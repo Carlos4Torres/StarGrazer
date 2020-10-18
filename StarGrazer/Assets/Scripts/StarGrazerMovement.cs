@@ -21,15 +21,18 @@ public class StarGrazerMovement : MonoBehaviour
 
     void Movement3D()
     {
-        float yMovement = Input.GetAxis("Vertical") * speed * Time.deltaTime;
         float xMovement = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        float yMovement = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
         transform.Translate(xMovement, yMovement, 0f);
         Vector3 clampedPosition = transform.localPosition;
 
+        //I think there's a better way to do this based off of the screen size/camera render, but need to do some research. 
+        //It works for now, but will be messy in the 2d/3d changing portions
         clampedPosition.x = Mathf.Clamp(clampedPosition.x, xMin, xMax);
         clampedPosition.y = Mathf.Clamp(clampedPosition.y, yMin, yMax);
 
         transform.localPosition = clampedPosition;
     }
+
 }
