@@ -23,6 +23,21 @@ public class CameraTrigger : MonoBehaviour
     [Header("Camera Information")]
     public Camera mainCamera;
     public Transform cameraLocation;
+    private bool triggered;
+
+
+    private void Update()
+    {
+        if (triggered)
+        {
+            // Vector3 Lerp and slerp are for smooth movement and rotations
+            mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, cameraLocation.position, speed * Time.deltaTime);
+            mainCamera.transform.rotation = Quaternion.Slerp(mainCamera.transform.rotation, cameraLocation.transform.rotation, speed * Time.deltaTime);
+
+            if (Vector3.Distance(mainCamera.transform.position, cameraLocation.position) < 0.1f)
+                triggered = false;
+        }
+    }
 
     public void OnTriggerEnter(Collider other)
     {
@@ -37,15 +52,13 @@ public class CameraTrigger : MonoBehaviour
                 case TriggerDirection.HORIZONTAL:
                     player.state = StarGrazerMovement.movementState.HORIZONTAL;
                     break;
-                
+
                 case TriggerDirection.VERTICAL:
                     player.state = StarGrazerMovement.movementState.VERTICAL;
                     break;
             }
 
-            mainCamera.transform.position = Vector3.MoveTowards(mainCamera.transform.position, cameraLocation.position, speed * Time.deltaTime);
-            mainCamera.transform.localEulerAngles = cameraLocation.transform.localEulerAngles;
-
+            triggered = true;
         }
     }
 
