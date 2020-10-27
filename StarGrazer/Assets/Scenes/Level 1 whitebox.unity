@@ -3949,7 +3949,7 @@ MonoBehaviour:
   - position: {x: -15, y: 70, z: 465}
     roll: 0
   - position: {x: -15.75, y: 100, z: 465}
-    roll: 0
+    roll: -11.99
   - position: {x: -16, y: 130, z: 465}
     roll: 0
   - position: {x: -17, y: 160, z: 465}
@@ -4008,13 +4008,23 @@ MonoBehaviour:
     roll: 0
   - position: {x: -36, y: 100, z: 465}
     roll: 0
-  - position: {x: -36.5, y: 70, z: 465}
+  - position: {x: -36.3, y: 70, z: 465}
     roll: 0
-  - position: {x: -37, y: 40, z: 465}
+  - position: {x: -36.9, y: 45.1, z: 465}
     roll: 0
-  - position: {x: -37.5, y: 10, z: 465}
+  - position: {x: -43.8, y: 10, z: 465}
     roll: 0
-  - position: {x: -39.7, y: -51.6, z: 465}
+  - position: {x: -66.3, y: 9.8, z: 465}
+    roll: 0
+  - position: {x: -67.5, y: -50, z: 490}
+    roll: 0
+  - position: {x: -67.5, y: -53.150856, z: 560}
+    roll: 0
+  - position: {x: -67.5, y: -49.364857, z: 630}
+    roll: 0
+  - position: {x: -67.5, y: -50, z: 700}
+    roll: 0
+  - position: {x: -67.2165, y: -50, z: 770}
     roll: 0
 --- !u!4 &1550690155
 Transform:
