@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class CameraTrigger : MonoBehaviour
+public class CameraAnimator : MonoBehaviour
 {
     public enum TriggerDirection
     {
@@ -22,22 +18,15 @@ public class CameraTrigger : MonoBehaviour
 
     [Header("Camera Information")]
     public Camera mainCamera;
-    public Transform cameraLocation;
+
+    private Animator animator;
     private bool triggered;
 
-
-    private void Update()
+    private void Start()
     {
-        if (triggered)
-        {
-            // Vector3 Lerp and slerp are for smooth movement and rotations
-            mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, cameraLocation.position, speed * Time.deltaTime);
-            mainCamera.transform.rotation = Quaternion.Slerp(mainCamera.transform.rotation, cameraLocation.transform.rotation, speed * Time.deltaTime);
-
-            if (Vector3.Distance(mainCamera.transform.position, cameraLocation.position) < 0.1f)
-                triggered = false;
-        }
+        animator = mainCamera.GetComponent<Animator>();
     }
+
 
     public void OnTriggerEnter(Collider other)
     {
@@ -47,14 +36,17 @@ public class CameraTrigger : MonoBehaviour
             {
                 case TriggerDirection.FULL:
                     player.state = StarGrazerMovement.movementState.FULL;
+                    animator.SetInteger("state", 1);
                     break;
                 
                 case TriggerDirection.HORIZONTAL:
                     player.state = StarGrazerMovement.movementState.HORIZONTAL;
+                    animator.SetInteger("state", 2);
                     break;
 
                 case TriggerDirection.VERTICAL:
                     player.state = StarGrazerMovement.movementState.VERTICAL;
+                    animator.SetInteger("state", 3);
                     break;
             }
 
