@@ -20,7 +20,7 @@ public class CameraAnimator : MonoBehaviour
     public Camera mainCamera;
 
     private Animator animator;
-    private bool triggered;
+    
 
     private void Start()
     {
@@ -50,7 +50,25 @@ public class CameraAnimator : MonoBehaviour
                     break;
             }
 
-            triggered = true;
+            UpdateClamps();
+        }
+    }
+
+    public void UpdateClamps()
+    {
+        switch(direction)
+        {
+            case TriggerDirection.FULL:
+
+                break;
+
+            case TriggerDirection.HORIZONTAL:
+
+                break;
+
+            case TriggerDirection.VERTICAL:
+
+                break;
         }
     }
 
