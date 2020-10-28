@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
-
 
 public class StarGrazerMovement : MonoBehaviour
 {
@@ -19,20 +17,6 @@ public class StarGrazerMovement : MonoBehaviour
     [Header("State")]
     public movementState state;
     public float speed = 5;
-
-<<<<<<< Updated upstream
-=======
-    [Header("X Clamp Values")]
-    [Range(0.0f, 1f)]
-    public float xMin;
-    [Range(0.0f, 1f)]
-    public float xMax;
-
-    [Header("Y Clamp Values")]
-    [Range(0.0f, 1f)]
-    public float yMin;
-    [Range(0.0f, 1f)]
-    public float yMax;
 
     void OnEnable()
     {
@@ -52,7 +36,6 @@ public class StarGrazerMovement : MonoBehaviour
         controls.Gameplay.PlayerMove.canceled += ctx => move = Vector2.zero;
     }
 
->>>>>>> Stashed changes
     void Update()
     {
         Movement();

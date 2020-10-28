@@ -62,7 +62,13 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
-<<<<<<< Updated upstream
+    "com.unity.inputsystem": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
     "com.unity.recorder": {
       "version": "2.2.0-preview.4",
       "depth": 1,
@@ -70,13 +76,6 @@
       "dependencies": {
         "com.unity.timeline": "1.0.0"
       },
-=======
-    "com.unity.inputsystem": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {},
->>>>>>> Stashed changes
       "url": "https://packages.unity.com"
     },
     "com.unity.test-framework": {

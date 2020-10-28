@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class CameraAnimator : MonoBehaviour
 {
@@ -20,10 +21,6 @@ public class CameraAnimator : MonoBehaviour
     public Camera mainCamera;
 
     private Animator animator;
-<<<<<<< Updated upstream
-    
-=======
->>>>>>> Stashed changes
 
     private void Start()
     {
@@ -52,30 +49,6 @@ public class CameraAnimator : MonoBehaviour
                     animator.SetInteger("state", 3);
                     break;
             }
-<<<<<<< Updated upstream
-
-            UpdateClamps();
         }
     }
-
-    public void UpdateClamps()
-    {
-        switch(direction)
-        {
-            case TriggerDirection.FULL:
-
-                break;
-
-            case TriggerDirection.HORIZONTAL:
-
-                break;
-
-            case TriggerDirection.VERTICAL:
-
-                break;
-=======
->>>>>>> Stashed changes
-        }
-    }
-
 }
