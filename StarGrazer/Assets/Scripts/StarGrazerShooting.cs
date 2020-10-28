@@ -8,13 +8,35 @@ public class StarGrazerShooting : MonoBehaviour
     public StarGrazerMovement movement;
     public GameObject marker;
 
+    PlayerControls controls;
+    Vector3 move;
+
     private Camera cam;
 
-    private void Awake() => cam = Camera.main; // Creating a reference for Camer.main as it is faster than calling the camera directly, good to put into practice
+    void OnEnable()
+    {
+        controls.Gameplay.Enable();
+    }
+
+    void OnDisable()
+    {
+        controls.Gameplay.Disable();
+    }
+
+    private void Start() => cam = Camera.main; // Creating a reference for Camera.main as it is faster than calling the camera directly, good to put into practice
+
+    private void Awake()
+    {
+        controls = new PlayerControls();
+
+        controls.Gameplay.ReticleMove.performed += ctx => move = ctx.ReadValue<Vector3>();
+        controls.Gameplay.ReticleMove.canceled += ctx => move = Vector3.zero;
+    }
 
     private void Update() // Update function to change the marker's position when the camera angle changes. 
     {
-        Vector3 mousePos = Input.mousePosition;
+        Vector3 mousePos = new Vector3(move.x, move.y, 0); //Input.mousePosition;
+        //Vector3 mousePos = new Vector3(move.x, move.y, move.z);
 
         switch (movement.state)
         {
@@ -32,6 +54,6 @@ public class StarGrazerShooting : MonoBehaviour
         }
 
         Vector3 worldMouse = cam.ScreenToWorldPoint(mousePos);
-        marker.transform.position = worldMouse;
+        marker.transform.position = mousePos;
     }
 }

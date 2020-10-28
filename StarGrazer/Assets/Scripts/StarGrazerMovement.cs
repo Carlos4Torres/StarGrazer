@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
 
 public class StarGrazerMovement : MonoBehaviour
 {
@@ -8,11 +12,47 @@ public class StarGrazerMovement : MonoBehaviour
         HORIZONTAL,
         VERTICAL,
     }
-   
+
+    PlayerControls controls;
+    Vector2 move;
+
     [Header("State")]
     public movementState state;
     public float speed = 5;
 
+<<<<<<< Updated upstream
+=======
+    [Header("X Clamp Values")]
+    [Range(0.0f, 1f)]
+    public float xMin;
+    [Range(0.0f, 1f)]
+    public float xMax;
+
+    [Header("Y Clamp Values")]
+    [Range(0.0f, 1f)]
+    public float yMin;
+    [Range(0.0f, 1f)]
+    public float yMax;
+
+    void OnEnable()
+    {
+        controls.Gameplay.Enable();
+    }
+
+    void OnDisable()
+    {
+        controls.Gameplay.Disable();
+    }
+
+    void Awake()
+    {
+        controls = new PlayerControls();
+
+        controls.Gameplay.PlayerMove.performed += ctx => move = ctx.ReadValue<Vector2>();
+        controls.Gameplay.PlayerMove.canceled += ctx => move = Vector2.zero;
+    }
+
+>>>>>>> Stashed changes
     void Update()
     {
         Movement();
@@ -20,10 +60,10 @@ public class StarGrazerMovement : MonoBehaviour
 
     void Movement()
     {
-        float xMovement = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        float yMovement = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+        float xMovement = move.x * speed * Time.deltaTime; /*Input.GetAxis("Horizontal")*/
+        float yMovement = move.y * speed * Time.deltaTime; /*Input.GetAxis("Vertical")*/
 
-        switch(state)
+        switch (state)
         {
             case movementState.FULL:
                 transform.Translate(xMovement, yMovement, 0f);
