@@ -7,7 +7,7 @@
             "actions": [
                 {
                     "name": "PlayerMove",
-                    "type": "PassThrough",
+                    "type": "Value",
                     "id": "b4f8cb0d-f333-491f-83b5-d7168f0f7cf4",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -15,7 +15,7 @@
                 },
                 {
                     "name": "ReticleMove",
-                    "type": "PassThrough",
+                    "type": "Value",
                     "id": "d3a1d9e1-6635-412e-86c2-9786ed24a1c9",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -28,19 +28,85 @@
                     "id": "854bb3c4-a4da-47e8-855f-9722e2eb42d5",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
-                    "processors": "",
-                    "groups": "",
+                    "processors": "NormalizeVector2",
+                    "groups": "Controller",
                     "action": "PlayerMove",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "2c00a47b-72bf-4891-819d-533926d14fa0",
-                    "path": "<Gamepad>/dpad",
+                    "name": "2D Vector",
+                    "id": "a9115a46-1850-4b79-844d-9880d92f4d31",
+                    "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
+                    "action": "PlayerMove",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "9c044383-91a1-4227-8e72-b3f2e1ed31d9",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "PlayerMove",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "015999d0-641a-42c3-a0b8-f87bc575d2dd",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "PlayerMove",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "eff6d34a-18c6-4085-bcb2-0ddeb68c3e9b",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "PlayerMove",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "c9b54813-934c-4da9-b36a-132238caf359",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "PlayerMove",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "2c00a47b-72bf-4891-819d-533926d14fa0",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "ReticleMove",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d8acc856-eaee-4c85-80d2-c16290d6e866",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
                     "action": "ReticleMove",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -48,5 +114,33 @@
             ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": "PC",
+            "bindingGroup": "PC",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Controller",
+            "bindingGroup": "Controller",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
 }

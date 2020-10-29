@@ -29,8 +29,8 @@ public class StarGrazerShooting : MonoBehaviour
     {
         controls = new PlayerControls();
 
-        controls.Gameplay.ReticleMove.performed += ctx => move = ctx.ReadValue<Vector3>();
-        controls.Gameplay.ReticleMove.canceled += ctx => move = Vector3.zero;
+        controls.Gameplay.ReticleMove.performed += ctx => move = ctx.ReadValue<Vector2>();
+        controls.Gameplay.ReticleMove.canceled += ctx => move = Vector2.zero;
     }
 
     private void Update() // Update function to change the marker's position when the camera angle changes. 
