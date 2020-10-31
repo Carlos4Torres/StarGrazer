@@ -268,18 +268,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 1
   speed: 20
-  xMinFull: 0
-  xMaxFull: 0
-  yMinFull: 0
-  yMaxFull: 0
-  xMinVert: 0
-  xMaxVert: 0
-  yMinVert: 0
-  yMaxVert: 0
-  xMinHorz: 0
-  xMaxHorz: 0
-  yMinHorz: 0
-  yMaxHorz: 0
+  xMin: 0.1
+  xMax: 0.9
+  yMin: 0.1
+  yMax: 0.9
 --- !u!54 &200117861
 Rigidbody:
   m_ObjectHideFlags: 0
