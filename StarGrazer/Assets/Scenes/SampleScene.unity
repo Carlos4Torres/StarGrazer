@@ -268,10 +268,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 1
   speed: 20
-  xMin: 0.1
-  xMax: 0.9
-  yMin: 0.1
-  yMax: 0.9
+  xMinFull: 0
+  xMaxFull: 0
+  yMinFull: 0
+  yMaxFull: 0
+  xMinVert: 0
+  xMaxVert: 0
+  yMinVert: 0
+  yMaxVert: 0
+  xMinHorz: 0
+  xMaxHorz: 0
+  yMinHorz: 0
+  yMaxHorz: 0
 --- !u!54 &200117861
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -302,6 +310,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement: {fileID: 200117860}
   marker: {fileID: 1670472186}
+--- !u!1 &329967360
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 329967361}
+  m_Layer: 0
+  m_Name: BulletPrefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &329967361
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329967360}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.501931, y: 13.24, z: -66.42}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &376299617
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,6 +440,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6016195725851492543, guid: 381386dc172b36441bd5a6ef707f271c, type: 3}
   m_PrefabInstance: {fileID: 6016195725752851493}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &507037485
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 507037486}
+  m_Layer: 0
+  m_Name: BulletController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &507037486
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507037485}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.31230783, y: 10.00861, z: -65.12684}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &511889734
 GameObject:
   m_ObjectHideFlags: 0
