@@ -76,7 +76,7 @@ public class EnemyDynamicPath : MonoBehaviour
                 moveDampen += 0.01f * Time.deltaTime;
                 break;
         }
-        Debug.Log(localDollyScript.m_Speed);
+        //Debug.Log(localDollyScript.m_Speed);
     }
 
     IEnumerator TimeToEscape()

@@ -33,6 +33,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""PlayerFire"",
+                    ""type"": ""Button"",
+                    ""id"": ""0a8974f3-0669-4e67-be28-676870db3a77"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -123,11 +131,44 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""ReticleMove"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4a088840-1f8c-4d01-93f0-04d49f056e20"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""PlayerFire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d2ffa959-ded4-4275-8850-4ac27c153e24"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""PlayerFire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
     ],
     ""controlSchemes"": [
+        {
+            ""name"": ""Controller"",
+            ""bindingGroup"": ""Controller"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        },
         {
             ""name"": ""PC"",
             ""bindingGroup"": ""PC"",
@@ -143,17 +184,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isOR"": false
                 }
             ]
-        },
-        {
-            ""name"": ""Controller"",
-            ""bindingGroup"": ""Controller"",
-            ""devices"": [
-                {
-                    ""devicePath"": ""<Gamepad>"",
-                    ""isOptional"": false,
-                    ""isOR"": false
-                }
-            ]
         }
     ]
 }");
@@ -161,6 +191,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
         m_Gameplay_PlayerMove = m_Gameplay.FindAction("PlayerMove", throwIfNotFound: true);
         m_Gameplay_ReticleMove = m_Gameplay.FindAction("ReticleMove", throwIfNotFound: true);
+        m_Gameplay_PlayerFire = m_Gameplay.FindAction("PlayerFire", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -212,12 +243,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private IGameplayActions m_GameplayActionsCallbackInterface;
     private readonly InputAction m_Gameplay_PlayerMove;
     private readonly InputAction m_Gameplay_ReticleMove;
+    private readonly InputAction m_Gameplay_PlayerFire;
     public struct GameplayActions
     {
         private @PlayerControls m_Wrapper;
         public GameplayActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @PlayerMove => m_Wrapper.m_Gameplay_PlayerMove;
         public InputAction @ReticleMove => m_Wrapper.m_Gameplay_ReticleMove;
+        public InputAction @PlayerFire => m_Wrapper.m_Gameplay_PlayerFire;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -233,6 +266,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @ReticleMove.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnReticleMove;
                 @ReticleMove.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnReticleMove;
                 @ReticleMove.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnReticleMove;
+                @PlayerFire.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPlayerFire;
+                @PlayerFire.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPlayerFire;
+                @PlayerFire.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPlayerFire;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -243,19 +279,13 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @ReticleMove.started += instance.OnReticleMove;
                 @ReticleMove.performed += instance.OnReticleMove;
                 @ReticleMove.canceled += instance.OnReticleMove;
+                @PlayerFire.started += instance.OnPlayerFire;
+                @PlayerFire.performed += instance.OnPlayerFire;
+                @PlayerFire.canceled += instance.OnPlayerFire;
             }
         }
     }
     public GameplayActions @Gameplay => new GameplayActions(this);
-    private int m_PCSchemeIndex = -1;
-    public InputControlScheme PCScheme
-    {
-        get
-        {
-            if (m_PCSchemeIndex == -1) m_PCSchemeIndex = asset.FindControlSchemeIndex("PC");
-            return asset.controlSchemes[m_PCSchemeIndex];
-        }
-    }
     private int m_ControllerSchemeIndex = -1;
     public InputControlScheme ControllerScheme
     {
@@ -265,9 +295,19 @@ public class @PlayerControls : IInputActionCollection, IDisposable
             return asset.controlSchemes[m_ControllerSchemeIndex];
         }
     }
+    private int m_PCSchemeIndex = -1;
+    public InputControlScheme PCScheme
+    {
+        get
+        {
+            if (m_PCSchemeIndex == -1) m_PCSchemeIndex = asset.FindControlSchemeIndex("PC");
+            return asset.controlSchemes[m_PCSchemeIndex];
+        }
+    }
     public interface IGameplayActions
     {
         void OnPlayerMove(InputAction.CallbackContext context);
         void OnReticleMove(InputAction.CallbackContext context);
+        void OnPlayerFire(InputAction.CallbackContext context);
     }
 }

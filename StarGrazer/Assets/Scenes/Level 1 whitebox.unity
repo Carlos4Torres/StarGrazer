@@ -835,6 +835,7 @@ MonoBehaviour:
   direction: 0
   speed: 5
   mainCamera: {fileID: 3557212745854814207}
+  cameraLocation: {fileID: 0}
 --- !u!65 &101331751
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15270,6 +15271,7 @@ GameObject:
   - component: {fileID: 3557212745024644329}
   - component: {fileID: 3557212745024644328}
   - component: {fileID: 3557212745024644330}
+  - component: {fileID: 3557212745024644336}
   m_Layer: 0
   m_Name: CubeGrazer
   m_TagString: Player
@@ -15292,6 +15294,18 @@ Transform:
   m_Father: {fileID: 3557212745565068604}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3557212745024644336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3557212745024644334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dcc4723868b7e2459b1b434100d4e4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3557212745344547786
 GameObject:
   m_ObjectHideFlags: 0
@@ -15705,6 +15719,7 @@ MonoBehaviour:
   direction: 2
   speed: 2
   mainCamera: {fileID: 3557212745854814207}
+  cameraLocation: {fileID: 0}
 --- !u!65 &5903718861331579503
 BoxCollider:
   m_ObjectHideFlags: 0
