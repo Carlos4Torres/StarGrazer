@@ -15,7 +15,7 @@ public class EnemyTrigger : MonoBehaviour
         {
             foreach(EnemyMainPath enemy in mainEnemies)
             {
-                enemy.EnterCombat();
+                enemy.Enter();
             }
         }
 

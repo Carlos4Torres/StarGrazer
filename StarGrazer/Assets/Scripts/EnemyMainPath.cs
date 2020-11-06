@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Cinemachine;
+using System.Collections;
 using UnityEngine;
-using Cinemachine;
 
 public class EnemyMainPath : MonoBehaviour
 {
@@ -15,6 +14,13 @@ public class EnemyMainPath : MonoBehaviour
     }
 
     public combatState state;
+   
+    [Header("Shooting")]
+    public float timeBetweenShots;
+    public float initialShotDelay;
+    public float shotSpeed = 25;
+    public GameObject shot;
+    public Transform shotSpawn;
 
     [Header("Escape Values")]
     public float escapeSpeed;
@@ -25,6 +31,10 @@ public class EnemyMainPath : MonoBehaviour
     [Header("Scripts and Components")]
     public CinemachineDollyCart mainDollyScipt; //Using this just to match speed
     private CinemachineDollyCart localDollyScript;
+
+    private bool escapeRunning = false;
+    private bool combatRunning = false;
+    
 
     void Start()
     {
@@ -45,13 +55,12 @@ public class EnemyMainPath : MonoBehaviour
                 moveDampen += 0.007f * Time.deltaTime;
                 if (mainDollyScipt.m_Speed - localDollyScript.m_Speed < 1)
                 {
-                    state = combatState.COMBAT;
-                    moveDampen = 0;
+                    StartCombat();
                 }
                 break;
 
             case combatState.COMBAT:
-                StartCoroutine(Escape());
+
                 break;
 
             case combatState.ESCAPE:
@@ -69,9 +78,45 @@ public class EnemyMainPath : MonoBehaviour
         Destroy(this.gameObject, timeUntilDestroy);
     }
 
-    public void EnterCombat()
+    public void Enter()
     {
-            state = combatState.ENTRY;
-            localDollyScript.m_Speed = escapeSpeed;
+        state = combatState.ENTRY;
+        localDollyScript.m_Speed = escapeSpeed;
+    }
+
+    public void StartCombat()
+    {
+        state = combatState.COMBAT;
+        localDollyScript.m_Speed = mainDollyScipt.m_Speed;
+        moveDampen = 0;
+
+        StartCoroutine(CombatControl());
+        StartCoroutine(Escape());
+        
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if(state == combatState.IDLE)
+        {
+            Enter();
+        }
+    }
+
+
+    IEnumerator CombatControl()
+    {
+        yield return new WaitForSeconds(initialShotDelay);
+        while (state == combatState.COMBAT)
+        {
+            Shoot();
+            yield return new WaitForSeconds(timeBetweenShots);
+        }
+
+    }
+
+    private void Shoot()
+    {
+        Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
     }
 }
