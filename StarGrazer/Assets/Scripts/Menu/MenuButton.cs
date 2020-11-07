@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
-using System.Runtime.Hosting;
+using System.Diagnostics;
 
 public class MenuButton : MonoBehaviour
 {
@@ -33,30 +33,30 @@ public class MenuButton : MonoBehaviour
                     }
                     if (menuButtonController.index == 2 && thisIndex == 2)
                     {
-                        StartCoroutine(MenuTutorial());
+                        StartCoroutine(MenuMainToOptions());
                     }
                     if (menuButtonController.index == 3 && thisIndex == 3)
                     {
-                        StartCoroutine(MenuMainToOptions());
+                        StartCoroutine(MenuMainToHighScores());
                     }
                     if (menuButtonController.index == 4 && thisIndex == 4)
-                    {
-                        StartCoroutine(MenuMainToAchievements());
-                    }
-                    if (menuButtonController.index == 5 && thisIndex == 5)
                     {
                         StartCoroutine(MenuQuit());
                     }
                 }
                 if (menuScreen == 2) //Start Game Menu
                 {
-                    if (menuButtonController.index == 6 && thisIndex == 6)
+                    if (menuButtonController.index == 5 && thisIndex == 5)
                     {
                         StartCoroutine(MenuCasualMode());
                     }
-                    if (menuButtonController.index == 7 && thisIndex == 7)
+                    if (menuButtonController.index == 6 && thisIndex == 6)
                     {
                         StartCoroutine(MenuVeteranMode());
+                    }
+                    if (menuButtonController.index == 7 && thisIndex == 7)
+                    {
+                        StartCoroutine(MenuTraining());
                     }
                     if (menuButtonController.index == 8 && thisIndex == 8)
                     {
@@ -70,11 +70,11 @@ public class MenuButton : MonoBehaviour
                         StartCoroutine(MenuOptionsToMain());
                     }
                 }
-                if (menuScreen == 4) // Achievements Menu
+                if (menuScreen == 4) // HighScores Menu
                 {
                     if (menuButtonController.index == 10 && thisIndex == 10)
                     {
-                        StartCoroutine(MenuAchievementsToMain());
+                        StartCoroutine(MenuHighScoresToMain());
                     }
                 }
             }
@@ -92,7 +92,7 @@ public class MenuButton : MonoBehaviour
     public IEnumerator MenuStartGame()
     {
         menuScreen = 2;
-        menuButtonController.index = 6;
+        menuButtonController.index = 5;
         yield return new WaitForSeconds(0.5f);
     }
 
@@ -115,7 +115,7 @@ public class MenuButton : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
     }
 
-    public IEnumerator MenuTutorial()
+    public IEnumerator MenuTraining()
     {
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("Level 1 whitebox");
@@ -135,14 +135,14 @@ public class MenuButton : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
     }
 
-    public IEnumerator MenuMainToAchievements()
+    public IEnumerator MenuMainToHighScores()
     {
         menuScreen = 4;
         menuButtonController.index = 10;
         yield return new WaitForSeconds(0.5f);
     }
 
-    public IEnumerator MenuAchievementsToMain()
+    public IEnumerator MenuHighScoresToMain()
     {
         menuScreen = 1;
         menuButtonController.index = 1;
@@ -151,6 +151,7 @@ public class MenuButton : MonoBehaviour
 
     public IEnumerator MenuQuit()
     {
+        yield return new WaitForSeconds(0.5f);
         Application.Quit();
     }
 }
