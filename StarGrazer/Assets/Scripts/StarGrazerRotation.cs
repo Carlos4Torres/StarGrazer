@@ -10,9 +10,12 @@ public class StarGrazerRotation : MonoBehaviour
 
     private float rotationX = 0;
     private float rotationY = 0;
+    private Camera cam;
+
 
     PlayerControls controls;
     Vector2 move;
+    Vector3 point;
 
     void Awake()
     {
@@ -20,11 +23,14 @@ public class StarGrazerRotation : MonoBehaviour
 
         controls.Gameplay.PlayerMove.performed += ctx => move = ctx.ReadValue<Vector2>();
         controls.Gameplay.PlayerMove.canceled += ctx => move = Vector2.zero;
+        cam = Camera.main;
+        point = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
     }
 
     void Update()
     {
-        Rotater();
+        transform.LookAt(point);
+        //Rotater();
     }
 
     void Rotater()
