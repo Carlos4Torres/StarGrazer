@@ -31,9 +31,6 @@ public class EnemyMainPath : MonoBehaviour
     [Header("Scripts and Components")]
     public CinemachineDollyCart mainDollyScipt; //Using this just to match speed
     private CinemachineDollyCart localDollyScript;
-
-    private bool escapeRunning = false;
-    private bool combatRunning = false;
     
 
     void Start()

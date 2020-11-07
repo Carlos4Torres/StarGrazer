@@ -14,11 +14,23 @@ public class BossMovement : MonoBehaviour
         ESCAPE,
     }
 
+    [Header("Shooting")]
+    public float timeBetweenShots;
+    public float initialShotDelay;
+    public float shotSpeed = 25;
+    public GameObject shot;
+    public Transform shotSpawn;
+
+    public float health;
+    public float dmgPerBullet;
+
     public combatState state;
 
-    [Header("Escape Values")]
-    public float escapeSpeed;
+    [Header("Movement Values")]
+    public float MoveSpeed;
     private float moveDampen = 0;
+
+
 
     [Header("Scripts and Components")]
     public CinemachineDollyCart mainDollyScipt; //Using this just to match speed
@@ -41,11 +53,9 @@ public class BossMovement : MonoBehaviour
 
                 localDollyScript.m_Speed = Mathf.Lerp(localDollyScript.m_Speed, mainDollyScipt.m_Speed, moveDampen);
                 moveDampen += 0.007f * Time.deltaTime;
-                if (mainDollyScipt.m_Speed - localDollyScript.m_Speed < 1)
+                if (localDollyScript.m_Position - mainDollyScipt.m_Position < 40)
                 {
-                    state = combatState.COMBAT;
-                    localDollyScript.m_Speed = mainDollyScipt.m_Speed;
-                    moveDampen = 0;
+                    StartCombat();
                 }
                 break;
 
@@ -57,7 +67,7 @@ public class BossMovement : MonoBehaviour
     public void EnterCombat()
     {
             state = combatState.ENTRY;
-            localDollyScript.m_Speed = escapeSpeed;
+            localDollyScript.m_Speed = MoveSpeed;
     }
 
     public void OnTriggerEnter(Collider other)
@@ -65,7 +75,50 @@ public class BossMovement : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             if(state == combatState.IDLE)
-            EnterCombat();
+            {
+                if (localDollyScript.m_Position - mainDollyScipt.m_Position > 40) 
+                    MoveSpeed += ((localDollyScript.m_Position - mainDollyScipt.m_Position)*-.75f);
+                
+                var collider = this.GetComponent<BoxCollider>();
+                collider.enabled = false;
+                
+                EnterCombat();
+            }
         }
+
+        if (other.CompareTag("Bullet"))
+        {
+            if (state == combatState.COMBAT)
+            {
+                health -= dmgPerBullet;
+                Destroy(other.gameObject);
+            }
+        }
+    }
+
+    public void StartCombat()
+    {
+        state = combatState.COMBAT;
+        localDollyScript.m_Speed = mainDollyScipt.m_Speed;
+        moveDampen = 0;
+
+        StartCoroutine(CombatControl());
+
+    }
+
+    IEnumerator CombatControl()
+    {
+        yield return new WaitForSeconds(initialShotDelay);
+        while (state == combatState.COMBAT)
+        {
+            Shoot();
+            yield return new WaitForSeconds(timeBetweenShots);
+        }
+
+    }
+
+    private void Shoot()
+    {
+        Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
     }
 }
