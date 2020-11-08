@@ -50,7 +50,7 @@ public class EnemyMainPath : MonoBehaviour
 
                 localDollyScript.m_Speed = Mathf.Lerp(localDollyScript.m_Speed, mainDollyScipt.m_Speed, moveDampen);
                 moveDampen += 0.007f * Time.deltaTime;
-                if (mainDollyScipt.m_Speed - localDollyScript.m_Speed < 1)
+                if (localDollyScript.m_Position - mainDollyScipt.m_Position < 20)
                 {
                     StartCombat();
                 }
@@ -94,7 +94,7 @@ public class EnemyMainPath : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if(state == combatState.IDLE)
+        if(state == combatState.IDLE && other.gameObject.CompareTag("Player"))
         {
             Enter();
         }

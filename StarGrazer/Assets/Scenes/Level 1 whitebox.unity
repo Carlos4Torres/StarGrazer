@@ -836,7 +836,6 @@ MonoBehaviour:
   direction: 0
   speed: 5
   mainCamera: {fileID: 3557212745854814207}
-  cameraLocation: {fileID: 0}
 --- !u!65 &101331751
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -880,6 +879,7 @@ MonoBehaviour:
   direction: 0
   speed: 0
   mainCamera: {fileID: 3557212745854814207}
+  cameraLocation: {fileID: 0}
 --- !u!1 &102440466
 GameObject:
   m_ObjectHideFlags: 0
@@ -16416,6 +16416,71 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2143660608}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &2255406771885496171
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7419706734901639917, guid: 8d5741009385e3143977b52f9bb0fe00, type: 3}
+      propertyPath: mainDollyScipt
+      value: 
+      objectReference: {fileID: 3557212745565068605}
+    - target: {fileID: 7419706734901639920, guid: 8d5741009385e3143977b52f9bb0fe00, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419706734901639920, guid: 8d5741009385e3143977b52f9bb0fe00, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419706734901639920, guid: 8d5741009385e3143977b52f9bb0fe00, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -185.00027
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419706734901639920, guid: 8d5741009385e3143977b52f9bb0fe00, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 1.0192903e-13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419706734901639920, guid: 8d5741009385e3143977b52f9bb0fe00, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -4.6956173e-14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419706734901639920, guid: 8d5741009385e3143977b52f9bb0fe00, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 4.786197e-27
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419706734901639920, guid: 8d5741009385e3143977b52f9bb0fe00, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419706734901639920, guid: 8d5741009385e3143977b52f9bb0fe00, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419706734901639920, guid: 8d5741009385e3143977b52f9bb0fe00, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419706734901639920, guid: 8d5741009385e3143977b52f9bb0fe00, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419706734901639920, guid: 8d5741009385e3143977b52f9bb0fe00, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419706734901639921, guid: 8d5741009385e3143977b52f9bb0fe00, type: 3}
+      propertyPath: m_Name
+      value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419706734901639922, guid: 8d5741009385e3143977b52f9bb0fe00, type: 3}
+      propertyPath: m_Path
+      value: 
+      objectReference: {fileID: 1550690154}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8d5741009385e3143977b52f9bb0fe00, type: 3}
 --- !u!114 &3557212745024644328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16951,6 +17016,7 @@ MonoBehaviour:
   direction: 2
   speed: 0
   mainCamera: {fileID: 3557212745854814207}
+  cameraLocation: {fileID: 0}
 --- !u!4 &5903718861331579500
 Transform:
   m_ObjectHideFlags: 0
@@ -16993,7 +17059,6 @@ MonoBehaviour:
   direction: 2
   speed: 2
   mainCamera: {fileID: 3557212745854814207}
-  cameraLocation: {fileID: 0}
 --- !u!65 &5903718861331579503
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
-public class BossMovement : MonoBehaviour
+public class BossController : MonoBehaviour
 {
 
     public enum combatState
@@ -11,20 +11,17 @@ public class BossMovement : MonoBehaviour
         IDLE,
         ENTRY,
         COMBAT,
-        ESCAPE,
     }
 
-    [Header("Shooting")]
-    public float timeBetweenShots;
-    public float initialShotDelay;
-    public float shotSpeed = 25;
-    public GameObject shot;
-    public Transform shotSpawn;
 
+
+    [Header("Shooting")]
+    public float initialShotDelay;
     public float health;
     public float dmgPerBullet;
 
     public combatState state;
+
 
     [Header("Movement Values")]
     public float MoveSpeed;
@@ -35,11 +32,13 @@ public class BossMovement : MonoBehaviour
     [Header("Scripts and Components")]
     public CinemachineDollyCart mainDollyScipt; //Using this just to match speed
     private CinemachineDollyCart localDollyScript;
+    private BossShooting bossShootingScript;
 
     void Start()
     {
 
         localDollyScript = GetComponent<CinemachineDollyCart>();
+        bossShootingScript = GetComponent<BossShooting>();
 
         state = combatState.IDLE;
         localDollyScript.m_Speed = 0;
@@ -64,25 +63,25 @@ public class BossMovement : MonoBehaviour
         }
     }
 
-    public void EnterCombat()
+    public void Entry()
     {
-            state = combatState.ENTRY;
-            localDollyScript.m_Speed = MoveSpeed;
+        state = combatState.ENTRY;
+        localDollyScript.m_Speed = MoveSpeed;
     }
 
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            if(state == combatState.IDLE)
+            if (state == combatState.IDLE)
             {
-                if (localDollyScript.m_Position - mainDollyScipt.m_Position > 40) 
-                    MoveSpeed += ((localDollyScript.m_Position - mainDollyScipt.m_Position)*-.75f);
-                
+                if (localDollyScript.m_Position - mainDollyScipt.m_Position > 40)
+                    MoveSpeed += ((localDollyScript.m_Position - mainDollyScipt.m_Position) * -.75f);
+
                 var collider = this.GetComponent<BoxCollider>();
                 collider.enabled = false;
-                
-                EnterCombat();
+
+                Entry();
             }
         }
 
@@ -103,7 +102,6 @@ public class BossMovement : MonoBehaviour
         moveDampen = 0;
 
         StartCoroutine(CombatControl());
-
     }
 
     IEnumerator CombatControl()
@@ -111,14 +109,9 @@ public class BossMovement : MonoBehaviour
         yield return new WaitForSeconds(initialShotDelay);
         while (state == combatState.COMBAT)
         {
-            Shoot();
-            yield return new WaitForSeconds(timeBetweenShots);
+            StartCoroutine(bossShootingScript.Shooting());
+            yield return new WaitForSeconds(bossShootingScript.timeBetweenShots * bossShootingScript.shotSpawn.Length + 1);
         }
 
-    }
-
-    private void Shoot()
-    {
-        Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
     }
 }
