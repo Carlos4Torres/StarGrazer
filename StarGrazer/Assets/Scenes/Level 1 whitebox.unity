@@ -16928,8 +16928,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8673389345174407904, guid: dc17ccfce1d92c543be3383e21ecd6bd, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8673389345174407904, guid: dc17ccfce1d92c543be3383e21ecd6bd, type: 3}
+      propertyPath: crosshair
+      value: 
+      objectReference: {fileID: 1156797623}
     - target: {fileID: 8673389345174407906, guid: dc17ccfce1d92c543be3383e21ecd6bd, type: 3}
       propertyPath: m_Name
       value: Model
