@@ -28,6 +28,8 @@ public class EnemyMainPath : MonoBehaviour
     public float timeUntilDestroy = 5f;
     private float moveDampen = 0;
 
+
+
     [Header("Scripts and Components")]
     public CinemachineDollyCart mainDollyScipt; //Using this just to match speed
     private CinemachineDollyCart localDollyScript;
@@ -100,7 +102,6 @@ public class EnemyMainPath : MonoBehaviour
         }
     }
 
-
     IEnumerator CombatControl()
     {
         yield return new WaitForSeconds(initialShotDelay);
@@ -115,5 +116,10 @@ public class EnemyMainPath : MonoBehaviour
     private void Shoot()
     {
         Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+    }
+
+    public void DestroyThis()
+    {
+        Destroy(this.gameObject);
     }
 }
