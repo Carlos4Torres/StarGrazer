@@ -50,7 +50,7 @@ public class EnemyMainPath : MonoBehaviour
         {
             case combatState.ENTRY:
 
-                localDollyScript.m_Speed = Mathf.Lerp(localDollyScript.m_Speed, mainDollyScipt.m_Speed, moveDampen);
+                localDollyScript.m_Speed = Mathf.Lerp(localDollyScript.m_Speed, 5, moveDampen);
                 moveDampen += 0.007f * Time.deltaTime;
                 if (localDollyScript.m_Position - mainDollyScipt.m_Position < 20)
                 {

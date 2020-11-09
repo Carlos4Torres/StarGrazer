@@ -51,12 +51,7 @@ public class BossShooting : MonoBehaviour
 
 
            // case shootingPattern.STAGGERED:
-           //     foreach (Transform location in shotSpawn)
-           //     {
-           //         Instantiate(shot, location.position, location.rotation);
-           //         location.
-           //     }
-           //     yield return new WaitForSeconds(timeBetweenShots);
+           //    Put  different shooting pattern here
            //     break;
         }
 

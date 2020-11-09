@@ -9,7 +9,7 @@ public class EnemyHealth : MonoBehaviour
 
     [Header("Heath")]
     public float health;
-    public float dmgPerBullet;
+    public float dmgPerBullet; //Damage the enemy takes per shot. Ideally would attach this value to the bullet instead of the enemy
 
 
     public void OnTriggerEnter(Collider other)
@@ -17,9 +17,7 @@ public class EnemyHealth : MonoBehaviour
             if (other.CompareTag("Bullet") && mainController.state != EnemyMainPath.combatState.IDLE)
             {
                 health -= dmgPerBullet;
-                //Destroy(other.gameObject.transform.parent);
-                //Destroy(other.gameObject);
-                Debug.Log("fuck");
+
                 if (health <= 0)
                 {
                     mainController.DestroyThis();
