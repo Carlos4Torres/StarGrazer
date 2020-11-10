@@ -2587,7 +2587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca602bdee365d3c42861fbda5f334fe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTimeBtwShots: 50
+  startTimeBtwShots: 70
   enemyBullet: {fileID: 4635193171472097772, guid: a7a3141339d59dc46aaf9d59b0938d1a, type: 3}
 --- !u!114 &313246588
 MonoBehaviour:
@@ -5155,7 +5155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca602bdee365d3c42861fbda5f334fe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTimeBtwShots: 50
+  startTimeBtwShots: 80
   enemyBullet: {fileID: 4635193171472097772, guid: a7a3141339d59dc46aaf9d59b0938d1a, type: 3}
 --- !u!114 &634370977
 MonoBehaviour:
@@ -6249,7 +6249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca602bdee365d3c42861fbda5f334fe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTimeBtwShots: 50
+  startTimeBtwShots: 70
   enemyBullet: {fileID: 4635193171472097772, guid: a7a3141339d59dc46aaf9d59b0938d1a, type: 3}
 --- !u!114 &757418000
 MonoBehaviour:
@@ -10513,7 +10513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca602bdee365d3c42861fbda5f334fe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTimeBtwShots: 50
+  startTimeBtwShots: 70
   enemyBullet: {fileID: 4635193171472097772, guid: a7a3141339d59dc46aaf9d59b0938d1a, type: 3}
 --- !u!114 &1321494752
 MonoBehaviour:
