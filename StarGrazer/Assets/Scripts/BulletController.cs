@@ -55,7 +55,7 @@ public class BulletController : MonoBehaviour
             spawnbullet();                                                                             //
     }                                                                                                  // }
         
-    // Update is called once per frame
+        // Update is called once per frame
     void Update()
     {
         transform.Translate(new Vector3(xSpeed, ySpeed, zSpeed), relativeTo);

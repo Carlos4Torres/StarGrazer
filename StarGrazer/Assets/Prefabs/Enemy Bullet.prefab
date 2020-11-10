@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 4635193171472097775}
   - component: {fileID: 4635193171472097774}
   - component: {fileID: 4635193171472097773}
-  - component: {fileID: -4788472563486966631}
+  - component: {fileID: 4635193171472097761}
+  - component: {fileID: -4117122631734033769}
   m_Layer: 0
   m_Name: Enemy Bullet
   m_TagString: Untagged
@@ -96,7 +97,23 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-4788472563486966631
+--- !u!54 &4635193171472097761
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4635193171472097772}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &-4117122631734033769
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,8 +122,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 4635193171472097772}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3654226466ede4b489577b6627483d06, type: 3}
+  m_Script: {fileID: 11500000, guid: bc4ace1ce9194ab49a79bfacc71e8608, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
-  damage: 40
+  speed: 25
+  rb: {fileID: 4635193171472097761}

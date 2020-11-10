@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-   public float speed = 50f;
+   public float speed=20f;
     public Rigidbody rb;
 
 
@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour
     private void Update()
     {
         //rb.velocity = Vector3.forward * Time.deltaTime * speed;
-        Destroy(gameObject, 3);
+        Destroy(gameObject, 2);
     }
     
     
