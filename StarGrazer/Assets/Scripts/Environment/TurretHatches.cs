@@ -13,14 +13,16 @@ public class TurretHatches : MonoBehaviour
         APPROACHING,
         SLOWING,
         STOPPED,
-        SPEEDING
+        SPEEDING,
+        GONE
     }
 
     public enum HatchStatus
     {
         SLOWING,
         STOPPED,
-        SPEEDING
+        SPEEDING,
+
     }
 
     public CinemachineDollyCart mainDolly;
@@ -29,11 +31,22 @@ public class TurretHatches : MonoBehaviour
     private float mainDollySpeed;
     public float stopPosition;
 
+    public GameObject upperHatch;
+    public Transform endUpper;
+    private Transform startUpper;
+    
+    public GameObject lowerHatch;
+    public Transform endLower;
+    private Transform startLower;
+
     private float moveDampen = 0;
 
     void Start()
     {
         mainDollySpeed = mainDolly.m_Speed;
+
+        startUpper = upperHatch.transform;
+        startLower = lowerHatch.transform;
     }
 
     void Update()
@@ -51,22 +64,22 @@ public class TurretHatches : MonoBehaviour
                 break;
            
             case PlayerStatus.STOPPED:
-              // mainDolly.m_Speed = Mathf.Lerp(mainDolly.m_Speed, 0, moveDampen);
-              // moveDampen += 0.007f * Time.deltaTime;
-              // if (mainDolly.m_Speed - 1 < 0)
-              // {
-              //     mainDolly.m_Speed = 0;
-              //     player = PlayerStatus.STOPPED;
-              // }
+                upperHatch.transform.position = Vector3.Lerp(startUpper.position, endUpper.position, Time.deltaTime);
+                lowerHatch.transform.position = Vector3.Lerp(startLower.position, endLower.position, Time.deltaTime);
+
+                if(lowerHatch.transform.position.y - endLower.position.y <1)
+                {
+                    player = PlayerStatus.SPEEDING;
+                }
                 break;
             
             case PlayerStatus.SPEEDING:
-                mainDolly.m_Speed = Mathf.Lerp(mainDolly.m_Speed, 0, moveDampen);
+                mainDolly.m_Speed = Mathf.Lerp(mainDolly.m_Speed, mainDollySpeed, moveDampen);
                 moveDampen += 0.007f * Time.deltaTime;
-                if (mainDolly.m_Speed - 1 < 0)
+                if (mainDollySpeed - mainDolly.m_Speed < 1)
                 {
-                    mainDolly.m_Speed = 0;
-                    player = PlayerStatus.STOPPED;
+                    mainDolly.m_Speed = mainDollySpeed;
+                    player = PlayerStatus.GONE;
                 }
                 break;
         }    
