@@ -17,8 +17,8 @@ public class EnemyHealth : MonoBehaviour
             if (other.CompareTag("Bullet") && mainController.state != EnemyMainPath.combatState.IDLE)
             {
                 health -= dmgPerBullet;
-
-                if (health <= 0)
+                Destroy(other.gameObject);
+            if (health <= 0)
                 {
                     mainController.DestroyThis();
                 }

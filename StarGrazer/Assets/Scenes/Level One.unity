@@ -33112,6 +33112,14 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 3557212745565068605}
+    - target: {fileID: 7419706734901639917, guid: 8d5741009385e3143977b52f9bb0fe00, type: 3}
+      propertyPath: dmgPerBullet
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419706734901639917, guid: 8d5741009385e3143977b52f9bb0fe00, type: 3}
+      propertyPath: health
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 7419706734901639920, guid: 8d5741009385e3143977b52f9bb0fe00, type: 3}
       propertyPath: m_LocalPosition.x
       value: -65.4966
@@ -33176,6 +33184,10 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 55.7
       objectReference: {fileID: 0}
+    - target: {fileID: 7419706734901639927, guid: 8d5741009385e3143977b52f9bb0fe00, type: 3}
+      propertyPath: shot
+      value: 
+      objectReference: {fileID: 4635193171472097772, guid: b097a1f0bba851f48acf31fdb432bdcc, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d5741009385e3143977b52f9bb0fe00, type: 3}
 --- !u!114 &3557212745024644328

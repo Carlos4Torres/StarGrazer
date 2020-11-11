@@ -99,13 +99,13 @@ public class MenuButton : MonoBehaviour
     public IEnumerator MenuCasualMode()
     {
         yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene("Level 1 whitebox");
+        SceneManager.LoadScene("Level One");
     }
 
     public IEnumerator MenuVeteranMode()
     {
         yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene("Level 1 whitebox");
+        SceneManager.LoadScene("Level One");
     }
 
     public IEnumerator MenuStartGameToMain()
@@ -118,7 +118,7 @@ public class MenuButton : MonoBehaviour
     public IEnumerator MenuTraining()
     {
         yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene("Level 1 whitebox");
+        SceneManager.LoadScene("Level One");
     }
     
     public IEnumerator MenuMainToOptions()

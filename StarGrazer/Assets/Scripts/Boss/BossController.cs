@@ -92,6 +92,10 @@ public class BossController : MonoBehaviour
                 health -= dmgPerBullet;
                 Destroy(other.gameObject);
             }
+            if(health <= 0)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 
