@@ -96,10 +96,8 @@ public class StarGrazerMovement : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("collision");
-        if(collision.collider.CompareTag("Enemy"))
+        if(collision.collider.CompareTag("Enemy") || (collision.collider.CompareTag("Boss")))
         {
-            Debug.Log("Enemy");
             StartCoroutine(DestroyModel());
         }
     }

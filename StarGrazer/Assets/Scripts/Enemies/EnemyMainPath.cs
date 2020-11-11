@@ -28,6 +28,7 @@ public class EnemyMainPath : MonoBehaviour
     public float timeUntilDestroy = 5f;
     private float moveDampen = 0;
 
+    public AudioSource laserSound;
 
 
     [Header("Scripts and Components")]
@@ -99,6 +100,8 @@ public class EnemyMainPath : MonoBehaviour
         if(state == combatState.IDLE && other.gameObject.CompareTag("Player"))
         {
             Enter();
+            var boxCollider = GetComponent<BoxCollider>();
+            boxCollider.enabled = false;
         }
     }
 
@@ -116,6 +119,7 @@ public class EnemyMainPath : MonoBehaviour
     private void Shoot()
     {
         Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+        laserSound.Play();
     }
 
     public void DestroyThis()

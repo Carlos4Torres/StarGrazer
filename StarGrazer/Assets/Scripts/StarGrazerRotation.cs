@@ -64,7 +64,7 @@ public class StarGrazerRotation : MonoBehaviour
 
                 if (Physics.Raycast(ray, out hit) && hit.transform.tag != "Player")
                 {
-                    print(hit.point);
+                    //print(hit.point);
                     Vector3 dir = (hit.point - transform.position);
                     toAngle = Quaternion.LookRotation(dir);
                     transform.rotation = Quaternion.Lerp(transform.rotation, toAngle, Time.deltaTime * rotateSpeed);
