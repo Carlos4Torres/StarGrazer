@@ -26710,7 +26710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3557212745024644328}
-  direction: 0
+  direction: 1
   speed: 0
   mainCamera: {fileID: 3557212745854814207}
   cameraLocation: {fileID: 0}
