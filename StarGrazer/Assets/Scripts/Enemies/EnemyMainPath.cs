@@ -29,6 +29,7 @@ public class EnemyMainPath : MonoBehaviour
     private float moveDampen = 0;
 
     public AudioSource laserSound;
+    public bool isDead = false;
 
 
     [Header("Scripts and Components")]
@@ -118,12 +119,18 @@ public class EnemyMainPath : MonoBehaviour
 
     private void Shoot()
     {
-        Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
-        laserSound.Play();
+        if(isDead == false)
+        {
+            Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+            laserSound.Play();
+        }
+
     }
 
-    public void DestroyThis()
+    public IEnumerator DestroyThis()
     {
+        yield return new WaitForSeconds(2);
         Destroy(this.gameObject);
     }
+
 }
