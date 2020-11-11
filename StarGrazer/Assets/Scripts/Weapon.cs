@@ -56,6 +56,7 @@ public class Weapon : MonoBehaviour
         Rigidbody bulletrb = bullet.GetComponent<Rigidbody>();
         bulletrb.velocity += gameplayPlane.transform.forward * 20;
         bulletrb.angularVelocity += rb.angularVelocity;
+        GetComponent<AudioSource>().Play();
         StartCoroutine("FireRate");
     }
 }

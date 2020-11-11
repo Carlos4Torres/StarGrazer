@@ -20,6 +20,7 @@ public class StarGrazerMovement : MonoBehaviour
     public float speed = 5;
 
     public GameObject model;
+    public AudioSource deathSound;
 
     void OnEnable()
     {
@@ -104,6 +105,7 @@ public class StarGrazerMovement : MonoBehaviour
 
     IEnumerator DestroyModel()
     {
+        deathSound.Play();
         Destroy(model); 
         yield return new WaitForSeconds(5);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
