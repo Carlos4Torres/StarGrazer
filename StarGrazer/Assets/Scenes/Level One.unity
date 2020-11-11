@@ -2280,6 +2280,7 @@ GameObject:
   - component: {fileID: 101331751}
   - component: {fileID: 101331750}
   - component: {fileID: 101331749}
+  - component: {fileID: 101331753}
   m_Layer: 0
   m_Name: Camera Trigger (1)
   m_TagString: CameraTrigger
@@ -2306,7 +2307,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 101331748}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1132fbc207a5f44298eb03201f0ecdb, type: 3}
   m_Name: 
@@ -2315,6 +2316,7 @@ MonoBehaviour:
   direction: 0
   speed: 5
   mainCamera: {fileID: 3557212745854814207}
+  cameraLocation: {fileID: 0}
 --- !u!65 &101331751
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2342,6 +2344,22 @@ Transform:
   m_Father: {fileID: 173322440}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
+--- !u!114 &101331753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101331748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b998f653a80b0d54dae25b44b183758c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 3557212745024644328}
+  direction: 0
+  speed: 0
+  mainCamera: {fileID: 3557212745854814207}
 --- !u!1 &102440466
 GameObject:
   m_ObjectHideFlags: 0
@@ -14059,6 +14077,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 4635193171472097772, guid: e3eeab0c4b3721745b7a53b1176af1ef, type: 3}
   firePosition: {fileID: 908764012}
+  gameplayPlane: {fileID: 3557212745565068604}
 --- !u!4 &921770119 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c679acf229813654f8a01b0c66991f69, type: 3}
@@ -24300,6 +24319,7 @@ GameObject:
   - component: {fileID: 1717295188}
   - component: {fileID: 1717295187}
   - component: {fileID: 1717295186}
+  - component: {fileID: 1717295189}
   m_Layer: 0
   m_Name: Camera Trigger (2)
   m_TagString: CameraTrigger
@@ -24340,7 +24360,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1717295184}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1132fbc207a5f44298eb03201f0ecdb, type: 3}
   m_Name: 
@@ -24349,6 +24369,7 @@ MonoBehaviour:
   direction: 1
   speed: 5
   mainCamera: {fileID: 3557212745854814207}
+  cameraLocation: {fileID: 0}
 --- !u!65 &1717295188
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24362,6 +24383,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 100, y: 100, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1717295189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717295184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b998f653a80b0d54dae25b44b183758c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 3557212745024644328}
+  direction: 0
+  speed: 0
+  mainCamera: {fileID: 3557212745854814207}
 --- !u!1 &1726328946
 GameObject:
   m_ObjectHideFlags: 0
@@ -31022,7 +31059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8673389344841794743, guid: dc17ccfce1d92c543be3383e21ecd6bd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8673389344841794743, guid: dc17ccfce1d92c543be3383e21ecd6bd, type: 3}
       propertyPath: m_LocalRotation.z
@@ -31030,11 +31067,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8673389344841794743, guid: dc17ccfce1d92c543be3383e21ecd6bd, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8673389344841794743, guid: dc17ccfce1d92c543be3383e21ecd6bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8673389344841794743, guid: dc17ccfce1d92c543be3383e21ecd6bd, type: 3}
       propertyPath: m_LocalScale.x
@@ -31044,9 +31081,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8673389344841794743, guid: dc17ccfce1d92c543be3383e21ecd6bd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673389344841794743, guid: dc17ccfce1d92c543be3383e21ecd6bd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673389344841794743, guid: dc17ccfce1d92c543be3383e21ecd6bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 8673389345174407904, guid: dc17ccfce1d92c543be3383e21ecd6bd, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8673389345174407904, guid: dc17ccfce1d92c543be3383e21ecd6bd, type: 3}
       propertyPath: crosshair
@@ -31074,7 +31123,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8673389345174407907, guid: dc17ccfce1d92c543be3383e21ecd6bd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8673389345174407907, guid: dc17ccfce1d92c543be3383e21ecd6bd, type: 3}
       propertyPath: m_LocalRotation.z
@@ -31082,7 +31131,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8673389345174407907, guid: dc17ccfce1d92c543be3383e21ecd6bd, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8673389345174407907, guid: dc17ccfce1d92c543be3383e21ecd6bd, type: 3}
       propertyPath: m_RootOrder
@@ -31094,11 +31143,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8673389345174407907, guid: dc17ccfce1d92c543be3383e21ecd6bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8673389345174407907, guid: dc17ccfce1d92c543be3383e21ecd6bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673389345279278026, guid: dc17ccfce1d92c543be3383e21ecd6bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.59
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc17ccfce1d92c543be3383e21ecd6bd, type: 3}
@@ -31114,6 +31167,7 @@ GameObject:
   - component: {fileID: 5903718861331579503}
   - component: {fileID: 5903718861331579502}
   - component: {fileID: 5903718861331579501}
+  - component: {fileID: 5903718861331579490}
   m_Layer: 0
   m_Name: Camera Trigger
   m_TagString: CameraTrigger
@@ -31121,6 +31175,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5903718861331579490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5903718861331579489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b998f653a80b0d54dae25b44b183758c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 3557212745024644328}
+  direction: 2
+  speed: 0
+  mainCamera: {fileID: 3557212745854814207}
 --- !u!4 &5903718861331579500
 Transform:
   m_ObjectHideFlags: 0
@@ -31154,7 +31224,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5903718861331579489}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1132fbc207a5f44298eb03201f0ecdb, type: 3}
   m_Name: 
@@ -31163,6 +31233,7 @@ MonoBehaviour:
   direction: 2
   speed: 2
   mainCamera: {fileID: 3557212745854814207}
+  cameraLocation: {fileID: 0}
 --- !u!65 &5903718861331579503
 BoxCollider:
   m_ObjectHideFlags: 0

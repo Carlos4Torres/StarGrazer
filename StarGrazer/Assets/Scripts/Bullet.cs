@@ -9,10 +9,10 @@ public class Bullet : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         //rb.velocity = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z * speed);
-        rb.velocity = transform.forward * speed;
+        rb.velocity += transform.forward * speed;
     }
 
     private void Update()

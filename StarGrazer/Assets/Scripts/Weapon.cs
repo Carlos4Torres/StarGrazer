@@ -7,9 +7,11 @@ public class Weapon : MonoBehaviour
   /// Public DataFields
    public GameObject bulletPrefab;
    public Transform firePosition;
+    public Transform gameplayPlane;
 
     PlayerControls controls;
     private bool shooting;
+    private Rigidbody rb;
 
     void OnEnable()                                                                     
     {                                                                                   
@@ -26,7 +28,10 @@ public class Weapon : MonoBehaviour
         controls = new PlayerControls();                                                
                                                                                         
         controls.Gameplay.PlayerFire.started += ctx => Shoot();                   
-        controls.Gameplay.PlayerFire.canceled += ctx => shooting = false;               
+        controls.Gameplay.PlayerFire.canceled += ctx => shooting = false;
+
+        rb = GetComponentInParent<Rigidbody>();
+        print(rb);
     }
     // Update is called once per frame
     void Update()
@@ -47,7 +52,10 @@ public class Weapon : MonoBehaviour
     void Shoot()
     {
         shooting = true;
-        Instantiate(bulletPrefab, firePosition.position, firePosition.rotation);
+        GameObject bullet = Instantiate(bulletPrefab, firePosition.position, firePosition.rotation);
+        Rigidbody bulletrb = bullet.GetComponent<Rigidbody>();
+        bulletrb.velocity += gameplayPlane.transform.forward * 20;
+        bulletrb.angularVelocity += rb.angularVelocity;
         StartCoroutine("FireRate");
     }
 }

@@ -27,11 +27,19 @@ public class CameraAnimator : MonoBehaviour
         animator = mainCamera.GetComponent<Animator>();
     }
 
+    //private void FixedUpdate()
+    //{
+    //    if (animator.GetCurrentAnimatorStateInfo(0).length > animator.GetCurrentAnimatorStateInfo(0).normalizedTime)
+    //        player.GetComponentInChildren<StarGrazerRotation>().rotateValue = 5;
+    //    else
+    //        player.GetComponentInChildren<StarGrazerRotation>().rotateValue = 5;
+    //}
 
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            StarGrazerRotation.changed = true;
             switch (direction)
             {
                 case TriggerDirection.FULL:
