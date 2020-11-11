@@ -25,7 +25,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: dfcb662b9d02412408651bcef1c9c2bb, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -212,6 +212,7 @@ MonoBehaviour:
   timeUntilEscape: 4
   timeUntilDestroy: 10
   laserSound: {fileID: 7575158320750305058}
+  isDead: 0
   mainDollyScipt: {fileID: 0}
 --- !u!65 &6414416409364205174
 BoxCollider:
@@ -238,7 +239,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a6bc1ba59af839344a9d37a782762b5a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0

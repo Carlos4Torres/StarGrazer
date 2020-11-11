@@ -1,0 +1,8 @@
+Idle Animation (Parade Rest)
+1-24
+
+Finger Gun Animation
+30-78
+
+Arms Flex Animation
+80-128
