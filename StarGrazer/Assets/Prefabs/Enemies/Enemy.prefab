@@ -108,7 +108,7 @@ MonoBehaviour:
   timeBetweenShots: 1.5
   initialShotDelay: 0.25
   shotSpeed: 30
-  shot: {fileID: 4635193171472097772, guid: 4c1b92eb993e9c74db9866b14a8c0e77, type: 3}
+  shot: {fileID: 4635193171472097772, guid: a7a3141339d59dc46aaf9d59b0938d1a, type: 3}
   shotSpawn: {fileID: 6414416409495655306}
   escapeSpeed: -20
   timeUntilEscape: 4

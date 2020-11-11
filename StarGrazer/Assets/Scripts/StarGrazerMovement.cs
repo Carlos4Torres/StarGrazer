@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StarGrazerMovement : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class StarGrazerMovement : MonoBehaviour
     [Header("State")]
     public movementState state;
     public float speed = 5;
+
+    public GameObject model;
 
     void OnEnable()
     {
@@ -89,6 +92,23 @@ public class StarGrazerMovement : MonoBehaviour
         }
 
         transform.position = Camera.main.ViewportToWorldPoint(viewportCoords);
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("collision");
+        if(collision.collider.CompareTag("Enemy"))
+        {
+            Debug.Log("Enemy");
+            StartCoroutine(DestroyModel());
+        }
+    }
+
+    IEnumerator DestroyModel()
+    {
+        Destroy(model); 
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     [Header("Full Clamp Values")]
