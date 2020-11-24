@@ -48,7 +48,7 @@ public class EnemyShootFollow : MonoBehaviour
 
         if (health != null)
         {
-            health.Demage(damage);
+            health.Damage(damage);
         }
 
         if (collision.CompareTag("Player"))

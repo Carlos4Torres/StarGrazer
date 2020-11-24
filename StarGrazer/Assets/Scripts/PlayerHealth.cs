@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public int health;
     public AudioSource deathAudio;
 
-    public void Demage(int damage)
+    public void Damage(int damage)
     {
         health -= damage;
 
