@@ -2648,6 +2648,7 @@ GameObject:
   - component: {fileID: 101331751}
   - component: {fileID: 101331749}
   - component: {fileID: 101331750}
+  - component: {fileID: 101331753}
   m_Layer: 0
   m_Name: Camera Trigger (1)
   m_TagString: CameraTrigger
@@ -2683,6 +2684,7 @@ MonoBehaviour:
   direction: 0
   speed: 2
   mainCamera: {fileID: 3557212745854814207}
+  cameraLocation: {fileID: 3557212745640264900}
 --- !u!65 &101331751
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2710,6 +2712,22 @@ Transform:
   m_Father: {fileID: 173322440}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
+--- !u!114 &101331753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101331748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b998f653a80b0d54dae25b44b183758c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 3557212745024644328}
+  direction: 0
+  speed: 2
+  mainCamera: {fileID: 3557212745854814207}
 --- !u!1 &102440466
 GameObject:
   m_ObjectHideFlags: 0
@@ -30991,6 +31009,7 @@ GameObject:
   - component: {fileID: 1717295188}
   - component: {fileID: 1717295186}
   - component: {fileID: 1717295187}
+  - component: {fileID: 1717295189}
   m_Layer: 0
   m_Name: Camera Trigger (2)
   m_TagString: CameraTrigger
@@ -31040,6 +31059,7 @@ MonoBehaviour:
   direction: 1
   speed: 2
   mainCamera: {fileID: 3557212745854814207}
+  cameraLocation: {fileID: 3557212745755046726}
 --- !u!65 &1717295188
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31053,6 +31073,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 100, y: 100, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1717295189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717295184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b998f653a80b0d54dae25b44b183758c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 3557212745024644328}
+  direction: 1
+  speed: 2
+  mainCamera: {fileID: 3557212745854814207}
 --- !u!1 &1720600318
 GameObject:
   m_ObjectHideFlags: 0
@@ -39490,6 +39526,7 @@ GameObject:
   - component: {fileID: 5903718861331579503}
   - component: {fileID: 5903718861331579501}
   - component: {fileID: 5903718861331579490}
+  - component: {fileID: 5903718861331579491}
   m_Layer: 0
   m_Name: Camera Trigger
   m_TagString: CameraTrigger
@@ -39507,6 +39544,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1132fbc207a5f44298eb03201f0ecdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 3557212745024644328}
+  direction: 2
+  speed: 2
+  mainCamera: {fileID: 3557212745854814207}
+  cameraLocation: {fileID: 3557212745757604820}
+--- !u!114 &5903718861331579491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5903718861331579489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b998f653a80b0d54dae25b44b183758c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3557212745024644328}
@@ -39595,6 +39649,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 964113131587106789, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 964113131587106789, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5839053860171454709, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -39617,6 +39679,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6971041715442651720, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971041715442651720, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971041715442651720, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: m_LocalPosition.x
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6971041715442651725, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
@@ -39665,6 +39735,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7294488070037190782, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7294488070037190782, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7294488070037190782, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: m_LocalPosition.x
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7436750291184794085, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
@@ -39749,6 +39827,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8319210976582233805, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319210976582233805, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319210976582233805, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: m_LocalPosition.x
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8428908035301131616, guid: ade5de47221b15544a9ab49688e0c104, type: 3}

@@ -106,6 +106,8 @@ public class EnemyMainPath : MonoBehaviour
         }
     }
 
+
+
     IEnumerator CombatControl()
     {
         yield return new WaitForSeconds(initialShotDelay);
@@ -121,11 +123,12 @@ public class EnemyMainPath : MonoBehaviour
     {
         if(isDead == false)
         {
-            Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+            var currentshot = Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
             laserSound.Play();
         }
 
     }
+
 
     public IEnumerator DestroyThis()
     {
