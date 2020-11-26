@@ -2417,6 +2417,100 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1295770873}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1381451161
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1381451163}
+  - component: {fileID: 1381451162}
+  m_Layer: 0
+  m_Name: Path
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1381451162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381451161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a200b19ca1a9685429ed7e043c28e904, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Resolution: 20
+  m_Appearance:
+    pathColor: {r: 0, g: 1, b: 0, a: 1}
+    inactivePathColor: {r: 1, g: 0.8726059, b: 0, a: 1}
+    width: 3.22
+  m_Looped: 0
+  m_Waypoints:
+  - position: {x: 0, y: 0, z: -5}
+    roll: 0
+  - position: {x: 0, y: 0, z: 275}
+    roll: 0
+  - position: {x: 0, y: 0, z: 485}
+    roll: 0
+  - position: {x: 0, y: 0, z: 695}
+    roll: 0
+  - position: {x: 0, y: 0, z: 765}
+    roll: 0
+  - position: {x: 0, y: 0, z: 800}
+    roll: 0
+  - position: {x: 0, y: 0, z: 860}
+    roll: 0
+  - position: {x: 0, y: 0, z: 900}
+    roll: 0
+  - position: {x: -40, y: 0, z: 910}
+    roll: 0
+  - position: {x: -190, y: 0, z: 910}
+    roll: 0
+  - position: {x: -440, y: 0, z: 910}
+    roll: 0
+  - position: {x: -690, y: 0, z: 910}
+    roll: 0
+  - position: {x: -940, y: 0, z: 910}
+    roll: 0
+  - position: {x: -1190, y: 0, z: 910}
+    roll: 0
+  - position: {x: -1440, y: 0, z: 910}
+    roll: 0
+  - position: {x: -1690, y: 0, z: 910}
+    roll: 0
+  - position: {x: -1940, y: 0, z: 910}
+    roll: 0
+  - position: {x: -2050, y: 30, z: 960}
+    roll: 0
+  - position: {x: -2050, y: 125, z: 1030}
+    roll: 0
+  - position: {x: -2050, y: 900, z: 1060}
+    roll: 0
+  - position: {x: -2050, y: 1383.7937, z: 1090}
+    roll: 0
+  - position: {x: -2050, y: 1445.0627, z: 1200}
+    roll: 0
+--- !u!4 &1381451163
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381451161}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 243.9, y: 18, z: 288.85}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1420201851
 GameObject:
   m_ObjectHideFlags: 0
