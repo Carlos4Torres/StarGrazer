@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/PlayerControls.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Scripts/Player/PlayerControls.inputactions'
 
 using System;
 using System.Collections;
@@ -41,6 +41,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Focus"",
+                    ""type"": ""Button"",
+                    ""id"": ""2cb9bcc3-84cc-4073-b425-46181e320abb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold""
                 }
             ],
             ""bindings"": [
@@ -153,6 +161,28 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""PlayerFire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cefcaa52-ec92-432a-835e-d4ee5fd62125"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Focus"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""553cb3ee-fb75-442f-912c-95e9a66af5f9"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Focus"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -192,6 +222,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Gameplay_PlayerMove = m_Gameplay.FindAction("PlayerMove", throwIfNotFound: true);
         m_Gameplay_ReticleMove = m_Gameplay.FindAction("ReticleMove", throwIfNotFound: true);
         m_Gameplay_PlayerFire = m_Gameplay.FindAction("PlayerFire", throwIfNotFound: true);
+        m_Gameplay_Focus = m_Gameplay.FindAction("Focus", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -244,6 +275,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_PlayerMove;
     private readonly InputAction m_Gameplay_ReticleMove;
     private readonly InputAction m_Gameplay_PlayerFire;
+    private readonly InputAction m_Gameplay_Focus;
     public struct GameplayActions
     {
         private @PlayerControls m_Wrapper;
@@ -251,6 +283,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @PlayerMove => m_Wrapper.m_Gameplay_PlayerMove;
         public InputAction @ReticleMove => m_Wrapper.m_Gameplay_ReticleMove;
         public InputAction @PlayerFire => m_Wrapper.m_Gameplay_PlayerFire;
+        public InputAction @Focus => m_Wrapper.m_Gameplay_Focus;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -269,6 +302,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @PlayerFire.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPlayerFire;
                 @PlayerFire.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPlayerFire;
                 @PlayerFire.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPlayerFire;
+                @Focus.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFocus;
+                @Focus.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFocus;
+                @Focus.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFocus;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -282,6 +318,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @PlayerFire.started += instance.OnPlayerFire;
                 @PlayerFire.performed += instance.OnPlayerFire;
                 @PlayerFire.canceled += instance.OnPlayerFire;
+                @Focus.started += instance.OnFocus;
+                @Focus.performed += instance.OnFocus;
+                @Focus.canceled += instance.OnFocus;
             }
         }
     }
@@ -309,5 +348,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnPlayerMove(InputAction.CallbackContext context);
         void OnReticleMove(InputAction.CallbackContext context);
         void OnPlayerFire(InputAction.CallbackContext context);
+        void OnFocus(InputAction.CallbackContext context);
     }
 }

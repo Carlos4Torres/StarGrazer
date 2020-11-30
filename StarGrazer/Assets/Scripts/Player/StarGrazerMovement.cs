@@ -17,10 +17,12 @@ public class StarGrazerMovement : MonoBehaviour
 
     [Header("State")]
     public movementState state;
-    public float speed = 5;
+    public float _SPEED = 20;
+    private float speed;
 
     public GameObject model;
     public AudioSource deathSound;
+    private bool focusing = false;
 
     void OnEnable()
     {
@@ -38,6 +40,11 @@ public class StarGrazerMovement : MonoBehaviour
 
         controls.Gameplay.PlayerMove.performed += ctx => move = ctx.ReadValue<Vector2>();
         controls.Gameplay.PlayerMove.canceled += ctx => move = Vector2.zero;
+
+        controls.Gameplay.Focus.started += ctx => Focus(true);
+        controls.Gameplay.Focus.canceled += ctx => Focus(false);
+
+        speed = _SPEED;
     }
 
     void Update()
@@ -93,6 +100,13 @@ public class StarGrazerMovement : MonoBehaviour
         }
 
         transform.position = Camera.main.ViewportToWorldPoint(viewportCoords);
+    }
+
+    void Focus(bool focusing)
+    {
+        if (focusing)
+            speed = _SPEED / 2;
+        else speed = _SPEED;
     }
 
     public void OnCollisionEnter(Collision collision)
