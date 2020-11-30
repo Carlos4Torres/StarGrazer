@@ -13,6 +13,10 @@ public class Weapon : MonoBehaviour
     private bool shooting;
     private Rigidbody rb;
 
+
+    [SerializeField]
+    private int grazeCount;
+
     void OnEnable()                                                                     
     {                                                                                   
         controls.Gameplay.Enable();                                                     
@@ -59,4 +63,12 @@ public class Weapon : MonoBehaviour
         GetComponent<AudioSource>().Play();
         StartCoroutine("FireRate");
     }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("EnemyBullet"))
+        {
+            grazeCount++;
+        }
+    }
+
 }
