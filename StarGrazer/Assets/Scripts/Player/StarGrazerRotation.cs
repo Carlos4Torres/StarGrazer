@@ -42,7 +42,6 @@ public class StarGrazerRotation : MonoBehaviour
 
         cam = Camera.main;
         movement = GetComponentInParent<StarGrazerMovement>();
-        //point = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
     }
 
     void FixedUpdate()
@@ -81,8 +80,6 @@ public class StarGrazerRotation : MonoBehaviour
                 transform.localRotation = Quaternion.Lerp(transform.localRotation, toAngle, Time.deltaTime * rotateSpeed);
                 break;
         }
-        //print(angle);
-        //Rotater();
     }
 
     IEnumerator SlowDownRotation()
