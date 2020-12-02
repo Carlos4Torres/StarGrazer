@@ -9,55 +9,20 @@ public class BulletController : MonoBehaviour
     //get component<'object with this script, let's call it bc')
     //then, you'd go bc.spawnbullet(arguments);
 
-    public GameObject bulletprefab;
-    public Transform spawnPosition;
-    public Space relativeTo;
-    public float xSpeed, ySpeed, zSpeed, xRotation, yRotation, zRotation, scale;
-    public Sprite sprite;
-    public Color color;
+    public GameObject bulletPrefab;
 
-    PlayerControls controls;
-    bool shooting = false;
-    bool canShoot = true;
-
-    void OnEnable()                                                                                    // {
-    {                                                                                                  //
-        controls.Gameplay.Enable();                                                                    //
-    }                                                                                                  //
-                                                                                                       //
-    void OnDisable()                                                                                   //
-    {                                                                                                  //
-        controls.Gameplay.Disable();                                                                   //
-    }                                                                                                  //
-                                                                                                       //
-    private void Awake()                                                                               //
-    {                                                                                                  //
-        controls = new PlayerControls();                                                               //
-                                                                                                       //
-        controls.Gameplay.PlayerFire.started += ctx => spawnbullet();                                  //   This should all probably be in the shooting script
-        controls.Gameplay.PlayerFire.canceled += ctx => shooting = false;                              //       
-    }                                                                                                  //
-                                                                                                       //
-    void spawnbullet ()                                                                                //
-    {                                                                                                  //
-        shooting = true;                                                                               //
-        GameObject inst = Instantiate(bulletprefab, spawnPosition);                                    //
-        inst.transform.localScale = new Vector3(scale, scale, scale);                                  //
-        inst.transform.eulerAngles = new Vector3(xRotation, yRotation, zRotation);                     //
-        print("shooted");                                                                              //
-        StartCoroutine("FireSpeed");                                                                   //
-    }                                                                                                  //
-                                                                                                       //
-    IEnumerator FireRate()                                                                             //
-    {                                                                                                  //
-        yield return new WaitForSeconds(.03f);                                                         //
-        if(shooting)                                                                                   //
-            spawnbullet();                                                                             //
-    }                                                                                                  // }
-        
-    // Update is called once per frame
-    void Update()
+    // Summon a bullet prefab with all of it's specifications
+    public void Shoot(Transform spawnPosition, float rotationX, float rotationY, float rotationZ, Sprite sprite, Color color, float scale, float speedX, float speedY, float speedZ /*Space space,*/)
     {
-        transform.Translate(new Vector3(xSpeed, ySpeed, zSpeed), relativeTo);
+        //shooting = true;
+        GameObject bullet = Instantiate(bulletPrefab, spawnPosition.position, Quaternion.Euler(rotationX, rotationY, rotationZ));
+        SpriteRenderer sr = bullet.GetComponentInChildren<SpriteRenderer>();
+        sr.sprite = sprite;
+        sr.color = color;
+        bullet.transform.localScale = new Vector3(scale, scale, scale);                                                                 
+        Rigidbody bulletrb = bullet.GetComponent<Rigidbody>();
+        bulletrb.velocity = new Vector3(speedX, speedY, speedZ);
+
+        GetComponent<AudioSource>().Play();
     }
 }

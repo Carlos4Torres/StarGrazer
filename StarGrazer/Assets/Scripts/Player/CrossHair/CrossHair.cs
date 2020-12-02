@@ -28,10 +28,6 @@ public class CrossHair : MonoBehaviour
 
         controls.Gameplay.ReticleMove.performed += ctx => move = ctx.ReadValue<Vector2>();
         controls.Gameplay.ReticleMove.canceled += ctx => move = Vector2.zero;
-        //if (mouseAndKeyboard)
-        //    controls.Gameplay.ReticleMove.Disable();
-        //else
-        //    controls.Gameplay.ReticleMove.Enable();
     }
     
 
@@ -47,9 +43,6 @@ public class CrossHair : MonoBehaviour
         {
             Cursor.visible = true;
         }
-        //if (mouseAndKeyboard)
-        //    transform.position = Input.mousePosition;
-        //else
             transform.position += move * controllerSensitivity;
     }
 }
