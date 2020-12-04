@@ -138,7 +138,6 @@ public class EnemyMainPath : MonoBehaviour
         {
             //executes the attack function in the bullet controller
             Invoke(attacktype, 0);
-            //L1G1();
             laserSound.Play();
         }
 
@@ -160,10 +159,153 @@ public class EnemyMainPath : MonoBehaviour
 
     private void L1G1()
     {
-        //this is a tri-shot just to get a good test going
-        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, .5f, 0, 0, 5);
-        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 45, sprite, color, .5f, 0, 0, 5);
-        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, -45, sprite, color, .5f, 0, 0, 5);
+        //Double Tri-Shot
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 0, -10);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 7, -7);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, -7, -7);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 0, -4);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 7, -1);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, -7, -1);
+        return;
+    }
+
+    private void L1G2()
+    {
+        //Lines
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, 0, 0, -20);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, 0, 0, -16);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, 0, 0, -12);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, 0, 0, -8);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, 0, 0, -4);
+        return;
+    }
+
+    private void L1G3()
+    {
+        //combination
+
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, 0, 7, -7);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, 0, -7, -7);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, 0, 7, -1);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, 0, -7, -1);
+    
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, 0, 0, -20);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, 0, 0, -16);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, 0, 0, -12);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, 0, 0, -8);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, 0, 0, -4);
+        return;
+    }
+
+
+    private void L1G4 ()
+    {
+        Invoke("L1G41", 0);
+        Invoke("L1G42", 1);
+    }
+
+            private void L1G41 ()
+            {
+                bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.7f, 0, 0, -10);
+                bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.7f, 0, 0, 10);
+                bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.7f, -10, 0, 0);
+                bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.7f, 10, 0, 0);
+            }
+
+            private void L1G42()
+            {
+                bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.7f, -10, 0, -10);
+                bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.7f, 10, 0, 10);
+                bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.7f, -10, 0, 10);
+                bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.7f, 10, 0, -10);
+            }
+
+    private void L1G5 ()
+    {
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, -5, 0);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, -5, 25);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, -5, -25);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, -5, 40);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, -5, -40);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, -1, 0);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, -1, 25);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, -1, -25);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, -1, 40);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, -1, -40);
+
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 15, -60);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 20, -60);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 25, -60);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 15, 60);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 20, 60);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 25, 60);
+
+
+    }
+
+    private void L1G6 ()
+    {
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 10, 0);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, -10, 0);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 0, -10);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 0, 10);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 10, 10);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, -10, -10);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 10, -10);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, -10, 10);
+    }
+
+    private void L1G7()
+    {
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, 0, -20, 0);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, 0, -16, 0);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, 0, -12, 0);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, 0, -8, 0);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, 0, -4, 0);
+    }
+
+    private void L1G8()
+    {
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, 0, 10, 0);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, 5, 10, 5);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, -5, 10, -5);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, -5, 10, 5);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, 5, 10, -5);
+    }
+
+    private void L1G9()
+    {
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, 0, 10, 0);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, 5, 10, 5);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, -5, 10, -5);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, -5, 10, 5);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, 5, 10, -5);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, 0, 10, 7);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, 0, 10, -7);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, -7, 10, 0);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, 7, 10, 0);
+    }
+
+    private void L1G10()
+    {
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, 0, 10, 0);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, 5, 10, 5);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, -5, 10, -5);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, -5, 10, 5);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, 5, 10, -5);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, 0, 10, 7);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, 0, 10, -7);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, -7, 10, 0);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, 7, 10, 0);
+
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, 10, 10, 10);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, -10, 10, -10);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, -10, 10, 10);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, 10, 10, -10);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, 0, 10, 10);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, 0, 10, -10);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, -10, 10, 0);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, 10, 10, 0);
     }
 
 

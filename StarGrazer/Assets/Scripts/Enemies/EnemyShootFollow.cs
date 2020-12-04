@@ -11,7 +11,7 @@ public class EnemyShootFollow : MonoBehaviour
     //Speed of Bullet
     public float speed;
     //Damage to player per bullet
-    public int damage = 40;
+    public int damage = 1;
 
     //Datafields for targeting system
     private Transform player;
