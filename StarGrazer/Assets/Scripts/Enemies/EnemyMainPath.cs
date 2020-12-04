@@ -161,9 +161,9 @@ public class EnemyMainPath : MonoBehaviour
     private void L1G1()
     {
         //this is a tri-shot just to get a good test going
-        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 0, 0, 0, 5);
-        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 45, sprite, color, 0, 0, 0, 5);
-        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, -45, sprite, color, 0, 0, 0, 5);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, .5f, 0, 0, 5);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 45, sprite, color, .5f, 0, 0, 5);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, -45, sprite, color, .5f, 0, 0, 5);
     }
 
 
