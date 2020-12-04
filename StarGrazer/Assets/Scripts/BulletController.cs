@@ -11,9 +11,12 @@ public class BulletController : MonoBehaviour
 
     public GameObject bulletPrefab;
 
+
+
     // Summon a bullet prefab with all of it's specifications
-    public void Shoot(Transform spawnPosition, float rotationX, float rotationY, float rotationZ, Sprite sprite, Color color, float scale, float speedX, float speedY, float speedZ /*Space space,*/)
+    public void Shoot(Transform spawnPosition, float rotationX, float rotationY, float rotationZ, Sprite sprite, Color color, float scale, float speedX, float speedY, float speedZ)
     {
+   
         //shooting = true;
         GameObject bullet = Instantiate(bulletPrefab, spawnPosition.position, Quaternion.Euler(rotationX, rotationY, rotationZ));
         SpriteRenderer sr = bullet.GetComponentInChildren<SpriteRenderer>();
@@ -23,6 +26,8 @@ public class BulletController : MonoBehaviour
         Rigidbody bulletrb = bullet.GetComponent<Rigidbody>();
         bulletrb.velocity = new Vector3(speedX, speedY, speedZ);
 
-        GetComponent<AudioSource>().Play();
+        //GetComponent<AudioSource>().Play();
     }
+
+
 }

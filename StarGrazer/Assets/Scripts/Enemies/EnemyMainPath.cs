@@ -31,11 +31,24 @@ public class EnemyMainPath : MonoBehaviour
     public AudioSource laserSound;
     public bool isDead = false;
 
+   
 
     [Header("Scripts and Components")]
     public CinemachineDollyCart mainDollyScipt; //Using this just to match speed
     private CinemachineDollyCart localDollyScript;
-    
+
+    public Transform spawnPosition;
+    public float rotationX; float rotationY; float rotationZ;
+    public Sprite sprite;
+    public Color color;
+
+
+    //bullet controller variable that gets called
+    public GameObject bc;
+
+    //using the Invoke function, we can publically decide what attack the enemy will use based on a string to call the respective action script.
+    public string attacktype;
+
 
     void Start()
     {
@@ -113,17 +126,19 @@ public class EnemyMainPath : MonoBehaviour
         yield return new WaitForSeconds(initialShotDelay);
         while (state == combatState.COMBAT)
         {
-            Shoot();
+            Shooted();
             yield return new WaitForSeconds(timeBetweenShots);
         }
 
     }
 
-    private void Shoot()
+    private void Shooted()
     {
         if(isDead == false)
         {
-            var currentshot = Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+            //executes the attack function in the bullet controller
+            Invoke(attacktype, 0);
+            //L1G1();
             laserSound.Play();
         }
 
@@ -135,5 +150,22 @@ public class EnemyMainPath : MonoBehaviour
         yield return new WaitForSeconds(2);
         Destroy(this.gameObject);
     }
+
+
+    //---------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+    //very very long list of enemy attacks because there's literally nowhere else I can put it that isnt a huge pain in the neck
+
+    private void L1G1()
+    {
+        //this is a tri-shot just to get a good test going
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 0, sprite, color, 0, 0, 0, 5);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, 45, sprite, color, 0, 0, 0, 5);
+        bc.GetComponent<BulletController>().Shoot(shotSpawn, 0, 0, -45, sprite, color, 0, 0, 0, 5);
+    }
+
+
 
 }
