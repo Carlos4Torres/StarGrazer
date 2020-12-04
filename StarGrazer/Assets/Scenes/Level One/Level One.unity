@@ -39218,7 +39218,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 964113131587106787, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: color.g
-      value: 0.38232452
+      value: 0.43529412
       objectReference: {fileID: 0}
     - target: {fileID: 964113131587106787, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: color.b
@@ -39228,6 +39228,10 @@ PrefabInstance:
       propertyPath: sprite
       value: 
       objectReference: {fileID: 21300000, guid: 2aea4a1933779e548ab3fba7bc5387a4, type: 3}
+    - target: {fileID: 964113131587106787, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 964113131587106789, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalRotation.x
       value: -2.0497119e-16
@@ -39310,7 +39314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6971041715442651726, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: color.g
-      value: 0.6318464
+      value: 0.43529412
       objectReference: {fileID: 0}
     - target: {fileID: 6971041715442651726, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: color.b
@@ -39320,6 +39324,10 @@ PrefabInstance:
       propertyPath: sprite
       value: 
       objectReference: {fileID: 21300000, guid: 2aea4a1933779e548ab3fba7bc5387a4, type: 3}
+    - target: {fileID: 6971041715442651726, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7111609584860369875, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalPosition.y
       value: 7
@@ -39338,11 +39346,11 @@ PrefabInstance:
       objectReference: {fileID: 1968195017}
     - target: {fileID: 7294488070037190776, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: color.r
-      value: 0.990566
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7294488070037190776, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: color.g
-      value: 0.45657396
+      value: 0.43529412
       objectReference: {fileID: 0}
     - target: {fileID: 7294488070037190776, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: color.b
@@ -39352,6 +39360,10 @@ PrefabInstance:
       propertyPath: sprite
       value: 
       objectReference: {fileID: 21300000, guid: 2aea4a1933779e548ab3fba7bc5387a4, type: 3}
+    - target: {fileID: 7294488070037190776, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7294488070037190779, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_Path
       value: 
@@ -39452,6 +39464,10 @@ PrefabInstance:
       propertyPath: bc
       value: 
       objectReference: {fileID: 1968195017}
+    - target: {fileID: 8319210976582233803, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8319210976582233805, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalRotation.x
       value: -2.0497119e-16
