@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public float speed = 50f;
     public Rigidbody rb;
+    public int lifetime;
 
 
     // Start is called before the first frame update
@@ -18,7 +19,7 @@ public class Bullet : MonoBehaviour
     private void Update()
     {
         //rb.velocity = Vector3.forward * Time.deltaTime * speed;
-        Destroy(gameObject, 3);
+        Destroy(gameObject, lifetime);
     }
     
     

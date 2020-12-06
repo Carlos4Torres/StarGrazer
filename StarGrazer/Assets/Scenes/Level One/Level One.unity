@@ -10895,36 +10895,6 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1 &559389912
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 559389913}
-  m_Layer: 0
-  m_Name: ShotSpawn (1)
-  m_TagString: Boss
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &559389913
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 559389912}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0, y: 11.47, z: -2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8769853678268738971}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &562982053
 GameObject:
   m_ObjectHideFlags: 0
@@ -13813,6 +13783,14 @@ PrefabInstance:
       propertyPath: bc
       value: 
       objectReference: {fileID: 1968195017}
+    - target: {fileID: 1863719610792583320, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: shotSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1863719610792583320, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: timeBetweenShots
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1863719610792583323, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -13921,6 +13899,14 @@ PrefabInstance:
       propertyPath: sprite
       value: 
       objectReference: {fileID: 21300000, guid: f947a65ab753d244b80769c76570cdc5, type: 3}
+    - target: {fileID: 1863719612306048766, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: shotSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1863719612306048766, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: timeBetweenShots
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1863719612326387370, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.49451128
@@ -13985,6 +13971,14 @@ PrefabInstance:
       propertyPath: bc
       value: 
       objectReference: {fileID: 1968195017}
+    - target: {fileID: 1863719612326387372, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: shotSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1863719612326387372, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: timeBetweenShots
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1863719612326387375, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -14057,6 +14051,14 @@ PrefabInstance:
       propertyPath: sprite
       value: 
       objectReference: {fileID: 21300000, guid: f947a65ab753d244b80769c76570cdc5, type: 3}
+    - target: {fileID: 1863719612580745876, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: shotSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1863719612580745876, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: timeBetweenShots
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1863719612580745879, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -14177,6 +14179,14 @@ PrefabInstance:
       propertyPath: sprite
       value: 
       objectReference: {fileID: 21300000, guid: f947a65ab753d244b80769c76570cdc5, type: 3}
+    - target: {fileID: 2630752028267027204, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: shotSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630752028267027204, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: timeBetweenShots
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2630752028267027207, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -14748,6 +14758,10 @@ PrefabInstance:
       propertyPath: sprite
       value: 
       objectReference: {fileID: 21300000, guid: f947a65ab753d244b80769c76570cdc5, type: 3}
+    - target: {fileID: 1863719612580745876, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1863719612580745879, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -15601,36 +15615,6 @@ Transform:
   m_Father: {fileID: 2070902640}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &720209629
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 720209630}
-  m_Layer: 0
-  m_Name: ShotSpawn (3)
-  m_TagString: Boss
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &720209630
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 720209629}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0, y: 0.47, z: -2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8769853678268738971}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &722080829
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31895,36 +31879,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 100, y: 100, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1720600318
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1720600319}
-  m_Layer: 0
-  m_Name: ShotSpawn (2)
-  m_TagString: Boss
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1720600319
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1720600318}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0, y: 5.67, z: -2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8769853678268738971}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1726328946
 GameObject:
   m_ObjectHideFlags: 0
@@ -39627,7 +39581,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1844180419810344791}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0, y: 15.67, z: -2}
+  m_LocalPosition: {x: -0, y: 8.48, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8769853678268738971}
@@ -40618,12 +40572,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 567701a5683e4254aa330b050ffc7889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialShotDelay: 1
-  health: 750
-  dmgPerBullet: 1.25
-  state: 0
   MoveSpeed: 25
+  timeBetweenShots: 0.25
+  initialShotDelay: 1
+  shotSpeed: 25
+  health_per_phase: 100
+  health: 100
+  phases: 5
+  dmgPerBullet: 1
+  boss: 1
+  state: 0
+  shotSpawn: {fileID: 1844180419810344790}
+  pattern: 0
+  bc: {fileID: 1968195017}
+  BulletTypes:
+  - {fileID: 4635193171472097772, guid: b097a1f0bba851f48acf31fdb432bdcc, type: 3}
+  - {fileID: 4635193171472097772, guid: 473b571d1057ae947acb38f604d04a85, type: 3}
+  - {fileID: 4635193171472097772, guid: 3ab99cd6dd906fc4bb902d867c4a29ec, type: 3}
+  - {fileID: 4635193171472097772, guid: 36fefddebc0b7f0409158bb83c193d29, type: 3}
+  BulletSprites:
+  - {fileID: 21300000, guid: f947a65ab753d244b80769c76570cdc5, type: 3}
+  - {fileID: 21300000, guid: 2aea4a1933779e548ab3fba7bc5387a4, type: 3}
+  - {fileID: 21300000, guid: a9ba0b78fb207c444914a9b8da6d1a82, type: 3}
+  - {fileID: 21300000, guid: 9aed7a5a47c25ed48a018e904c67ffb3, type: 3}
+  - {fileID: 21300000, guid: 138d95584f3a75e429ee321eb4e7ab58, type: 3}
+  - {fileID: 21300000, guid: 13a392c6b21749e429cf73f82240e738, type: 3}
+  - {fileID: 21300000, guid: 5033331d4ba95864c9c2015827fdccfb, type: 3}
+  - {fileID: 21300000, guid: 1e4f999fcb261ad4abacd69057f8a6c0, type: 3}
+  - {fileID: 21300000, guid: 531081486786eba4e961254f0e722d2d, type: 3}
+  - {fileID: 21300000, guid: 7ef56ce49c585714e9b4d71920a96e1b, type: 3}
+  - {fileID: 21300000, guid: 189e5bd812ae1884683d53c275c59e90, type: 3}
+  - {fileID: 21300000, guid: 79c1343c8e8329c41a5521fe14e0f24a, type: 3}
+  colors:
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 1, g: 0.49003887, b: 0, a: 1}
+  - {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
+  - {r: 1, g: 0, b: 0.6199312, a: 1}
   mainDollyScipt: {fileID: 3557212745565068605}
+  timer: 0
+  timertop: 0
+  timer2: 0
+  timertop2: 0
+  bomb: {fileID: 4635193171472097772, guid: a7a3141339d59dc46aaf9d59b0938d1a, type: 3}
+  burst: 0
+  rise: 0
+  BladePos: 0
+  secondstowait: 0
 --- !u!65 &8769853678268738968
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40665,7 +40659,6 @@ GameObject:
   - component: {fileID: 8769853678268738971}
   - component: {fileID: 8769853678268738969}
   - component: {fileID: 8769853678268738950}
-  - component: {fileID: 8769853678268738972}
   - component: {fileID: 8769853678268738968}
   - component: {fileID: 1844180420990197864}
   m_Layer: 0
@@ -40688,32 +40681,6 @@ Transform:
   m_Children:
   - {fileID: 904853443}
   - {fileID: 1844180419810344790}
-  - {fileID: 559389913}
-  - {fileID: 1720600319}
-  - {fileID: 720209630}
   m_Father: {fileID: 742556447}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8769853678268738972
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8769853678268738970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f68cab4df02a0e4bb3001287acc8a02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changePatterEvery: 10
-  timeBetweenShots: 0.25
-  initialShotDelay: 1
-  shotSpeed: 25
-  shot: {fileID: 4635193171472097772, guid: b097a1f0bba851f48acf31fdb432bdcc, type: 3}
-  shotSpawn:
-  - {fileID: 1844180419810344790}
-  - {fileID: 559389913}
-  - {fileID: 1720600319}
-  - {fileID: 720209630}
-  pattern: 0

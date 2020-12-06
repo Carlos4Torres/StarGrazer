@@ -29,5 +29,25 @@ public class BulletController : MonoBehaviour
         //GetComponent<AudioSource>().Play();
     }
 
+    public void ShootExtra(GameObject prefab, Transform spawnPosition, float posX, float posY, float posZ, float rotationX, float rotationY, float rotationZ, Sprite sprite, Color color, float scale, float speedX, float speedY, float speedZ)
+    {
+
+        //shooting = true;
+        GameObject bullet = Instantiate(prefab, spawnPosition.position, Quaternion.Euler(rotationX, rotationY, rotationZ));
+        bullet.transform.position = new Vector3(spawnPosition.position.x + posX, spawnPosition.position.y + posY, spawnPosition.position.z + posZ);
+        bullet.transform.localScale = new Vector3(scale, scale, scale);
+        Rigidbody bulletrb = bullet.GetComponent<Rigidbody>();
+        bulletrb.velocity = new Vector3(speedX, speedY, speedZ);
+        SpriteRenderer sr = bullet.GetComponentInChildren<SpriteRenderer>();
+        sr.sprite = sprite;
+        sr.color = color;
+
+        //GetComponent<AudioSource>().Play();
+    }
+
+
+    //specific action bullets
+
+
 
 }

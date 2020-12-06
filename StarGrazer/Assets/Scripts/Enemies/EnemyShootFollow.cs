@@ -13,9 +13,15 @@ public class EnemyShootFollow : MonoBehaviour
     //Damage to player per bullet
     public int damage = 1;
 
+    public float speed2 = 10;
+
+    public GameObject self;
+
     //Datafields for targeting system
     private Transform player;
     private Vector3 target;
+
+    public int mode;
 
     void Start()
     {
@@ -26,19 +32,27 @@ public class EnemyShootFollow : MonoBehaviour
         target = new Vector3(player.position.x, player.position.y,player.position.z);
     }
 
-    
+
     void Update()
     {
         //Moving the bullet towards player's position
-        transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
-
-        //If the bullet reaches the player's position, it deletes itself
-        if (transform.position.x == target.x && transform.position.y == target.y && transform.position.z==target.z)
         {
-            DestroyProjectile();
-        }
+            transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
 
-        Destroy(gameObject, 10f);
+            //If the bullet reaches the player's position, it deletes itself
+            if ((transform.position.x >= target.x - 2) && (transform.position.x <= target.x + 2) && (transform.position.y >= target.y - 2) && (transform.position.y <= target.y + 2) && (transform.position.z >= target.z - 2) && (transform.position.z <= target.z + 2))
+            {
+                //standard
+                if (mode == 0) { Destroy(gameObject); }
+                //bomb
+                if (mode == 1)
+                {
+                  explode();
+                }
+
+                if (mode == 2) { speed2 -= 0.2f; }
+            }
+        }
     }
    
     private void OnTriggerEnter(Collider collision)
@@ -51,17 +65,23 @@ public class EnemyShootFollow : MonoBehaviour
             health.Damage(damage);
         }
 
-        if (collision.CompareTag("Player"))
-        {
-            DestroyProjectile();
-        }
-
-       
+            if ((collision.CompareTag("Player")) && (mode == 1))
+            {
+            explode();
+            }
     }
 
-    void DestroyProjectile()
-    {
-        Destroy(gameObject);
 
+    private void explode()
+    {
+        GameObject clone1 = Instantiate(self, transform.position, Quaternion.Euler(0, 0, 0));
+        GameObject clone2 = Instantiate(self, transform.position, Quaternion.Euler(45, 0, 0));
+        GameObject clone3 = Instantiate(self, transform.position, Quaternion.Euler(90, 0, 0));
+        GameObject clone4 = Instantiate(self, transform.position, Quaternion.Euler(135, 0, 0));
+        GameObject clone5 = Instantiate(self, transform.position, Quaternion.Euler(180, 0, 0));
+        GameObject clone6 = Instantiate(self, transform.position, Quaternion.Euler(225, 0, 0));
+        GameObject clone7 = Instantiate(self, transform.position, Quaternion.Euler(270, 0, 0));
+        GameObject clone8 = Instantiate(self, transform.position, Quaternion.Euler(315, 0, 0));
+        Destroy(gameObject);
     }
 }
