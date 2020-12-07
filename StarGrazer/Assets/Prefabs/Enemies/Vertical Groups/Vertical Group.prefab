@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6525925380106445266}
   m_Layer: 0
-  m_Name: Group 1 (2)
+  m_Name: Vertical Group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,6 +42,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6525925380106445266}
     m_Modifications:
+    - target: {fileID: 391213904450707809, guid: 1a2f31271f77e80498a7a902eb16c4da, type: 3}
+      propertyPath: m_Size.y
+      value: 0.72
+      objectReference: {fileID: 0}
     - target: {fileID: 6414416409364205168, guid: 1a2f31271f77e80498a7a902eb16c4da, type: 3}
       propertyPath: m_Name
       value: Enemy (7)
@@ -132,6 +136,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6525925380106445266}
     m_Modifications:
+    - target: {fileID: 391213904450707809, guid: 1a2f31271f77e80498a7a902eb16c4da, type: 3}
+      propertyPath: m_Size.y
+      value: 0.72
+      objectReference: {fileID: 0}
     - target: {fileID: 6414416409364205168, guid: 1a2f31271f77e80498a7a902eb16c4da, type: 3}
       propertyPath: m_Name
       value: Enemy (4)
@@ -222,6 +230,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6525925380106445266}
     m_Modifications:
+    - target: {fileID: 391213904450707809, guid: 1a2f31271f77e80498a7a902eb16c4da, type: 3}
+      propertyPath: m_Size.y
+      value: 0.72
+      objectReference: {fileID: 0}
     - target: {fileID: 6414416409364205168, guid: 1a2f31271f77e80498a7a902eb16c4da, type: 3}
       propertyPath: m_Name
       value: Enemy (6)
@@ -312,6 +324,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6525925380106445266}
     m_Modifications:
+    - target: {fileID: 391213904450707809, guid: 1a2f31271f77e80498a7a902eb16c4da, type: 3}
+      propertyPath: m_Size.y
+      value: 0.72
+      objectReference: {fileID: 0}
     - target: {fileID: 6414416409364205168, guid: 1a2f31271f77e80498a7a902eb16c4da, type: 3}
       propertyPath: m_Name
       value: Enemy (5)
@@ -402,6 +418,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6525925380106445266}
     m_Modifications:
+    - target: {fileID: 391213904450707809, guid: 1a2f31271f77e80498a7a902eb16c4da, type: 3}
+      propertyPath: m_Size.y
+      value: 0.72
+      objectReference: {fileID: 0}
     - target: {fileID: 6414416409364205168, guid: 1a2f31271f77e80498a7a902eb16c4da, type: 3}
       propertyPath: m_Name
       value: Enemy (3)
