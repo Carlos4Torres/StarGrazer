@@ -49,6 +49,22 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Hold""
+                },
+                {
+                    ""name"": ""SpecialWeapon_TimeStopper"",
+                    ""type"": ""Button"",
+                    ""id"": ""306fa50b-e231-4e32-aefc-0248ee73e4f0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold""
+                },
+                {
+                    ""name"": ""SpecialWeapon_AntiMatterBomb"",
+                    ""type"": ""Button"",
+                    ""id"": ""d0570f49-15e7-43d6-ba7a-55afb41984b1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold""
                 }
             ],
             ""bindings"": [
@@ -183,6 +199,50 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Focus"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""76adc4c8-b717-4753-9799-b29fee6d9076"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""SpecialWeapon_TimeStopper"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c96b34ab-27e0-468f-a02a-6732067b871d"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""SpecialWeapon_TimeStopper"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7f5d7a9f-65a4-4fba-9c12-6ed961c59939"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""SpecialWeapon_AntiMatterBomb"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3c4c1ed4-551a-415a-abf1-7b64855e695d"",
+                    ""path"": ""<Keyboard>/b"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""SpecialWeapon_AntiMatterBomb"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -223,6 +283,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Gameplay_ReticleMove = m_Gameplay.FindAction("ReticleMove", throwIfNotFound: true);
         m_Gameplay_PlayerFire = m_Gameplay.FindAction("PlayerFire", throwIfNotFound: true);
         m_Gameplay_Focus = m_Gameplay.FindAction("Focus", throwIfNotFound: true);
+        m_Gameplay_SpecialWeapon_TimeStopper = m_Gameplay.FindAction("SpecialWeapon_TimeStopper", throwIfNotFound: true);
+        m_Gameplay_SpecialWeapon_AntiMatterBomb = m_Gameplay.FindAction("SpecialWeapon_AntiMatterBomb", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -276,6 +338,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_ReticleMove;
     private readonly InputAction m_Gameplay_PlayerFire;
     private readonly InputAction m_Gameplay_Focus;
+    private readonly InputAction m_Gameplay_SpecialWeapon_TimeStopper;
+    private readonly InputAction m_Gameplay_SpecialWeapon_AntiMatterBomb;
     public struct GameplayActions
     {
         private @PlayerControls m_Wrapper;
@@ -284,6 +348,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @ReticleMove => m_Wrapper.m_Gameplay_ReticleMove;
         public InputAction @PlayerFire => m_Wrapper.m_Gameplay_PlayerFire;
         public InputAction @Focus => m_Wrapper.m_Gameplay_Focus;
+        public InputAction @SpecialWeapon_TimeStopper => m_Wrapper.m_Gameplay_SpecialWeapon_TimeStopper;
+        public InputAction @SpecialWeapon_AntiMatterBomb => m_Wrapper.m_Gameplay_SpecialWeapon_AntiMatterBomb;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -305,6 +371,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Focus.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFocus;
                 @Focus.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFocus;
                 @Focus.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFocus;
+                @SpecialWeapon_TimeStopper.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSpecialWeapon_TimeStopper;
+                @SpecialWeapon_TimeStopper.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSpecialWeapon_TimeStopper;
+                @SpecialWeapon_TimeStopper.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSpecialWeapon_TimeStopper;
+                @SpecialWeapon_AntiMatterBomb.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSpecialWeapon_AntiMatterBomb;
+                @SpecialWeapon_AntiMatterBomb.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSpecialWeapon_AntiMatterBomb;
+                @SpecialWeapon_AntiMatterBomb.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSpecialWeapon_AntiMatterBomb;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -321,6 +393,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Focus.started += instance.OnFocus;
                 @Focus.performed += instance.OnFocus;
                 @Focus.canceled += instance.OnFocus;
+                @SpecialWeapon_TimeStopper.started += instance.OnSpecialWeapon_TimeStopper;
+                @SpecialWeapon_TimeStopper.performed += instance.OnSpecialWeapon_TimeStopper;
+                @SpecialWeapon_TimeStopper.canceled += instance.OnSpecialWeapon_TimeStopper;
+                @SpecialWeapon_AntiMatterBomb.started += instance.OnSpecialWeapon_AntiMatterBomb;
+                @SpecialWeapon_AntiMatterBomb.performed += instance.OnSpecialWeapon_AntiMatterBomb;
+                @SpecialWeapon_AntiMatterBomb.canceled += instance.OnSpecialWeapon_AntiMatterBomb;
             }
         }
     }
@@ -349,5 +427,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnReticleMove(InputAction.CallbackContext context);
         void OnPlayerFire(InputAction.CallbackContext context);
         void OnFocus(InputAction.CallbackContext context);
+        void OnSpecialWeapon_TimeStopper(InputAction.CallbackContext context);
+        void OnSpecialWeapon_AntiMatterBomb(InputAction.CallbackContext context);
     }
 }

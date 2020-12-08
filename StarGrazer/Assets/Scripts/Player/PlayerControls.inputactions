@@ -36,6 +36,22 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Hold"
+                },
+                {
+                    "name": "SpecialWeapon_TimeStopper",
+                    "type": "Button",
+                    "id": "306fa50b-e231-4e32-aefc-0248ee73e4f0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold"
+                },
+                {
+                    "name": "SpecialWeapon_AntiMatterBomb",
+                    "type": "Button",
+                    "id": "d0570f49-15e7-43d6-ba7a-55afb41984b1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold"
                 }
             ],
             "bindings": [
@@ -168,6 +184,50 @@
                     "processors": "",
                     "groups": "PC",
                     "action": "Focus",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "76adc4c8-b717-4753-9799-b29fee6d9076",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "SpecialWeapon_TimeStopper",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c96b34ab-27e0-468f-a02a-6732067b871d",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "SpecialWeapon_TimeStopper",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7f5d7a9f-65a4-4fba-9c12-6ed961c59939",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "SpecialWeapon_AntiMatterBomb",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3c4c1ed4-551a-415a-abf1-7b64855e695d",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "SpecialWeapon_AntiMatterBomb",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
