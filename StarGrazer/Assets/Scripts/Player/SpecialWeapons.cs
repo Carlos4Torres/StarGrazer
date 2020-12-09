@@ -12,6 +12,13 @@ public class SpecialWeapons : MonoBehaviour
 
     PlayerControls controls;
 
+
+    //gamePlayPause DataField use for Slow Affect
+    public float gamePlayPause = 0f;
+    //pauseTime field for how long Slow Affect will
+    public float pauseTime = 2f;
+
+
     //Necessary for Input System
     void OnEnable()
     {
@@ -65,6 +72,18 @@ public class SpecialWeapons : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            //Start GamePlaySlow Coroutine
+          
+          StartCoroutine(GamePlaySlow());
+        }
+
+  
+    }
+
     void FireTimeStopper() //If more than 0 special weapon units, fire Time Stopper.
     {
         if (specialWeaponUnits > 0)
@@ -89,5 +108,13 @@ public class SpecialWeapons : MonoBehaviour
         {
             print("Not enough special weapon units.");
         }
+    }
+
+    //Coroutine for Time Stop Affect
+    IEnumerator GamePlaySlow()
+    {
+        Time.timeScale = gamePlayPause;
+        yield return new WaitForSeconds(pauseTime);
+        Time.timeScale = 1;
     }
 }

@@ -54,8 +54,8 @@ public class StarGrazerMovement : MonoBehaviour
 
     void Movement()
     {
-        float xMovement = move.x * speed * Time.deltaTime; /*Input.GetAxis("Horizontal")*/
-        float yMovement = move.y * speed * Time.deltaTime; /*Input.GetAxis("Vertical")*/
+        float xMovement = move.x * speed * Time.unscaledDeltaTime; /*Input.GetAxis("Horizontal")*/
+        float yMovement = move.y * speed * Time.unscaledDeltaTime; /*Input.GetAxis("Vertical")*/
 
         switch (state)
         {
