@@ -62,10 +62,10 @@ public class EnemyShootFollow : MonoBehaviour
 
         if (health != null)
         {
-            health.Damage(damage);
+            health.Damage();
         }
 
-            if ((collision.CompareTag("Player")) && (mode == 1))
+            if ((collision.CompareTag("PlayerHealth")) && (mode == 1))
             {
             explode();
             }

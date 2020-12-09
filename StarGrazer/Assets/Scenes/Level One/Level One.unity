@@ -22133,6 +22133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7bc0aead7ec16f4f898e345906ddff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grazed: 0
 --- !u!1 &1100219458
 GameObject:
   m_ObjectHideFlags: 0
@@ -39568,6 +39569,10 @@ PrefabInstance:
       propertyPath: crosshair
       value: 
       objectReference: {fileID: 1156797623}
+    - target: {fileID: 689015017433729283, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
+      propertyPath: m_TagString
+      value: PlayerHealth
+      objectReference: {fileID: 0}
     - target: {fileID: 689015017433729343, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: deathAudio
       value: 

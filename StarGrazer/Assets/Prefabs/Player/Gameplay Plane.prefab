@@ -595,12 +595,13 @@ MonoBehaviour:
   health: 100
   deathAudio: {fileID: 0}
   healthUI: {fileID: 0}
-  HP0: {fileID: 0}
-  HP1: {fileID: 0}
-  HP2: {fileID: 0}
-  HP3: {fileID: 0}
-  HP4: {fileID: 0}
-  HP5: {fileID: 0}
+  healthImages:
+  - {fileID: 2800000, guid: 8760b4732995d694f961f39e84174030, type: 3}
+  - {fileID: 2800000, guid: ccbbd0266fa24434ea648f87e54c7220, type: 3}
+  - {fileID: 2800000, guid: 73e40f223d64d90428cd42713a86b286, type: 3}
+  - {fileID: 2800000, guid: 9e79849117955aa41a95121007a3c016, type: 3}
+  - {fileID: 2800000, guid: 607d561481f2e7e4d9ad9b0f32999e41, type: 3}
+  - {fileID: 2800000, guid: 7b7bbece35063394fadd8fdb55b8628f, type: 3}
 --- !u!65 &689015017433729280
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -609,11 +610,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 689015017433729283}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 3.25}
-  m_Center: {x: 0, y: 0, z: -1.25}
+  m_Size: {x: 0.5, y: 0.5, z: 1}
+  m_Center: {x: 0, y: 0.25, z: -0.6}
 --- !u!1 &2975859156692514543
 GameObject:
   m_ObjectHideFlags: 0

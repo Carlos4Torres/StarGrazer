@@ -7,7 +7,8 @@ public class Bullet : MonoBehaviour
     public float speed = 50f;
     public Rigidbody rb;
     public int lifetime;
-
+    
+    PlayerHealth heathScript;
 
     // Start is called before the first frame update
     void Awake()
@@ -21,6 +22,19 @@ public class Bullet : MonoBehaviour
         //rb.velocity = Vector3.forward * Time.deltaTime * speed;
         Destroy(gameObject, lifetime);
     }
-    
-    
+
+
+    //Damages player & destroys bullet
+    public void OnTriggerEnter(Collider other)
+    {
+      if (other.CompareTag("PlayerHealth") && CompareTag("Bullet") == false)
+      {
+         heathScript = other.GetComponent<PlayerHealth>();
+         heathScript.Damage();
+         Destroy(gameObject);
+      }
+    }
+
+
 }
+ 
