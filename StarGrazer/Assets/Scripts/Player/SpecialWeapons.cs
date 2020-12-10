@@ -12,11 +12,15 @@ public class SpecialWeapons : MonoBehaviour
 
     PlayerControls controls;
 
+    //Anti-Matter Bomb
+    private GameObject[] enemies;
+    private GameObject[] enemyBullets;
+
 
     //gamePlayPause DataField use for Slow Affect
-    public float gamePlayPause = 0f;
+    public float gamePlayPause = 0.005f;
     //pauseTime field for how long Slow Affect will
-    public float pauseTime = 2f;
+    public float pauseTime = .01f;
 
 
     //Necessary for Input System
@@ -72,23 +76,13 @@ public class SpecialWeapons : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            //Start GamePlaySlow Coroutine
-          
-          StartCoroutine(GamePlaySlow());
-        }
-
-  
-    }
 
     void FireTimeStopper() //If more than 0 special weapon units, fire Time Stopper.
     {
         if (specialWeaponUnits > 0)
         {
             specialWeaponUnits--;
+            StartCoroutine(GamePlaySlow());
             print("Time Stopper. Units Left: " + specialWeaponUnits);
         }
         else
@@ -102,6 +96,24 @@ public class SpecialWeapons : MonoBehaviour
         if (specialWeaponUnits > 0)
         {
             specialWeaponUnits--;
+
+            enemies = GameObject.FindGameObjectsWithTag("Enemy Model");
+            foreach (GameObject enemy in enemies)
+            {
+                Renderer renderer = enemy.GetComponent<Renderer>();
+                if(renderer.isVisible)
+                {
+                    Destroy(enemy.transform.parent.gameObject);
+                }
+            }
+
+            enemyBullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
+            foreach (GameObject bullet in enemyBullets)
+            {
+                Destroy(bullet.gameObject);
+            }
+
+
             print("Anti-Matter. Units Left: " + specialWeaponUnits);
         }
         else

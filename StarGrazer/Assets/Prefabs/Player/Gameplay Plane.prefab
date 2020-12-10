@@ -301,6 +301,7 @@ GameObject:
   - component: {fileID: 689015016306477808}
   - component: {fileID: 689015016306477815}
   - component: {fileID: 689015016306477814}
+  - component: {fileID: 6163586684235791093}
   m_Layer: 0
   m_Name: CubeGrazer
   m_TagString: Player
@@ -337,6 +338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 1
   _SPEED: 20
+  resetting: 0
   model: {fileID: 689015017433729283}
   deathSound: {fileID: 0}
   playerHealth: {fileID: 689015017433729343}
@@ -368,6 +370,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6163586684235791093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689015016306477809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7bc0aead7ec16f4f898e345906ddff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grazed: 0
+  gamePlayPause: 0.005
+  pauseTime: 0.1
 --- !u!1 &689015016564672343
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,6 +611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathAudio: {fileID: 0}
+  model: {fileID: 3752470961882321881}
   health: 100
   healthUI: {fileID: 0}
   healthImages:
@@ -610,7 +628,6 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 5b969503125383a4a9d2f0b5b0e01746, type: 3}
   - {fileID: 2800000, guid: 9bd0169aea56d0344a13442fb92e865c, type: 3}
   - {fileID: 2800000, guid: 3b7432e58792d2f4e80cc4e4609544cd, type: 3}
-  model: {fileID: 3752470961882321881}
 --- !u!65 &689015017433729280
 BoxCollider:
   m_ObjectHideFlags: 0
