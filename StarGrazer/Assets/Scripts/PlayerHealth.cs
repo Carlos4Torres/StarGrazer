@@ -63,9 +63,7 @@ public class PlayerHealth : MonoBehaviour
     public IEnumerator Respawn()
     {
 
-        healthCollider.enabled = false;
-
-        
+        healthCollider.enabled = false;        
 
         for (int i = 0; i < respawnCycles; i++)
         {
@@ -83,6 +81,7 @@ public class PlayerHealth : MonoBehaviour
     private IEnumerator Restart()
     {
 
+        healthCollider.enabled = false;
         deathAudio.Play();
         Destroy(gameObject);
 
