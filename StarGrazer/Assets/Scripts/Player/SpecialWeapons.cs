@@ -58,7 +58,7 @@ public class SpecialWeapons : MonoBehaviour
     {
         if (grazed && grazes < 99)         //if graze and grazes < 99, add 1 to grazes.
         {
-            grazes++;//=10;
+            grazes += 10;
             print("Grazes: " + grazes);
             grazed = false;
         }
