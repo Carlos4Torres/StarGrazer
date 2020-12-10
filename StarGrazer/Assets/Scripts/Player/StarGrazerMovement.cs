@@ -125,7 +125,7 @@ public class StarGrazerMovement : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.CompareTag("Enemy") || (collision.collider.CompareTag("Boss")))
+        if(collision.collider.CompareTag("Enemy") || (collision.collider.CompareTag("Boss") || collision.collider.CompareTag("Enemy Model")))
         {
             StartCoroutine(playerHealth.Respawn());
         }

@@ -11,6 +11,7 @@ TagManager:
   - EnemyBullet
   - BombBullet
   - PlayerHealth
+  - Enemy Model
   layers:
   - Default
   - TransparentFX
