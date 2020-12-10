@@ -22134,8 +22134,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grazed: 0
-  gamePlayPause: 0
-  pauseTime: 2
+  gamePlayPause: 0.005
+  pauseTime: 0.01
 --- !u!1 &1100219458
 GameObject:
   m_ObjectHideFlags: 0
@@ -31770,6 +31770,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1691216575}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1691634166 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3752470961882321881, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
+  m_PrefabInstance: {fileID: 4094367604439002655}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1717295184
 GameObject:
   m_ObjectHideFlags: 0
@@ -39712,6 +39717,10 @@ PrefabInstance:
       propertyPath: livesImages.Array.data[0]
       value: 
       objectReference: {fileID: 2800000, guid: fe551fbe71aaf8b44b543df990909af9, type: 3}
+    - target: {fileID: 689015017433729343, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
+      propertyPath: model
+      value: 
+      objectReference: {fileID: 1691634166}
     - target: {fileID: 2066527884424526349, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_IsTrigger
       value: 1

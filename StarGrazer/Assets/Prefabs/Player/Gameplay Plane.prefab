@@ -339,6 +339,7 @@ MonoBehaviour:
   _SPEED: 20
   model: {fileID: 689015017433729283}
   deathSound: {fileID: 0}
+  playerHealth: {fileID: 689015017433729343}
   xMinFull: 0.1
   xMaxFull: 0.9
   yMinFull: 0.1
@@ -604,8 +605,12 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 7b7bbece35063394fadd8fdb55b8628f, type: 3}
   lives: 3
   livesUI: {fileID: 0}
-  livesImages: []
-  model: {fileID: 0}
+  livesImages:
+  - {fileID: 2800000, guid: fe551fbe71aaf8b44b543df990909af9, type: 3}
+  - {fileID: 2800000, guid: 5b969503125383a4a9d2f0b5b0e01746, type: 3}
+  - {fileID: 2800000, guid: 9bd0169aea56d0344a13442fb92e865c, type: 3}
+  - {fileID: 2800000, guid: 3b7432e58792d2f4e80cc4e4609544cd, type: 3}
+  model: {fileID: 3752470961882321881}
 --- !u!65 &689015017433729280
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -784,6 +789,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c68f66ccac5a1b84d8c408cccd2c7a42, type: 3}
+--- !u!1 &3752470961882321881 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c68f66ccac5a1b84d8c408cccd2c7a42, type: 3}
+  m_PrefabInstance: {fileID: 4094367604615671432}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4564579477514258787 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c68f66ccac5a1b84d8c408cccd2c7a42, type: 3}

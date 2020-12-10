@@ -23,6 +23,7 @@ public class StarGrazerMovement : MonoBehaviour
     public GameObject model;
     public AudioSource deathSound;
     private bool focusing = false;
+    public PlayerHealth playerHealth;
 
     void OnEnable()
     {
@@ -113,17 +114,17 @@ public class StarGrazerMovement : MonoBehaviour
     {
         if(collision.collider.CompareTag("Enemy") || (collision.collider.CompareTag("Boss")))
         {
-            StartCoroutine(DestroyModel());
+            StartCoroutine(playerHealth.Respawn());
         }
     }
 
-    IEnumerator DestroyModel()
-    {
-        deathSound.Play();
-        Destroy(model); 
-        yield return new WaitForSeconds(5);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
+   // IEnumerator DestroyModel()
+   // {
+   //     deathSound.Play();
+   //     Destroy(model); 
+   //     yield return new WaitForSeconds(5);
+   //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+   // }
 
     [Header("Full Clamp Values")]
     [Range(0.0f, 1f)] public float xMinFull;

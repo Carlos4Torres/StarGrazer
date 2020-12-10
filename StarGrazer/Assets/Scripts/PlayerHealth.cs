@@ -55,13 +55,12 @@ public class PlayerHealth : MonoBehaviour
             }
             else if(lives == 0)
             {
-                deathAudio.Play();
-                Destroy(gameObject);
+                Restart();
             }
         }
     }
 
-    private IEnumerator Respawn()
+    public IEnumerator Respawn()
     {
 
         collider.enabled = false;
@@ -83,6 +82,10 @@ public class PlayerHealth : MonoBehaviour
 
     private IEnumerator Restart()
     {
+
+        deathAudio.Play();
+        Destroy(gameObject);
+
         yield return new WaitForSeconds(3f);
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
