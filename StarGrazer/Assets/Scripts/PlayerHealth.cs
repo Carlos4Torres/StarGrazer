@@ -10,7 +10,8 @@ public class PlayerHealth : MonoBehaviour
 
    
     public AudioSource deathAudio;
-    
+    public GameObject model;
+
     [Header("Health")]
     public int health = 5;
     public RawImage healthUI;
@@ -21,8 +22,7 @@ public class PlayerHealth : MonoBehaviour
     public RawImage livesUI;
     public Texture[] livesImages;
 
-    private Collider collider;
-    public GameObject model;
+    private Collider healthCollider;
     private int respawnCycles = 10;
 
     //Cleaned this up to be an array, only updates when damaged instead of updating every frame
@@ -35,7 +35,7 @@ public class PlayerHealth : MonoBehaviour
         lives = 3;
         livesUI.texture = livesImages[lives];
 
-        collider = this.GetComponent<Collider>();
+        healthCollider = this.GetComponent<Collider>();
     }
 
     public void Damage()
@@ -55,7 +55,7 @@ public class PlayerHealth : MonoBehaviour
             }
             else if(lives == 0)
             {
-                Restart();
+                StartCoroutine(Restart());
             }
         }
     }
@@ -63,7 +63,7 @@ public class PlayerHealth : MonoBehaviour
     public IEnumerator Respawn()
     {
 
-        collider.enabled = false;
+        healthCollider.enabled = false;
 
         
 
@@ -77,7 +77,7 @@ public class PlayerHealth : MonoBehaviour
        
         health = 5;
         healthUI.texture = healthImages[health];
-        collider.enabled = true;
+        healthCollider.enabled = true;
     }
 
     private IEnumerator Restart()

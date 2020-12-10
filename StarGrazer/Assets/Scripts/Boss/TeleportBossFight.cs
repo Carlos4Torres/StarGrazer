@@ -16,9 +16,14 @@ public class TeleportBossFight : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-                    Distance = Boss.m_Position - Player.m_Position;
-                    Player.m_Position = TeleportPoint.m_Position;
-                    Boss.m_Position = TeleportPoint.m_Position + Distance;
+             //      Distance = Boss.m_Position - Player.m_Position;
+             //      Player.m_Position = TeleportPoint.m_Position;
+             //      Boss.m_Position = TeleportPoint.m_Position + Distance;
+
+
+            //Removes Teleport due to background issues
+            Boss.m_Speed = 0;
+            Player.m_Speed = 0;
         }
     }
 }

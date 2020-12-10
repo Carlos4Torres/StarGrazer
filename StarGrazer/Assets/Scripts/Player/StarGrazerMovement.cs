@@ -20,6 +20,8 @@ public class StarGrazerMovement : MonoBehaviour
     public float _SPEED = 20;
     private float speed;
 
+    public bool resetting = false;
+
     public GameObject model;
     public AudioSource deathSound;
     private bool focusing = false;
@@ -51,6 +53,17 @@ public class StarGrazerMovement : MonoBehaviour
     void Update()
     {
         Movement();
+        //Need this bit to reset player position and actually have the enemy bullets hit
+        if(resetting)
+        {
+            transform.localPosition = Vector3.MoveTowards(transform.localPosition, new Vector3(0, 3, 0), speed * Time.deltaTime);
+        }
+    }
+
+    public IEnumerator TurnOffResetting()
+    {
+        yield return new WaitForSeconds(3);
+        resetting = false;
     }
 
     void Movement()

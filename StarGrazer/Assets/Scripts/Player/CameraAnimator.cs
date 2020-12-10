@@ -32,6 +32,8 @@ public class CameraAnimator : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             StarGrazerRotation.changed = true;
+            player.resetting = true;
+            StartCoroutine(player.TurnOffResetting());
             switch (direction)
             {
                 case TriggerDirection.FULL:
