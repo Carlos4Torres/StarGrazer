@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class PauseMenuController : MonoBehaviour
 {
     public static int pauseindex;
+    public CrossHair crossHairScript;
+    public StarGrazerMovement movement;
     public Canvas PauseMenu;
     public bool isPaused;
     [SerializeField] bool keyDown;
@@ -20,19 +22,19 @@ public class PauseMenuController : MonoBehaviour
 
     void Update()
     {
-        //if(Input.GetKeyDown(KeyCode.Escape))
-        //{
-            //if(isPaused)
-            //{
-                //ResumeGame();
-                //pauseindex = 1;
-            //}
-            //else
-            //{
-                //PauseGame();
-                //pauseindex = 1;
-            //}
-        //}
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(isPaused)
+            {
+                ResumeGame();
+                pauseindex = 1;
+            }
+            else
+            {
+                PauseGame();
+                pauseindex = 1;
+            }
+        }
         if (PauseMenu.GetComponent<Canvas>().enabled == true)
         {
             //if (Input.GetKeyDown(KeyCode.S))
@@ -88,6 +90,8 @@ public class PauseMenuController : MonoBehaviour
     public void PauseGame()
     {
         PauseMenu.GetComponent<Canvas>().enabled = true;
+        crossHairScript.enabled = false;
+        movement.enabled = false;
         Time.timeScale = 0f;
         isPaused = true;
     }
@@ -95,6 +99,9 @@ public class PauseMenuController : MonoBehaviour
     public void ResumeGame()
     {
         PauseMenu.GetComponent<Canvas>().enabled = false;
+        crossHairScript.enabled = true;
+        movement.enabled = true;
+        Cursor.visible = false;
         Time.timeScale = 1f;
         isPaused = false;
     }
