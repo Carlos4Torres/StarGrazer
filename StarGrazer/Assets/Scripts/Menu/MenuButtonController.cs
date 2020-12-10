@@ -11,6 +11,11 @@ public class MenuButtonController : MonoBehaviour
     [SerializeField] int minIndex;
     [SerializeField] int menuScreen;
 
+    void Start()
+    {
+        Time.timeScale = 1f;
+    }
+
     void Update()
     {
         menuScreen = MenuButton.menuScreen;

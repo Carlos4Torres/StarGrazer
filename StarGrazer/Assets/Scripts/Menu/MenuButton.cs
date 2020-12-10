@@ -10,10 +10,12 @@ public class MenuButton : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] int thisIndex;
     [SerializeField] public static int menuScreen;
+    [SerializeField] public static int clickControl;
 
     public void Start()
     {
         menuScreen = 1;
+        clickControl = 0;
     }
 
 
@@ -78,12 +80,12 @@ public class MenuButton : MonoBehaviour
                     }
                 }
             }
-            else if (animator.GetBool("pressed"))
+            else if (animator.GetBool("pressed") && clickControl == 0)
             {
                 animator.SetBool("pressed", false);
             }
         }
-        else
+        else if (clickControl == 0)
         {
             animator.SetBool("selected", false);
         }
@@ -91,67 +93,170 @@ public class MenuButton : MonoBehaviour
 
     public IEnumerator MenuStartGame()
     {
+        clickControl = 1;
         menuScreen = 2;
         menuButtonController.index = 5;
         yield return new WaitForSeconds(0.5f);
+        animator.SetBool("selected", false);
+        clickControl = 0;
     }
 
     public IEnumerator MenuCasualMode()
     {
+        clickControl = 1;
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("Level One");
+        animator.SetBool("selected", false);
+        clickControl = 0;
     }
 
     public IEnumerator MenuVeteranMode()
     {
+        clickControl = 1;
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("Level One");
+        animator.SetBool("selected", false);
+        clickControl = 0;
     }
 
     public IEnumerator MenuStartGameToMain()
     {
+        clickControl = 1;
         menuScreen = 1;
         menuButtonController.index = 1;
         yield return new WaitForSeconds(0.5f);
+        animator.SetBool("selected", false);
+        clickControl = 0;
     }
 
     public IEnumerator MenuTraining()
     {
+        clickControl = 1;
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("Level One");
+        animator.SetBool("selected", false);
+        clickControl = 0;
     }
     
     public IEnumerator MenuMainToOptions()
     {
+        clickControl = 1;
         menuScreen = 3;
         menuButtonController.index = 9;
         yield return new WaitForSeconds(0.5f);
+        animator.SetBool("selected", false);
+        clickControl = 0;
     }
 
     public IEnumerator MenuOptionsToMain()
     {
+        clickControl = 1;
         menuScreen = 1;
         menuButtonController.index = 1;
         yield return new WaitForSeconds(0.5f);
+        animator.SetBool("selected", false);
+        clickControl = 0;
     }
 
     public IEnumerator MenuMainToHighScores()
     {
+        clickControl = 1;
         menuScreen = 4;
         menuButtonController.index = 10;
         yield return new WaitForSeconds(0.5f);
+        animator.SetBool("selected", false);
+        clickControl = 0;
     }
 
     public IEnumerator MenuHighScoresToMain()
     {
+        clickControl = 1;
         menuScreen = 1;
         menuButtonController.index = 1;
         yield return new WaitForSeconds(0.5f);
+        animator.SetBool("selected", false);
+        clickControl = 0;
     }
 
     public IEnumerator MenuQuit()
     {
         yield return new WaitForSeconds(0.5f);
         Application.Quit();
+    }
+
+    public void button_click()
+    {
+        if (menuScreen == 1)
+        {
+            if (thisIndex == 1)
+            {
+                StartCoroutine(MenuStartGame());
+                animator.SetBool("selected", true);
+                animator.SetBool("pressed", true);
+            }
+            if (thisIndex == 2)
+            {
+                StartCoroutine(MenuMainToOptions());
+                animator.SetBool("selected", true);
+                animator.SetBool("pressed", true);
+            }
+            if (thisIndex == 3)
+            {
+                StartCoroutine(MenuMainToHighScores());
+                animator.SetBool("selected", true);
+                animator.SetBool("pressed", true);
+            }
+            if (thisIndex == 4)
+            {
+                StartCoroutine(MenuQuit());
+                animator.SetBool("selected", true);
+                animator.SetBool("pressed", true);
+            }
+        }
+        if (menuScreen == 2)
+        {
+            if (thisIndex == 5)
+            {
+                StartCoroutine(MenuCasualMode());
+                animator.SetBool("selected", true);
+                animator.SetBool("pressed", true);
+            }
+            if (thisIndex == 6)
+            {
+                StartCoroutine(MenuVeteranMode());
+                animator.SetBool("selected", true);
+                animator.SetBool("pressed", true);
+            }
+            if (thisIndex == 7)
+            {
+                StartCoroutine(MenuTraining());
+                animator.SetBool("selected", true);
+                animator.SetBool("pressed", true);
+            }
+            if (thisIndex == 8)
+            {
+                StartCoroutine(MenuStartGameToMain());
+                animator.SetBool("selected", true);
+                animator.SetBool("pressed", true);
+            }
+        }
+        if (menuScreen == 3)
+        {
+            if (thisIndex == 9)
+            {
+                StartCoroutine(MenuOptionsToMain());
+                animator.SetBool("selected", true);
+                animator.SetBool("pressed", true);
+            }
+        }
+        if (menuScreen == 4)
+        {
+            if (thisIndex == 10)
+            {
+                StartCoroutine(MenuHighScoresToMain());
+                animator.SetBool("selected", true);
+                animator.SetBool("pressed", true);
+            }
+        }
     }
 }
