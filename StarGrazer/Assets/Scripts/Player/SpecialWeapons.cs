@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpecialWeapons : MonoBehaviour
 {
     [Range(0, 10)]
     public static int specialWeaponUnits;
     public bool grazed;
+    public Text specialWeaponText;
 
     private int grazes;
 
@@ -47,6 +49,7 @@ public class SpecialWeapons : MonoBehaviour
     void Start()
     {
         specialWeaponUnits = 3;
+        specialWeaponText.text = "Special Weapon: " + specialWeaponUnits;
         grazed = false;
         grazes = 0;
     }
@@ -67,6 +70,7 @@ public class SpecialWeapons : MonoBehaviour
             if (specialWeaponUnits < 10)
             {
                 specialWeaponUnits++;
+                specialWeaponText.text = "Special Weapon: " + specialWeaponUnits;
                 print("Unit added.\nUnits Left: " + specialWeaponUnits);
             }
             else if (specialWeaponUnits >= 10)
@@ -82,6 +86,7 @@ public class SpecialWeapons : MonoBehaviour
         if (specialWeaponUnits > 0)
         {
             specialWeaponUnits--;
+            specialWeaponText.text = "Special Weapon: " + specialWeaponUnits;
             StartCoroutine(GamePlaySlow());
             print("Time Stopper. Units Left: " + specialWeaponUnits);
         }
@@ -96,6 +101,7 @@ public class SpecialWeapons : MonoBehaviour
         if (specialWeaponUnits > 0)
         {
             specialWeaponUnits--;
+            specialWeaponText.text = "Special Weapon: " + specialWeaponUnits;
 
             enemies = GameObject.FindGameObjectsWithTag("Enemy Model");
             foreach (GameObject enemy in enemies)
@@ -112,7 +118,6 @@ public class SpecialWeapons : MonoBehaviour
             {
                 Destroy(bullet.gameObject);
             }
-
 
             print("Anti-Matter. Units Left: " + specialWeaponUnits);
         }
