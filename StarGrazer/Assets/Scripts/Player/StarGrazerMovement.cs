@@ -131,13 +131,21 @@ public class StarGrazerMovement : MonoBehaviour
         }
     }
 
-   // IEnumerator DestroyModel()
-   // {
-   //     deathSound.Play();
-   //     Destroy(model); 
-   //     yield return new WaitForSeconds(5);
-   //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-   // }
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy Model"))
+        {
+            StartCoroutine(playerHealth.Respawn());
+        }
+    }
+
+    // IEnumerator DestroyModel()
+    // {
+    //     deathSound.Play();
+    //     Destroy(model); 
+    //     yield return new WaitForSeconds(5);
+    //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    // }
 
     [Header("Full Clamp Values")]
     [Range(0.0f, 1f)] public float xMinFull;

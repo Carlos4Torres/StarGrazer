@@ -63,7 +63,7 @@ public class PlayerHealth : MonoBehaviour
     public IEnumerator Respawn()
     {
 
-        healthCollider.enabled = false;        
+        healthCollider.enabled = false;
 
         for (int i = 0; i < respawnCycles; i++)
         {
