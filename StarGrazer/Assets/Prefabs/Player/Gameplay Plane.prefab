@@ -541,7 +541,7 @@ GameObject:
   - component: {fileID: 689015017433729280}
   m_Layer: 0
   m_Name: Model
-  m_TagString: Player
+  m_TagString: PlayerHealth
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -592,8 +592,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7304372b805c9ae4c911de0cd748e580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   deathAudio: {fileID: 0}
+  health: 100
   healthUI: {fileID: 0}
   healthImages:
   - {fileID: 2800000, guid: 8760b4732995d694f961f39e84174030, type: 3}
@@ -602,6 +602,10 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 9e79849117955aa41a95121007a3c016, type: 3}
   - {fileID: 2800000, guid: 607d561481f2e7e4d9ad9b0f32999e41, type: 3}
   - {fileID: 2800000, guid: 7b7bbece35063394fadd8fdb55b8628f, type: 3}
+  lives: 3
+  livesUI: {fileID: 0}
+  livesImages: []
+  model: {fileID: 0}
 --- !u!65 &689015017433729280
 BoxCollider:
   m_ObjectHideFlags: 0
