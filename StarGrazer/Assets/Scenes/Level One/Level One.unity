@@ -39782,6 +39782,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: PlayerHealth
       objectReference: {fileID: 0}
+    - target: {fileID: 689015017433729283, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 689015017433729343, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: livesImages.Array.size
       value: 4
@@ -39850,6 +39854,14 @@ PrefabInstance:
       propertyPath: model
       value: 
       objectReference: {fileID: 1691634166}
+    - target: {fileID: 689015017433729343, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
+      propertyPath: crosshair
+      value: 
+      objectReference: {fileID: 1156797621}
+    - target: {fileID: 1835729335344423147, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2066527884424526349, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_IsTrigger
       value: 1

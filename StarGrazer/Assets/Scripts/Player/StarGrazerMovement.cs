@@ -123,19 +123,20 @@ public class StarGrazerMovement : MonoBehaviour
         else speed = _SPEED;
     }
 
-    public void OnCollisionEnter(Collision collision)
-    {
-        if(collision.collider.CompareTag("Enemy") || (collision.collider.CompareTag("Boss") || collision.collider.CompareTag("Enemy Model")))
-        {
-            StartCoroutine(playerHealth.Respawn());
-        }
-    }
+    //public void OnCollisionEnter(Collision collision)
+    //{
+    //    if(collision.collider.CompareTag("Enemy") || (collision.collider.CompareTag("Boss") || collision.collider.CompareTag("Enemy Model")))
+    //    {
+    //        StartCoroutine(playerHealth.Respawn());
+    //    }
+    //}
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy Model"))
+        if (other.CompareTag("Enemy Model") && !playerHealth.respawning)
         {
-            StartCoroutine(playerHealth.Respawn());
+            playerHealth.respawning = true;
+            playerHealth.Damage(playerHealth.health);
         }
     }
 

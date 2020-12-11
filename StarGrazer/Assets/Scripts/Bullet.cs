@@ -30,11 +30,9 @@ public class Bullet : MonoBehaviour
       if (other.CompareTag("PlayerHealth") && CompareTag("Bullet") == false)
       {
          heathScript = other.GetComponent<PlayerHealth>();
-         heathScript.Damage();
+         heathScript.Damage(1);
          Destroy(gameObject);
       }
     }
-
-
 }
  

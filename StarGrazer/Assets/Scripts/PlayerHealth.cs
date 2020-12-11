@@ -17,10 +17,13 @@ public class PlayerHealth : MonoBehaviour
     public RawImage healthUI;
     public Texture[] healthImages;
 
+    public bool respawning;
+
     [Header("Lives")]
     public int lives = 3;
     public RawImage livesUI;
     public Texture[] livesImages;
+    public GameObject crosshair;
 
     private Collider healthCollider;
     private int respawnCycles = 10;
@@ -29,6 +32,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void Start()
     {
+        respawning = false;
         health = 5;
         healthUI.texture = healthImages[health];
 
@@ -38,9 +42,9 @@ public class PlayerHealth : MonoBehaviour
         healthCollider = this.GetComponent<Collider>();
     }
 
-    public void Damage()
+    public void Damage(int amount)
     {
-        health--;
+        health -= amount;
 
         healthUI.texture = healthImages[health];
 
@@ -62,7 +66,7 @@ public class PlayerHealth : MonoBehaviour
 
     public IEnumerator Respawn()
     {
-
+        respawning = true;
         healthCollider.enabled = false;
 
         for (int i = 0; i < respawnCycles; i++)
@@ -76,14 +80,16 @@ public class PlayerHealth : MonoBehaviour
         health = 5;
         healthUI.texture = healthImages[health];
         healthCollider.enabled = true;
+        respawning = false;
     }
 
-    private IEnumerator Restart()
+    public IEnumerator Restart()
     {
-
         healthCollider.enabled = false;
         deathAudio.Play();
-        Destroy(gameObject);
+        model.SetActive(false);
+        crosshair.SetActive(false);
+        //Destroy(gameObject);
 
         yield return new WaitForSeconds(3f);
         Scene scene = SceneManager.GetActiveScene();
