@@ -114,7 +114,7 @@ public class MenuButton : MonoBehaviour
     {
         clickControl = 1;
         yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene("Level One");
+        SceneManager.LoadScene("(WB) Level Two");
         animator.SetBool("selected", false);
         clickControl = 0;
     }
