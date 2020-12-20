@@ -123,7 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainController: {fileID: 6414416409364205175}
   health: 50
-  dmgPerBullet: 10
+  dmgPerBullet: 1
   deathSound: {fileID: 2317281009243724140}
 --- !u!1 &6414416409364205168
 GameObject:
