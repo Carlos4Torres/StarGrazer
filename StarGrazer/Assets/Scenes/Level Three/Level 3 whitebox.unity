@@ -3456,38 +3456,42 @@ MonoBehaviour:
   m_Appearance:
     pathColor: {r: 0, g: 1, b: 0, a: 1}
     inactivePathColor: {r: 1, g: 0.8334857, b: 0, a: 1}
-    width: 0.2
+    width: 4.31
   m_Looped: 0
   m_Waypoints:
   - position: {x: 0, y: 0, z: 0}
     roll: 0
-  - position: {x: 0.1, y: 50, z: 0}
+  - position: {x: 0.5, y: 50, z: 0}
     roll: 0
-  - position: {x: 0.2, y: 100, z: 0}
+  - position: {x: 1, y: 100, z: 0}
     roll: 0
-  - position: {x: 0.3, y: 150, z: 0}
+  - position: {x: 1.5, y: 150, z: 0}
     roll: 0
-  - position: {x: 0.40000004, y: 200, z: 0}
+  - position: {x: 2, y: 200, z: 0}
     roll: 0
-  - position: {x: 0.5, y: 250, z: 0}
+  - position: {x: 2.5, y: 250, z: 0}
     roll: 0
-  - position: {x: 0.59999996, y: 300, z: 0}
+  - position: {x: 3, y: 300, z: 0}
     roll: 0
-  - position: {x: 0.7, y: 350, z: 0}
+  - position: {x: 3.5, y: 400, z: 0}
     roll: 0
-  - position: {x: 0.8, y: 400, z: 0}
+  - position: {x: 4, y: 500, z: 0}
     roll: 0
-  - position: {x: 0.90000004, y: 450, z: 0}
+  - position: {x: 5, y: 560.0176, z: 0}
     roll: 0
-  - position: {x: 1, y: 500, z: 0}
+  - position: {x: 7.1922874, y: 582.283, z: -0.6079712}
     roll: 0
-  - position: {x: 1.0999999, y: 550, z: 0}
+  - position: {x: 8.644581, y: 600.8294, z: -0.973053}
     roll: 0
-  - position: {x: 12, y: 600, z: 0}
+  - position: {x: 19.930355, y: 611.09705, z: 0}
     roll: 0
-  - position: {x: 80, y: 645, z: 0}
+  - position: {x: 43.57629, y: 615.53894, z: 6.607971}
     roll: 0
-  - position: {x: 115, y: 690, z: -80}
+  - position: {x: 61.15123, y: 635.46936, z: 10.575928}
+    roll: 0
+  - position: {x: 80, y: 640.6583, z: 0}
+    roll: 0
+  - position: {x: 115, y: 676.95355, z: -80}
     roll: 0
   - position: {x: 115, y: 730, z: -155}
     roll: 0
@@ -3498,6 +3502,40 @@ MonoBehaviour:
   - position: {x: 115, y: 730, z: -900}
     roll: 0
   - position: {x: 115, y: 730, z: -1200}
+    roll: 0
+  - position: {x: 114.995636, y: 733.0615, z: -1301.8152}
+    roll: 0
+  - position: {x: 115, y: 712.4078, z: -1360}
+    roll: 0
+  - position: {x: 115, y: 677.7686, z: -1380}
+    roll: 0
+  - position: {x: 115, y: 630, z: -1382.765}
+    roll: 0
+  - position: {x: 115, y: 582.2314, z: -1383.5436}
+    roll: 0
+  - position: {x: 115, y: 534.46277, z: -1384.3221}
+    roll: 0
+  - position: {x: 115, y: 486.69415, z: -1385.1007}
+    roll: 0
+  - position: {x: 115, y: 438.92554, z: -1385.8793}
+    roll: 0
+  - position: {x: 115, y: 391.15692, z: -1386.6578}
+    roll: 0
+  - position: {x: 115, y: 343.3883, z: -1387.4364}
+    roll: 0
+  - position: {x: 115, y: 295.6197, z: -1388.215}
+    roll: 0
+  - position: {x: 115, y: 247.85107, z: -1388.9935}
+    roll: 0
+  - position: {x: 115, y: 200.08246, z: -1389.7721}
+    roll: 0
+  - position: {x: 115, y: 152.31384, z: -1390.5507}
+    roll: 0
+  - position: {x: 115, y: 104.54523, z: -1391.3292}
+    roll: 0
+  - position: {x: 115, y: 56.77661, z: -1392.1078}
+    roll: 0
+  - position: {x: 115, y: 9.007996, z: -1392.8864}
     roll: 0
 --- !u!4 &957427143
 Transform:
@@ -5209,19 +5247,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.49950737
+      value: -0.49749726
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.50049216
+      value: 0.5024903
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.49949208
+      value: 0.49749225
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5005075
+      value: 0.5024953
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_RootOrder
