@@ -39714,6 +39714,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: '[Testing] Gameplay Plane'
       objectReference: {fileID: 0}
+    - target: {fileID: 689015015764783932, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 689015016085837269, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 689015016306477809, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 689015016306477815, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: deathSound
       value: 
@@ -40510,7 +40522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5839053860171454709, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6971041715442651720, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalRotation.x
@@ -40700,6 +40712,10 @@ PrefabInstance:
       propertyPath: m_Path
       value: 
       objectReference: {fileID: 1073417061}
+    - target: {fileID: 8319210976582233802, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8319210976582233803, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: mainDollyScipt
       value: 

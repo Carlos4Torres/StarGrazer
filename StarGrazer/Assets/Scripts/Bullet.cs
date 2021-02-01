@@ -7,32 +7,41 @@ public class Bullet : MonoBehaviour
     public float speed = 50f;
     public Rigidbody rb;
     public int lifetime;
-    
+
+    [Header("Damage Values")]
+    //Damage bullet does when hitting an enemy and hitting the player respectively
+    //Need two differnt values since enemy and player use the same bulelt prefab
+    public  int enemyDamage = 10;
+    public const int playerDamage = 1;
+
     PlayerHealth heathScript;
 
-    // Start is called before the first frame update
     void Awake()
     {
-        //rb.velocity = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z * speed);
         rb.velocity += transform.forward * speed;
     }
 
     private void Update()
     {
-        //rb.velocity = Vector3.forward * Time.deltaTime * speed;
         Destroy(gameObject, lifetime);
     }
-
 
     //Damages player & destroys bullet
     public void OnTriggerEnter(Collider other)
     {
       if (other.CompareTag("PlayerHealth") && CompareTag("Bullet") == false)
       {
-         heathScript = other.GetComponent<PlayerHealth>();
-         heathScript.Damage(1);
-         Destroy(gameObject);
+            //We should change this to intialize on start
+            heathScript = other.GetComponent<PlayerHealth>();
+            heathScript.Damage(playerDamage);
+            Destroy(gameObject);
       }
+     // else if (other.CompareTag("Enemy Model") && CompareTag("Bullet") == false)
+     // {
+     //       enemyHealth = other.GetComponent<EnemyHealth>();
+     //       enemyHealth.Damage(enemyDamage);
+     //       Destroy(gameObject);
+     // }
     }
 }
  

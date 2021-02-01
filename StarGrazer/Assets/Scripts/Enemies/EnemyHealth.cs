@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-
+    [Header("Variables")]
     public EnemyMainPath mainController;
-
-    [Header("Heath")]
-    public float health;
-    public float dmgPerBullet; //Damage the enemy takes per shot. Ideally would attach this value to the bullet instead of the enemy
-
     public AudioSource deathSound;
+    
+
+    private float health = 50;
+
 
     public void OnTriggerEnter(Collider other)
     {
             if (other.CompareTag("Bullet") && mainController.state != EnemyMainPath.combatState.IDLE)
             {
-                health -= dmgPerBullet;
-
+                Bullet bulletScript = other.GetComponent<Bullet>();
+                health -= bulletScript.enemyDamage;
+  
                 if (health <= 0)
                 {
                     deathSound.Play();
@@ -30,6 +30,25 @@ public class EnemyHealth : MonoBehaviour
                     collider.enabled = false;
                 }
             }
-        
     }
+
+  //public void Damage(int damageValue)
+  //{
+  //    if (mainController.state != EnemyMainPath.combatState.IDLE)
+  //    {
+  //        health -= damageValue;
+  //        Debug.Log(health);
+  //        if (health <= 0)
+  //        {
+  //            deathSound.Play();
+  //            StartCoroutine(mainController.DestroyThis());
+  //            mainController.isDead = true;
+  //            var mesh = GetComponent<MeshRenderer>();
+  //            mesh.enabled = false;
+  //            var collider = GetComponent<BoxCollider>();
+  //            collider.enabled = false;
+  //        }
+  //    }
+  //}
+
 }
