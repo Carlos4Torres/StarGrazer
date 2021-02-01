@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class SpecialWeapons : MonoBehaviour
 {
-    [Range(0, 10)]
-    public static int specialWeaponUnits;
-    public bool grazed;
-    public Text specialWeaponText;
+    private int specialWeaponUnits;
+    private const int MAXSPECIAL = 3;
+   
+    [Header("Images")]
+    public RawImage specialUI;
+    public Texture[] specialImages;
 
+    private bool grazed;
     private int grazes;
 
     PlayerControls controls;
@@ -48,8 +51,8 @@ public class SpecialWeapons : MonoBehaviour
 
     void Start()
     {
-        specialWeaponUnits = 3;
-        specialWeaponText.text = "Special Weapon: " + specialWeaponUnits;
+        specialWeaponUnits = MAXSPECIAL;
+        specialUI.texture = specialImages[specialWeaponUnits];
         grazed = false;
         grazes = 0;
     }
@@ -67,10 +70,10 @@ public class SpecialWeapons : MonoBehaviour
             grazes = 0;
             print("Grazes Reset: " + grazes);
             grazed = false;
-            if (specialWeaponUnits < 10)
+            if (specialWeaponUnits < MAXSPECIAL)
             {
                 specialWeaponUnits++;
-                specialWeaponText.text = "Special Weapon: " + specialWeaponUnits;
+                specialUI.texture = specialImages[specialWeaponUnits];
                 print("Unit added.\nUnits Left: " + specialWeaponUnits);
             }
             else if (specialWeaponUnits >= 10)
@@ -86,7 +89,7 @@ public class SpecialWeapons : MonoBehaviour
         if (specialWeaponUnits > 0)
         {
             specialWeaponUnits--;
-            specialWeaponText.text = "Special Weapon: " + specialWeaponUnits;
+            specialUI.texture = specialImages[specialWeaponUnits];
             StartCoroutine(GamePlaySlow());
             print("Time Stopper. Units Left: " + specialWeaponUnits);
         }
@@ -101,7 +104,7 @@ public class SpecialWeapons : MonoBehaviour
         if (specialWeaponUnits > 0)
         {
             specialWeaponUnits--;
-            specialWeaponText.text = "Special Weapon: " + specialWeaponUnits;
+            specialUI.texture = specialImages[specialWeaponUnits];
 
             enemies = GameObject.FindGameObjectsWithTag("Enemy Model");
             foreach (GameObject enemy in enemies)
