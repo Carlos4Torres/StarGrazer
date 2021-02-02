@@ -8,9 +8,13 @@ public class CrossHair : MonoBehaviour
     //public bool mouseAndKeyboard;
     [Range(0.1f, 10.0f)]
     public float controllerSensitivity;
+    public bool build;
+
+    private bool controller;
 
     PlayerControls controls;
     Vector3 move;
+    Rect screenRect = new Rect(0, 0, Screen.width, Screen.height);
 
     void OnEnable()
     {
@@ -34,6 +38,13 @@ public class CrossHair : MonoBehaviour
     private void Start()
     {
         Cursor.visible = false;
+        if (screenRect.Contains(Input.mousePosition) && !build)
+        {
+            transform.position = Input.mousePosition;
+            controller = false;
+        }
+        else
+            controller = true;
     }
     // Update is called once per frame
     void Update()
@@ -43,6 +54,10 @@ public class CrossHair : MonoBehaviour
         {
             Cursor.visible = true;
         }
+
+        if (controller)
             transform.position += move * controllerSensitivity;
+        else
+            transform.position = Input.mousePosition;
     }
 }

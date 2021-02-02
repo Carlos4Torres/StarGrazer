@@ -86,13 +86,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 689015015459465698}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 25, y: 10, z: 20}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 7, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 689015015764783907}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &689015015459465696
 Camera:
   m_ObjectHideFlags: 0
@@ -117,7 +117,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 1500
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -187,7 +187,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 689015015764783932}
-  m_LocalRotation: {x: -4.2148062e-17, y: 2.2681177e-17, z: 9.559677e-34, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2, y: 2, z: -350}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -196,7 +196,7 @@ Transform:
   - {fileID: 689015015459465703}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -58.47, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &689015015764783906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,16 +336,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ca7eb65de1547e45b8d6334a47b5b3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: 1
+  state: 0
   _SPEED: 20
   resetting: 0
   model: {fileID: 689015017433729283}
   deathSound: {fileID: 0}
   playerHealth: {fileID: 689015017433729343}
-  xMinFull: 0.1
-  xMaxFull: 0.9
-  yMinFull: 0.1
-  yMaxFull: 0.9
+  xMinFull: 0
+  xMaxFull: 1
+  yMinFull: 0.05
+  yMaxFull: 0.95
   xMinVert: 0.1
   xMaxVert: 0.9
   yMinVert: 0.05
@@ -382,10 +382,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7bc0aead7ec16f4f898e345906ddff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grazed: 0
-  specialWeaponText: {fileID: 0}
+  specialUI: {fileID: 0}
+  specialImages: []
   gamePlayPause: 0.005
-  pauseTime: 0.1
+  pauseTime: 0.01
 --- !u!1 &689015016564672343
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,6 +398,7 @@ GameObject:
   - component: {fileID: 4094367603665833329}
   - component: {fileID: 4094367603665833330}
   - component: {fileID: 2817828972225972879}
+  - component: {fileID: 2062864384}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Player
@@ -529,7 +530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 4635193171472097772, guid: e3eeab0c4b3721745b7a53b1176af1ef, type: 3}
   gameplayPlane: {fileID: 689015015764783907}
-  sgShot: {fileID: 0}
+  sgShot: {fileID: 21300000, guid: f947a65ab753d244b80769c76570cdc5, type: 3}
   fireRate: 0.1
   shotSpeed: 50
   grazeCount: 0
@@ -546,6 +547,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 3.5
   m_Center: {x: 0, y: 0, z: -1}
+--- !u!114 &2062864384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689015016564672343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dcc4723868b7e2459b1b434100d4e4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 4635193171472097772, guid: e3eeab0c4b3721745b7a53b1176af1ef, type: 3}
 --- !u!1 &689015017433729283
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,6 +635,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 9e79849117955aa41a95121007a3c016, type: 3}
   - {fileID: 2800000, guid: 607d561481f2e7e4d9ad9b0f32999e41, type: 3}
   - {fileID: 2800000, guid: 7b7bbece35063394fadd8fdb55b8628f, type: 3}
+  respawning: 0
   lives: 3
   livesUI: {fileID: 0}
   livesImages:
@@ -628,6 +643,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 5b969503125383a4a9d2f0b5b0e01746, type: 3}
   - {fileID: 2800000, guid: 9bd0169aea56d0344a13442fb92e865c, type: 3}
   - {fileID: 2800000, guid: 3b7432e58792d2f4e80cc4e4609544cd, type: 3}
+  crosshair: {fileID: 0}
 --- !u!65 &689015017433729280
 BoxCollider:
   m_ObjectHideFlags: 0

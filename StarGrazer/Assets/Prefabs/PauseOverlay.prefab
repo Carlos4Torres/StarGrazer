@@ -196,6 +196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 438d85660faf5a14487313c93a654d05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crossHairScript: {fileID: 0}
+  movement: {fileID: 0}
   PauseMenu: {fileID: 4224152392944898928}
   isPaused: 0
   keyDown: 0
