@@ -23269,6 +23269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controllerSensitivity: 5.5
+  build: 0
 --- !u!1 &1170698012
 GameObject:
   m_ObjectHideFlags: 0
@@ -40714,7 +40715,7 @@ PrefabInstance:
       objectReference: {fileID: 1073417061}
     - target: {fileID: 8319210976582233802, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8319210976582233803, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: mainDollyScipt
