@@ -14,6 +14,8 @@ public class PauseMenuController : MonoBehaviour
     [SerializeField] int maxIndex = 1;
     [SerializeField] int minIndex = 4;
 
+    public Weapon weaponFunc;
+
     private void Start()
     {
         PauseMenu.GetComponent<Canvas>().enabled = false;
@@ -28,11 +30,13 @@ public class PauseMenuController : MonoBehaviour
             {
                 ResumeGame();
                 pauseindex = 1;
+                weaponFunc.enabled = true;
             }
             else
             {
                 PauseGame();
                 pauseindex = 1;
+                weaponFunc.enabled = false;
             }
         }
         if (PauseMenu.GetComponent<Canvas>().enabled == true)
