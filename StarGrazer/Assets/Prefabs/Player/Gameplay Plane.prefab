@@ -383,7 +383,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   specialUI: {fileID: 0}
-  specialImages: []
+  specialImages:
+  - {fileID: 2800000, guid: 27d0345924276b24099c2c2da1dc9085, type: 3}
+  - {fileID: 2800000, guid: b2896ae28b0f0b647a98688d21c1b109, type: 3}
+  - {fileID: 2800000, guid: b9494e1511c50c54fa1b8c18f626b782, type: 3}
+  - {fileID: 2800000, guid: 1987fc06aa779724a848d96766882c5e, type: 3}
   gamePlayPause: 0.005
   pauseTime: 0.01
 --- !u!1 &689015016564672343
