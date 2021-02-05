@@ -16,6 +16,7 @@
             "."
         ],
         "fbxSavePaths": [
+            "C:/Users/13862/Desktop/Ace/UCF/Fall2020/Game Workshop/StarGrazer Art Assets/ENV/LVL4",
             "C:/Users/frapp/OneDrive/Documents",
             "."
         ],
@@ -27,7 +28,7 @@
             "exportFormat": 0,
             "animatedSkinnedMesh": false,
             "mayaCompatibleNaming": true,
-            "include": 2,
+            "include": 0,
             "lodLevel": 0,
             "objectPosition": 0,
             "exportUnrendered": true
