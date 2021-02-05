@@ -248,6 +248,7 @@ Transform:
   - {fileID: 762088748}
   - {fileID: 684598966}
   - {fileID: 232657187}
+  - {fileID: 7158893393060876730}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -493,6 +494,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719610792583320, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719610792583323, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -569,6 +574,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719612306048766, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719612326387370, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.023361843
@@ -601,6 +610,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719612326387372, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719612326387375, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -641,6 +654,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719612580745876, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719612580745879, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -681,6 +698,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 2630752028267027204, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 2630752028267027207, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -763,6 +784,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719610792583320, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719610792583323, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -839,6 +864,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719612306048766, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719612326387370, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.000027533442
@@ -871,6 +900,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719612326387372, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719612326387375, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -911,6 +944,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719612580745876, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719612580745879, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -951,6 +988,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 2630752028267027204, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 2630752028267027207, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -1080,7 +1121,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6016195725851492530, guid: 381386dc172b36441bd5a6ef707f271c, type: 3}
       propertyPath: m_Name
-      value: Camera Trigger (2)
+      value: V->Full
       objectReference: {fileID: 0}
     - target: {fileID: 6016195725851492540, guid: 381386dc172b36441bd5a6ef707f271c, type: 3}
       propertyPath: m_Size.y
@@ -1379,6 +1420,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 964113131587106787, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 964113131587106789, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.00000015487352
@@ -1447,6 +1492,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 6971041715442651726, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 7111609584860369875, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalPosition.y
       value: 5.7
@@ -1459,6 +1508,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 7294488070037190776, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 7294488070037190779, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_Path
       value: 
@@ -1563,6 +1616,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 8319210976582233803, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 8319210976582233805, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.00000015487352
@@ -2923,6 +2980,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 964113131587106787, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 964113131587106789, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.00015403586
@@ -2991,6 +3052,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 6971041715442651726, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 7111609584860369875, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -3007,6 +3072,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 7294488070037190776, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 7294488070037190779, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_Path
       value: 
@@ -3115,6 +3184,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 8319210976582233803, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 8319210976582233805, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.00015403586
@@ -3181,6 +3254,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1779087490515108185, guid: 5b353180c821fa148a692612e76c1bda, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1779087490515108186, guid: 5b353180c821fa148a692612e76c1bda, type: 3}
       propertyPath: m_Position
       value: 2700
@@ -3257,6 +3334,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1779087492093047637, guid: 5b353180c821fa148a692612e76c1bda, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1779087492093047638, guid: 5b353180c821fa148a692612e76c1bda, type: 3}
       propertyPath: m_Position
       value: 2700
@@ -3313,6 +3394,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1779087492354959167, guid: 5b353180c821fa148a692612e76c1bda, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1779087492383948651, guid: 5b353180c821fa148a692612e76c1bda, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
@@ -3353,6 +3438,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1779087492383948653, guid: 5b353180c821fa148a692612e76c1bda, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1779087492383948654, guid: 5b353180c821fa148a692612e76c1bda, type: 3}
       propertyPath: m_Position
       value: 2700
@@ -3401,6 +3490,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 2733573584151165637, guid: 5b353180c821fa148a692612e76c1bda, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 2733573584151165638, guid: 5b353180c821fa148a692612e76c1bda, type: 3}
       propertyPath: m_Position
       value: 2700
@@ -3786,6 +3879,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 622093705}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &627019877 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4094367603665833330, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
+  m_PrefabInstance: {fileID: 1613626211}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd31d19fa6c0b048af404f1db900a9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &654979245 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4057183013128365305, guid: 636e0f81f7efcac469b3d676c68d918d, type: 3}
@@ -4091,7 +4195,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6016195725851492530, guid: 381386dc172b36441bd5a6ef707f271c, type: 3}
       propertyPath: m_Name
-      value: Camera Trigger (1)
+      value: H->V
       objectReference: {fileID: 0}
     - target: {fileID: 6016195725851492540, guid: 381386dc172b36441bd5a6ef707f271c, type: 3}
       propertyPath: m_Size.y
@@ -4740,6 +4844,68 @@ Transform:
   m_Father: {fileID: 1488174406}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
+--- !u!1001 &778578224
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4471470595191187261, guid: 378deb00b2420db45bca6413b5545927, type: 3}
+      propertyPath: m_Name
+      value: BulletController
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471470595191187263, guid: 378deb00b2420db45bca6413b5545927, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.172874
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471470595191187263, guid: 378deb00b2420db45bca6413b5545927, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 18.256004
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471470595191187263, guid: 378deb00b2420db45bca6413b5545927, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -269.83374
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471470595191187263, guid: 378deb00b2420db45bca6413b5545927, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471470595191187263, guid: 378deb00b2420db45bca6413b5545927, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471470595191187263, guid: 378deb00b2420db45bca6413b5545927, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471470595191187263, guid: 378deb00b2420db45bca6413b5545927, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471470595191187263, guid: 378deb00b2420db45bca6413b5545927, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471470595191187263, guid: 378deb00b2420db45bca6413b5545927, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471470595191187263, guid: 378deb00b2420db45bca6413b5545927, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471470595191187263, guid: 378deb00b2420db45bca6413b5545927, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 378deb00b2420db45bca6413b5545927, type: 3}
+--- !u!1 &778578225 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4471470595191187261, guid: 378deb00b2420db45bca6413b5545927, type: 3}
+  m_PrefabInstance: {fileID: 778578224}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &793763091
 GameObject:
   m_ObjectHideFlags: 0
@@ -5187,6 +5353,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 964113131587106787, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 964113131587106789, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.0000000071698554
@@ -5255,6 +5425,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 6971041715442651726, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 7111609584860369875, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalPosition.y
       value: 5.7
@@ -5271,6 +5445,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 7294488070037190776, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 7294488070037190779, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_Path
       value: 
@@ -5379,6 +5557,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 8319210976582233803, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 8319210976582233805, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.0000000071698554
@@ -5870,6 +6052,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 964113131587106787, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 964113131587106789, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.0000007835403
@@ -5938,6 +6124,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 6971041715442651726, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 7111609584860369875, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalPosition.y
       value: 5.7
@@ -5954,6 +6144,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 7294488070037190776, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 7294488070037190779, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_Path
       value: 
@@ -6062,6 +6256,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 8319210976582233803, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 8319210976582233805, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.0000007835403
@@ -6484,6 +6682,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719610792583320, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719610792583323, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -6560,6 +6762,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719612306048766, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719612326387370, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.49692866
@@ -6592,6 +6798,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719612326387372, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719612326387375, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -6632,6 +6842,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719612580745876, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719612580745879, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -6672,6 +6886,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 2630752028267027204, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 2630752028267027207, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -6762,6 +6980,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 964113131587106787, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 964113131587106789, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.000005525607
@@ -6830,6 +7052,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 6971041715442651726, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 7111609584860369875, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalPosition.y
       value: 5.7
@@ -6842,6 +7068,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 7294488070037190776, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 7294488070037190779, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_Path
       value: 
@@ -6946,6 +7176,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 8319210976582233803, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 8319210976582233805, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.000005525607
@@ -7322,6 +7556,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719610792583320, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719610792583323, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -7398,6 +7636,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719612306048766, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719612326387370, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.4969262
@@ -7430,6 +7672,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719612326387372, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719612326387375, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -7470,6 +7716,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719612580745876, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719612580745879, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -7510,6 +7760,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 2630752028267027204, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 2630752028267027207, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -7717,6 +7971,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719610792583320, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719610792583323, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -7793,6 +8051,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719612306048766, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719612326387370, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.00050872244
@@ -7825,6 +8087,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719612326387372, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719612326387375, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -7865,6 +8131,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719612580745876, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719612580745879, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -7905,6 +8175,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 2630752028267027204, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 2630752028267027207, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -8272,6 +8546,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1779087490515108185, guid: 5b353180c821fa148a692612e76c1bda, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1779087490515108186, guid: 5b353180c821fa148a692612e76c1bda, type: 3}
       propertyPath: m_Position
       value: 2500
@@ -8348,6 +8626,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1779087492093047637, guid: 5b353180c821fa148a692612e76c1bda, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1779087492093047638, guid: 5b353180c821fa148a692612e76c1bda, type: 3}
       propertyPath: m_Position
       value: 2500
@@ -8404,6 +8686,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1779087492354959167, guid: 5b353180c821fa148a692612e76c1bda, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1779087492383948651, guid: 5b353180c821fa148a692612e76c1bda, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
@@ -8444,6 +8730,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1779087492383948653, guid: 5b353180c821fa148a692612e76c1bda, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1779087492383948654, guid: 5b353180c821fa148a692612e76c1bda, type: 3}
       propertyPath: m_Position
       value: 2500
@@ -8492,6 +8782,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 2733573584151165637, guid: 5b353180c821fa148a692612e76c1bda, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 2733573584151165638, guid: 5b353180c821fa148a692612e76c1bda, type: 3}
       propertyPath: m_Position
       value: 2500
@@ -8704,6 +8998,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1779087490515108185, guid: 5b353180c821fa148a692612e76c1bda, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1779087490515108186, guid: 5b353180c821fa148a692612e76c1bda, type: 3}
       propertyPath: m_Position
       value: 2300
@@ -8780,6 +9078,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1779087492093047637, guid: 5b353180c821fa148a692612e76c1bda, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1779087492093047638, guid: 5b353180c821fa148a692612e76c1bda, type: 3}
       propertyPath: m_Position
       value: 2300
@@ -8836,6 +9138,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1779087492354959167, guid: 5b353180c821fa148a692612e76c1bda, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1779087492383948651, guid: 5b353180c821fa148a692612e76c1bda, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
@@ -8876,6 +9182,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1779087492383948653, guid: 5b353180c821fa148a692612e76c1bda, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1779087492383948654, guid: 5b353180c821fa148a692612e76c1bda, type: 3}
       propertyPath: m_Position
       value: 2300
@@ -8924,6 +9234,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 2733573584151165637, guid: 5b353180c821fa148a692612e76c1bda, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 2733573584151165638, guid: 5b353180c821fa148a692612e76c1bda, type: 3}
       propertyPath: m_Position
       value: 2300
@@ -9091,7 +9405,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6016195725851492530, guid: 381386dc172b36441bd5a6ef707f271c, type: 3}
       propertyPath: m_Name
-      value: Camera Trigger
+      value: V -> H
       objectReference: {fileID: 0}
     - target: {fileID: 6016195725851492540, guid: 381386dc172b36441bd5a6ef707f271c, type: 3}
       propertyPath: m_Size.y
@@ -9215,6 +9529,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719610792583320, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719610792583323, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -9291,6 +9609,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719612306048766, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719612326387370, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
@@ -9323,6 +9645,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719612326387372, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719612326387375, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -9363,6 +9689,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719612580745876, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719612580745879, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -9403,6 +9733,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 2630752028267027204, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 2630752028267027207, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -9481,6 +9815,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719610792583320, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719610792583323, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -9557,6 +9895,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719612306048766, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719612326387370, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.4973648
@@ -9589,6 +9931,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719612326387372, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719612326387375, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -9629,6 +9975,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719612580745876, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719612580745879, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -9669,6 +10019,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 2630752028267027204, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 2630752028267027207, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -10047,6 +10401,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 964113131587106787, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 964113131587106789, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.000005525607
@@ -10115,6 +10473,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 6971041715442651726, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 7111609584860369875, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalPosition.y
       value: 5.7
@@ -10127,6 +10489,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 7294488070037190776, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 7294488070037190779, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_Path
       value: 
@@ -10231,6 +10597,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 8319210976582233803, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 8319210976582233805, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.000005525607
@@ -11132,6 +11502,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719610792583320, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719610792583323, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -11208,6 +11582,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719612306048766, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719612326387370, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.49827003
@@ -11240,6 +11618,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719612326387372, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719612326387375, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -11280,6 +11662,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 1863719612580745876, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 1863719612580745879, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -11320,6 +11706,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 2630752028267027204, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 2630752028267027207, guid: 5dd635f893fcec84a80078ffb6c469cb, type: 3}
       propertyPath: m_Path
       value: 
@@ -11890,6 +12280,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 964113131587106787, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 964113131587106789, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.0000014274524
@@ -11958,6 +12352,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 6971041715442651726, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 7111609584860369875, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalPosition.y
       value: 5.7
@@ -11970,6 +12368,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 7294488070037190776, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 7294488070037190779, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_Path
       value: 
@@ -12074,6 +12476,10 @@ PrefabInstance:
       propertyPath: mainDollyScipt
       value: 
       objectReference: {fileID: 1613626212}
+    - target: {fileID: 8319210976582233803, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
+      propertyPath: bc
+      value: 
+      objectReference: {fileID: 778578225}
     - target: {fileID: 8319210976582233805, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.0000014274524
@@ -12509,6 +12915,10 @@ PrefabInstance:
       propertyPath: movement
       value: 
       objectReference: {fileID: 1008551796}
+    - target: {fileID: 4224152392931230740, guid: bfc2ec5f2b42fbf45ab970c5d6592606, type: 3}
+      propertyPath: weaponFunc
+      value: 
+      objectReference: {fileID: 627019877}
     - target: {fileID: 4224152392931230741, guid: bfc2ec5f2b42fbf45ab970c5d6592606, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -12891,3 +13301,75 @@ Transform:
   m_Father: {fileID: 1053932857}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7158893393060876727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7158893393060876730}
+  - component: {fileID: 7158893393060876729}
+  - component: {fileID: 7158893393060876731}
+  - component: {fileID: 7158893393060876728}
+  m_Layer: 0
+  m_Name: Path Switcher
+  m_TagString: CameraTrigger
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &7158893393060876728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7158893393060876727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa816557955852645be45338c7f565e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainDollyScipt: {fileID: 1613626212}
+  newPath: {fileID: 1981438982}
+--- !u!65 &7158893393060876729
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7158893393060876727}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 150, y: 150, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &7158893393060876730
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7158893393060876727}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 44.2, y: -12.7, z: -956}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 41641045}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &7158893393060876731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7158893393060876727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40423866f10f76f40a5634acde433335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

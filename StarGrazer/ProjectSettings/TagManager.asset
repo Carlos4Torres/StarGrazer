@@ -12,6 +12,8 @@ TagManager:
   - BombBullet
   - PlayerHealth
   - Enemy Model
+  - Gameplay Plane
+  - Ghost
   layers:
   - Default
   - TransparentFX
