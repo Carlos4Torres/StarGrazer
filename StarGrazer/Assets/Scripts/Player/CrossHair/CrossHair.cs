@@ -8,7 +8,6 @@ public class CrossHair : MonoBehaviour
     //public bool mouseAndKeyboard;
     [Range(0.1f, 10.0f)]
     public float controllerSensitivity;
-    public bool build;
 
     private bool controller;
 
@@ -38,21 +37,24 @@ public class CrossHair : MonoBehaviour
     private void Start()
     {
         Cursor.visible = false;
-        if (screenRect.Contains(Input.mousePosition) && !build)
-        {
-            transform.position = Input.mousePosition;
-            controller = false;
-        }
-        else
-            controller = true;
     }
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.M) && controller)
+            controller = false;
+        else if (Input.GetKeyDown(KeyCode.M) && !controller)
+            controller = true;
+
         //if Escape Key Press, Cursor will show
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Cursor.visible = true;
+        }
+
+        if (screenRect.Contains(Input.mousePosition) && !controller)
+        {
+            transform.position = Input.mousePosition;
         }
 
         if (controller)
