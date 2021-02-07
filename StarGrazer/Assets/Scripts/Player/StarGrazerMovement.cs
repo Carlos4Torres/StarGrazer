@@ -24,7 +24,7 @@ public class StarGrazerMovement : MonoBehaviour
 
     public GameObject model;
     public AudioSource deathSound;
-    private bool focusing = false;
+    //private bool focusing = false;
     public PlayerHealth playerHealth;
 
     void OnEnable()

@@ -84,7 +84,7 @@ public class StarGrazerRotation : MonoBehaviour
 
     IEnumerator SlowDownRotation()
     {
-        rotateSpeed = .85f;
+        rotateSpeed = 0;
         yield return new WaitForSeconds(3);
         rotateSpeed = 50;
         changed = false;

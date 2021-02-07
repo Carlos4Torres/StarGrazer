@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class CameraAnimator : MonoBehaviour
 {
@@ -22,9 +23,38 @@ public class CameraAnimator : MonoBehaviour
 
     private Animator animator;
 
-    private void Start()
+    private void Awake()
     {
         animator = mainCamera.GetComponent<Animator>();
+
+        switch(SceneManager.GetActiveScene().name)
+        {
+            case "(WB) Level One":
+                animator.SetBool("HORIZONTAL", true);
+                break;
+            case "Level One":
+                print("trie");
+                animator.SetBool("HORIZONTAL", true);
+                break;
+            case "(WB) Level Two":
+                animator.SetBool("FULL", true);
+                break;
+            case "Level Two":
+                animator.SetBool("FULL", true);
+                break;
+            case "(WB) Level 3":
+                animator.SetBool("VERTICAL", true);
+                break;
+            case "Level 3":
+                animator.SetBool("VERTICAL", true);
+                break;
+            case "(WB) Level 4":
+                animator.SetBool("HORIZONTAL", true);
+                break;
+            case "Level 4":
+                animator.SetBool("HORIZONTAL", true);
+                break;
+        }
     }
 
     public void OnTriggerEnter(Collider other)
@@ -38,19 +68,52 @@ public class CameraAnimator : MonoBehaviour
             {
                 case TriggerDirection.FULL:
                     player.state = StarGrazerMovement.movementState.FULL;
-                    animator.SetInteger("state", 1);
+                    if (animator.GetBool("VERTICAL"))
+                    {
+                        animator.SetBool("FULL", true);
+                        animator.SetInteger("state", 2);
+                        StartCoroutine(TurnOffLast("VERTICAL"));
+                    }
+                    else if (animator.GetBool("HORIZONTAL"))
+                    {
+                        animator.SetBool("FULL", true);
+                        animator.SetInteger("state", 5);
+                        StartCoroutine(TurnOffLast("HORIZONTAL"));
+                    }
                     break;
                 
                 case TriggerDirection.HORIZONTAL:
                     player.state = StarGrazerMovement.movementState.HORIZONTAL;
-                    animator.SetInteger("state", 2);
+                    if (animator.GetBool("FULL"))
+                    {
+                        animator.SetBool("HORIZONTAL", true);
+                        animator.SetInteger("state", 3);
+                        StartCoroutine(TurnOffLast("FULL"));
+                    }
+                    //else if (animator.GetBool("START"))
+                    //{
+                    //    animator.SetBool("HORIZONTAL", true);
+                    //    animator.SetInteger("state", 4);
+                    //    StartCoroutine(TurnOffLast("START"));
+                    //}
                     break;
 
                 case TriggerDirection.VERTICAL:
                     player.state = StarGrazerMovement.movementState.VERTICAL;
-                    animator.SetInteger("state", 3);
+                    if (animator.GetBool("HORIZONTAL"))
+                    {
+                        animator.SetBool("VERTICAL", true);
+                        animator.SetInteger("state", 1);
+                        StartCoroutine(TurnOffLast("HORIZONTAL"));
+                    }
                     break;
             }
         }
+    }
+
+    IEnumerator TurnOffLast(string state)
+    {
+        yield return new WaitForSeconds(3);
+        animator.SetBool(state, false);
     }
 }

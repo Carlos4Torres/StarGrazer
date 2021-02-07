@@ -4031,9 +4031,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8319210976545344821, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
   m_PrefabInstance: {fileID: 509635563}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &540114966 stripped
+--- !u!82 &554922213 stripped
 AudioSource:
-  m_CorrespondingSourceObject: {fileID: 2691071566174922545, guid: 06d95ac4b5dc0a4498bd1d3d4a8310c6, type: 3}
+  m_CorrespondingSourceObject: {fileID: 554922213, guid: 06d95ac4b5dc0a4498bd1d3d4a8310c6, type: 3}
   m_PrefabInstance: {fileID: 302006066}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &556245871
@@ -7300,11 +7300,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8319210976545344821, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
   m_PrefabInstance: {fileID: 824851727}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &870413576 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 2691071566384591987, guid: 06d95ac4b5dc0a4498bd1d3d4a8310c6, type: 3}
-  m_PrefabInstance: {fileID: 302006066}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &908786286
 GameObject:
@@ -11544,7 +11539,7 @@ PrefabInstance:
     - target: {fileID: 689015016306477815, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: deathSound
       value: 
-      objectReference: {fileID: 540114966}
+      objectReference: {fileID: 554922213}
     - target: {fileID: 689015017433729281, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: crosshair
       value: 
@@ -11552,7 +11547,7 @@ PrefabInstance:
     - target: {fileID: 689015017433729343, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: deathAudio
       value: 
-      objectReference: {fileID: 870413576}
+      objectReference: {fileID: 554922213}
     - target: {fileID: 689015017433729343, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: healthUI
       value: 

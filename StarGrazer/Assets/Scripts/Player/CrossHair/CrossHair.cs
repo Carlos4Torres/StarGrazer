@@ -15,6 +15,7 @@ public class CrossHair : MonoBehaviour
     Vector3 move;
     Rect screenRect = new Rect(0, 0, Screen.width, Screen.height);
 
+    //Next 3 functions are for input controls
     void OnEnable()
     {
         controls.Gameplay.Enable();
@@ -38,9 +39,11 @@ public class CrossHair : MonoBehaviour
     {
         Cursor.visible = false;
     }
+
     // Update is called once per frame
     void Update()
     {
+        //Toggle mouse/controller control using M key
         if (Input.GetKeyDown(KeyCode.M) && controller)
             controller = false;
         else if (Input.GetKeyDown(KeyCode.M) && !controller)
@@ -52,11 +55,13 @@ public class CrossHair : MonoBehaviour
             Cursor.visible = true;
         }
 
+        //if the mouse is on screen and mouse support is on, track crosshair to mouse
         if (screenRect.Contains(Input.mousePosition) && !controller)
         {
             transform.position = Input.mousePosition;
         }
 
+        //if controller input is active, use input controls
         if (controller)
             transform.position += move * controllerSensitivity;
         else

@@ -11,8 +11,8 @@ public class PauseMenuController : MonoBehaviour
     public Canvas PauseMenu;
     public bool isPaused;
     [SerializeField] bool keyDown;
-    [SerializeField] int maxIndex = 1;
-    [SerializeField] int minIndex = 4;
+    //[SerializeField] int maxIndex = 1;
+    //[SerializeField] int minIndex = 4;
 
     public Weapon weaponFunc;
 
