@@ -136,7 +136,7 @@ public class StarGrazerMovement : MonoBehaviour
         if (other.CompareTag("Enemy Model") && !playerHealth.respawning)
         {
             playerHealth.respawning = true;
-            playerHealth.Damage(playerHealth.health);
+            playerHealth.Damage(1);
         }
     }
 
