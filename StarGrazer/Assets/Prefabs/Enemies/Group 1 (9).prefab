@@ -43,6 +43,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 367633112155143321}
     m_Modifications:
+    - target: {fileID: 391213904450707809, guid: 1a2f31271f77e80498a7a902eb16c4da, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6414416409364205168, guid: 1a2f31271f77e80498a7a902eb16c4da, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -165,6 +169,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 367633112155143321}
     m_Modifications:
+    - target: {fileID: 391213904450707809, guid: 1a2f31271f77e80498a7a902eb16c4da, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6414416409364205168, guid: 1a2f31271f77e80498a7a902eb16c4da, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -287,6 +295,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 367633112155143321}
     m_Modifications:
+    - target: {fileID: 391213904450707809, guid: 1a2f31271f77e80498a7a902eb16c4da, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6414416409364205168, guid: 1a2f31271f77e80498a7a902eb16c4da, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -409,6 +421,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 367633112155143321}
     m_Modifications:
+    - target: {fileID: 391213904450707809, guid: 1a2f31271f77e80498a7a902eb16c4da, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6414416409364205168, guid: 1a2f31271f77e80498a7a902eb16c4da, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -531,6 +547,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 367633112155143321}
     m_Modifications:
+    - target: {fileID: 391213904450707809, guid: 1a2f31271f77e80498a7a902eb16c4da, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6414416409364205168, guid: 1a2f31271f77e80498a7a902eb16c4da, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -653,6 +673,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 367633112155143321}
     m_Modifications:
+    - target: {fileID: 391213904450707809, guid: 1a2f31271f77e80498a7a902eb16c4da, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6414416409364205168, guid: 1a2f31271f77e80498a7a902eb16c4da, type: 3}
       propertyPath: m_Name
       value: Enemy

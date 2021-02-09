@@ -90,19 +90,18 @@ public class CameraAnimator : MonoBehaviour
                         animator.SetInteger("state", 3);
                         StartCoroutine(TurnOffLast("FULL"));
                     }
-                    else if (animator.GetBool("VERTICAL"))
-                    {
-                        animator.SetBool("HORIZONTAL", true);
-                        animator.SetInteger("state", 4);
-                        StartCoroutine(TurnOffLast("VERTICAL"));
-                    }
+                    //else if (animator.GetBool("START"))
+                    //{
+                    //    animator.SetBool("HORIZONTAL", true);
+                    //    animator.SetInteger("state", 4);
+                    //    StartCoroutine(TurnOffLast("START"));
+                    //}
                     break;
 
                 case TriggerDirection.VERTICAL:
                     player.state = StarGrazerMovement.movementState.VERTICAL;
                     if (animator.GetBool("HORIZONTAL"))
                     {
-                        print("did");
                         animator.SetBool("VERTICAL", true);
                         animator.SetInteger("state", 1);
                         StartCoroutine(TurnOffLast("HORIZONTAL"));
