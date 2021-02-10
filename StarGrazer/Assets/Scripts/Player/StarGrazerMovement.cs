@@ -23,6 +23,7 @@ public class StarGrazerMovement : MonoBehaviour
     public bool resetting = false;
 
     public GameObject model;
+    public SpriteRenderer focusingSprite;
     public AudioSource deathSound;
     //private bool focusing = false;
     public PlayerHealth playerHealth;
@@ -119,8 +120,15 @@ public class StarGrazerMovement : MonoBehaviour
     void Focus(bool focusing)
     {
         if (focusing)
+        {
             speed = _SPEED / 2;
-        else speed = _SPEED;
+            focusingSprite.enabled = true;
+        }
+        else
+        {   
+            speed = _SPEED;
+            focusingSprite.enabled = false;
+        }
     }
 
     //public void OnCollisionEnter(Collision collision)

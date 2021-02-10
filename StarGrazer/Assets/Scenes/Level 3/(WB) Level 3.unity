@@ -7530,6 +7530,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1138492829}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!212 &1155321764 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8321467685463954577, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
+  m_PrefabInstance: {fileID: 1613626211}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1246949612
 GameObject:
   m_ObjectHideFlags: 0
@@ -11212,6 +11217,10 @@ PrefabInstance:
       propertyPath: deathSound
       value: 
       objectReference: {fileID: 2086583396}
+    - target: {fileID: 689015016306477815, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
+      propertyPath: focusingSprite
+      value: 
+      objectReference: {fileID: 1155321764}
     - target: {fileID: 689015017433729281, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: crosshair
       value: 
@@ -11260,6 +11269,26 @@ PrefabInstance:
       propertyPath: specialImages.Array.data[3]
       value: 
       objectReference: {fileID: 2800000, guid: 1987fc06aa779724a848d96766882c5e, type: 3}
+    - target: {fileID: 8321467685463954577, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1e4f999fcb261ad4abacd69057f8a6c0, type: 3}
+    - target: {fileID: 8321467685463954577, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189964208582184344, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189964208582184344, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189964208582184344, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
 --- !u!114 &1613626212 stripped
