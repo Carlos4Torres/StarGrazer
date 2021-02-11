@@ -9,13 +9,15 @@ public class PathSwitchTrigger : MonoBehaviour
     public CinemachineDollyCart mainDollyScipt;
     public CinemachineSmoothPath newPath;
 
+    public float insertPoint = 0;
+
     public void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
         {
             mainDollyScipt.m_Path = newPath;
 
-            mainDollyScipt.m_Position = 0;
+            mainDollyScipt.m_Position = insertPoint;
 
             Destroy(this.gameObject);
         }
