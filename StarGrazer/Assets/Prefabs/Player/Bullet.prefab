@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 940720147423477067}
   - component: {fileID: 5309986300567702567}
   - component: {fileID: 752101520103115474}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: New Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 4635193171472097773}
   - component: {fileID: 4635193171472097761}
   - component: {fileID: -4117122631734033769}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -224,3 +224,4 @@ MonoBehaviour:
   speed: 50
   rb: {fileID: 4635193171472097761}
   lifetime: 3
+  enemyDamage: 10

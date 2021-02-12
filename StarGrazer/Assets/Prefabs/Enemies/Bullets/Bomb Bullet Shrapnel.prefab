@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1066330511466267104}
   - component: {fileID: 2737207166188318629}
   - component: {fileID: 4431827606582362475}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: New Sprite (1)
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 4635193171472097774}
   - component: {fileID: 4635193171472097773}
   - component: {fileID: 8247754906676345721}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bomb Bullet Shrapnel
   m_TagString: BombBullet
   m_Icon: {fileID: 0}
@@ -207,6 +207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startspeed: 0.3
   speeddepletion: 0.004
+  timer: 180
 --- !u!1 &7531675956679645880
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,7 +219,7 @@ GameObject:
   - component: {fileID: 6262505831006804721}
   - component: {fileID: 4873026658324303227}
   - component: {fileID: 8577717311562616560}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: New Sprite
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
