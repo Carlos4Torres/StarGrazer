@@ -89,12 +89,35 @@ public class BossController : MonoBehaviour
         //checks for which boss it is so I can just reuse this script for all of the bosses
         if (boss == 1)
         {
-            //checks the phase of the boss
+            //checks the phase of the boss/
             if (phases == 5) { pattern = shootingPattern.HUNGER_GAMES; timertop = 20; }
             if (phases == 4) { pattern = shootingPattern.HOTHEAD; timertop = 20; timertop2 = 120; }
             if (phases == 3) { pattern = shootingPattern.WHAMMY_POP; timertop = 20; timertop2 = 180; rise = -20; }
             if (phases == 2) { pattern = shootingPattern.THIS_IS_VIOLENCE_NOW; timertop = 240; }
             if (phases == 1) { pattern = shootingPattern.GUILLOTINE; timertop = 40; timertop2 = 300; }
+        }
+        else if (boss == 3)
+        {
+           
+            //Change the position on the "Gameplay Plane" object script to 2800 for easy testing the boss section only
+            
+            //just copy pasted this part in bc it froze without it 
+           if (phases == 5) { pattern = shootingPattern.HUNGER_GAMES; timertop = 20; }
+           if (phases == 4) { pattern = shootingPattern.HOTHEAD; timertop = 20; timertop2 = 120; }
+           if (phases == 3) { pattern = shootingPattern.WHAMMY_POP; timertop = 20; timertop2 = 180; rise = -20; }
+           if (phases == 2) { pattern = shootingPattern.THIS_IS_VIOLENCE_NOW; timertop = 240; }
+           if (phases == 1) { pattern = shootingPattern.GUILLOTINE; timertop = 40; timertop2 = 300; }
+
+
+           //Used to stop the boss/player once they reach the end of the boss tunnel. Might also be useful to use this code in level 1 to prevent the teleport issue. 
+           //Once you put in whatever code you want to use to signifiy the phase two/retreating camera section, I can come back in and make the player & boss start going backwards.
+           if (localDollyScript.m_Position > localDollyScript.m_Path.PathLength - 150)
+           {
+               localDollyScript.m_Speed = Mathf.Lerp(localDollyScript.m_Speed, 0, moveDampen);
+               mainDollyScipt.m_Speed = Mathf.Lerp(mainDollyScipt.m_Speed, 0, moveDampen);
+    
+               moveDampen += 0.007f * Time.deltaTime;
+           }
         }
 
 
