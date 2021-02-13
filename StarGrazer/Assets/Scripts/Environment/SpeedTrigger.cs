@@ -28,11 +28,11 @@ public class SpeedTrigger : MonoBehaviour
             switch (changeType)
             {
                 case SpeedChange.SLOWING:
-                        mainDolly.m_Speed = Mathf.Lerp(mainDolly.m_Speed, defaultSPEED, moveDampen);
+                        mainDolly.m_Speed = Mathf.Lerp(mainDolly.m_Speed, newSpeed, moveDampen);
                         moveDampen += 0.007f * Time.deltaTime;
-                    if( mainDolly.m_Speed - defaultSPEED < 1)
+                    if( mainDolly.m_Speed - newSpeed < 1)
                     {
-                        mainDolly.m_Speed = defaultSPEED;
+                        mainDolly.m_Speed = newSpeed;
                         Destroy(this.gameObject);
                     }
                     break;
