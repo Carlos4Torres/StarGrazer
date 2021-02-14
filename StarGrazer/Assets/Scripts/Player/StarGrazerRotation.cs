@@ -22,12 +22,14 @@ public class StarGrazerRotation : MonoBehaviour
     [Header("Direction")]
     public TriggerDirection direction;
 
+    public Transform gameplayPlane;
     public Image crosshair;
 
     //private float rotationX = 0;
     //private float rotationY = 0;
     private Camera cam;
     private StarGrazerMovement movement;
+    private bool rotationBack;
 
     PlayerControls controls;
     Vector2 move;
@@ -49,6 +51,12 @@ public class StarGrazerRotation : MonoBehaviour
         if (changed)
             StartCoroutine(SlowDownRotation());
 
+        if (rotationBack)
+        {
+            rotateSpeed = Mathf.Lerp(rotateSpeed, 50, Time.deltaTime * 1.25f);
+            rotationBack = false;
+        }
+
         Vector3 screenPos = cam.WorldToScreenPoint(transform.position);
         Vector3 worldPosCross = cam.ScreenToWorldPoint(crosshair.transform.position);
         Vector3 screenPosCross = crosshair.rectTransform.position;
@@ -63,20 +71,28 @@ public class StarGrazerRotation : MonoBehaviour
 
                 if (Physics.Raycast(ray, out hit) && hit.transform.tag != "Player")
                 {
-                    //print(hit.point);
                     Vector3 dir = (hit.point - transform.position);
-                    toAngle = Quaternion.LookRotation(dir);
+                    if (!changed)
+                        toAngle = Quaternion.LookRotation(dir);
+                    else
+                        toAngle = Quaternion.LookRotation(gameplayPlane.forward);
                     transform.rotation = Quaternion.Lerp(transform.rotation, toAngle, Time.deltaTime * rotateSpeed);
                 }
                 break;
 
             case StarGrazerMovement.movementState.HORIZONTAL:
-                toAngle = Quaternion.Euler(-angle, 0, 0);
+                if (!changed)
+                    toAngle = Quaternion.Euler(-angle, 0, 0);
+                else
+                    toAngle = Quaternion.LookRotation(gameplayPlane.forward);
                 transform.localRotation = Quaternion.Lerp(transform.localRotation, toAngle, Time.deltaTime * rotateSpeed);
                 break;
 
             case StarGrazerMovement.movementState.VERTICAL:
-                toAngle = Quaternion.Euler(0, -angle + 90, 0);
+                if (!changed)
+                    toAngle = Quaternion.Euler(0, -angle + 90, 0);
+                else
+                    toAngle = Quaternion.LookRotation(-gameplayPlane.right);
                 transform.localRotation = Quaternion.Lerp(transform.localRotation, toAngle, Time.deltaTime * rotateSpeed);
                 break;
         }
@@ -84,10 +100,11 @@ public class StarGrazerRotation : MonoBehaviour
 
     IEnumerator SlowDownRotation()
     {
-        rotateSpeed = 0;
+        rotateSpeed = 2;
         yield return new WaitForSeconds(3);
-        rotateSpeed = 50;
+        //rotateSpeed = 50;
         changed = false;
+        rotationBack = true;
     }
 
     //void Rotater()

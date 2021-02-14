@@ -16610,6 +16610,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 775636658}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &779006152 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
+  m_PrefabInstance: {fileID: 4094367604439002655}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &792739945
 GameObject:
   m_ObjectHideFlags: 0
@@ -39852,6 +39857,10 @@ PrefabInstance:
       propertyPath: crosshair
       value: 
       objectReference: {fileID: 1156797623}
+    - target: {fileID: 689015017433729281, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
+      propertyPath: gameplayPlane
+      value: 
+      objectReference: {fileID: 779006152}
     - target: {fileID: 689015017433729283, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_TagString
       value: PlayerHealth
