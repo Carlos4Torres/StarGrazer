@@ -19,6 +19,34 @@ public class BossController : MonoBehaviour
         WHAMMY_POP,
         THIS_IS_VIOLENCE_NOW,
         GUILLOTINE,
+        //Boss 2
+        THE_FEVER,
+        STREAKY,
+        FULL_MOON,
+        CUT_THROAT,
+        THE_FEAR,
+        //Boss 3
+        LIL_BOY,
+        DEATH_HEATED,
+        SYSTEM_BLOWER,
+        HACKER,
+        EIGHT_OH_EIGHT,
+        ARTIFICIAL_DEATH,
+        //Boss 4
+        INANIMATE_SENSATION,
+        HAHAHA,
+        THRU_THE_WALLS,
+        LOST_BOYS,
+        BIRDS,
+        HUSTLE_BONES,
+        //Boss 5
+        ALL_MY_LIFE,
+        MORE_THAN_THE_FAIRY,
+        CENTURIES_OF_DAMN,
+        GIVING_BAD_PEOPLE_GOOD_IDEAS,
+        TWO_HEAVENS,
+        BEYOND_ALIVE,
+        ON_GP
     }
 
     [Header("Shooting")]
@@ -47,12 +75,15 @@ public class BossController : MonoBehaviour
     public int timertop;
     public int timer2;
     public int timertop2;
+    public int phasetimer;
 
     //attack specific variables
     public GameObject bomb;
     public bool burst;
     public float rise = -20;
     public int BladePos;
+
+    public float randval;
 
     public int secondstowait;
     //-----------------------------------------------------------------------------------------------------------------------------------------
@@ -66,8 +97,11 @@ public class BossController : MonoBehaviour
 
     void Update()
     {
+        //constantly decreases timer that controls the pause between phases
+        if (phasetimer > 0) { phasetimer--; }
+
         //if the boss's health is 0, but they have more than 1 phase left, transitions to the next phase
-        if ((health <= 0) && (phases > 0)) { phases--; health = health_per_phase; }
+        if ((health <= 0) && (phases > 0)) { phasetimer = 500;  phases--; health = health_per_phase; }
 
         //if the boss's health is 0 and they have no more phases left, kills the boss.
         if ((health <= 0) && (phases == 0)) { Destroy(this.gameObject); }
@@ -83,7 +117,7 @@ public class BossController : MonoBehaviour
         }
 
 
-        if (state == 2) { timer--; timer2--; if (timer <= 0) { Attack(); timer = timertop; } }
+        if (state == 2) { timer--; timer2--; if ((timer <= 0) && (phasetimer <= 0)) { Attack(); timer = timertop; } }
 
 
         //checks for which boss it is so I can just reuse this script for all of the bosses
@@ -99,11 +133,11 @@ public class BossController : MonoBehaviour
         else if( boss == 2)
         {
             //just copy pasted this part in bc it froze without it 
-            if (phases == 5) { pattern = shootingPattern.HUNGER_GAMES; timertop = 20; }
-            if (phases == 4) { pattern = shootingPattern.HOTHEAD; timertop = 20; timertop2 = 120; }
-            if (phases == 3) { pattern = shootingPattern.WHAMMY_POP; timertop = 20; timertop2 = 180; rise = -20; }
-            if (phases == 2) { pattern = shootingPattern.THIS_IS_VIOLENCE_NOW; timertop = 240; }
-            if (phases == 1) { pattern = shootingPattern.GUILLOTINE; timertop = 40; timertop2 = 300; }
+            if (phases == 5) { pattern = shootingPattern.THE_FEVER; timertop = 100; }
+            if (phases == 4) { pattern = shootingPattern.STREAKY; timertop = 70;}
+            if (phases == 3) { pattern = shootingPattern.FULL_MOON; timertop = 160; }
+            if (phases == 2) { pattern = shootingPattern.CUT_THROAT; timertop = 100; }
+            if (phases == 1) { pattern = shootingPattern.THE_FEAR; timertop = 100; }
         }
         else if (boss == 3)
         {
@@ -111,11 +145,12 @@ public class BossController : MonoBehaviour
             //Change the position on the "Gameplay Plane" object script to 2800 for easy testing the boss section only
 
             //just copy pasted this part in bc it froze without it 
-            if (phases == 5) { pattern = shootingPattern.HUNGER_GAMES; timertop = 20; }
-            if (phases == 4) { pattern = shootingPattern.HOTHEAD; timertop = 20; timertop2 = 120; }
-            if (phases == 3) { pattern = shootingPattern.WHAMMY_POP; timertop = 20; timertop2 = 180; rise = -20; }
-            if (phases == 2) { pattern = shootingPattern.THIS_IS_VIOLENCE_NOW; timertop = 240; }
-            if (phases == 1) { pattern = shootingPattern.GUILLOTINE; timertop = 40; timertop2 = 300; }
+            if (phases == 6) { pattern = shootingPattern.LIL_BOY; timertop = 20; }
+            if (phases == 5) { pattern = shootingPattern.DEATH_HEATED; timertop = 20; timertop2 = 120; }
+            if (phases == 4) { pattern = shootingPattern.SYSTEM_BLOWER; timertop = 20; timertop2 = 180; rise = -20; }
+            if (phases == 3) { pattern = shootingPattern.HACKER; timertop = 240; }
+            if (phases == 2) { pattern = shootingPattern.EIGHT_OH_EIGHT; timertop = 40; timertop2 = 300; }
+            if (phases == 1) { pattern = shootingPattern.EIGHT_OH_EIGHT; timertop = 40; timertop2 = 300; }
 
 
             //Used to stop the boss/player once they reach the end of the boss tunnel. Might also be useful to use this code in level 1 to prevent the teleport issue. 
@@ -127,6 +162,16 @@ public class BossController : MonoBehaviour
     
                moveDampen += 0.007f * Time.deltaTime;
            }
+        }
+
+        else if (boss == 4)
+        {
+            //just copy pasted this part in bc it froze without it 
+            if (phases == 5) { pattern = shootingPattern.INANIMATE_SENSATION; timertop = 100; }
+            if (phases == 4) { pattern = shootingPattern.HAHAHA; timertop = 150; }
+            if (phases == 3) { pattern = shootingPattern.BIRDS; timertop = 100; }
+            if (phases == 2) { pattern = shootingPattern.THRU_THE_WALLS; timertop = 100; }
+            if (phases == 1) { pattern = shootingPattern.HUSTLE_BONES; timertop = 50; }
         }
 
 
@@ -174,6 +219,8 @@ public class BossController : MonoBehaviour
 
     public void Attack()
     {
+        //BOSS 1
+
         if (pattern == shootingPattern.HUNGER_GAMES) {
             bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, 0, Random.Range(-1f, -5f));
             bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[0], colors[1], 2.0f, 0, 0, Random.Range(-1f, -5f));
@@ -222,9 +269,123 @@ public class BossController : MonoBehaviour
                 timer2 = timertop2;
             }
         }
-    }
-        
 
+        //BOSS 2
+
+        if (pattern == shootingPattern.THE_FEVER)
+        {
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -20, 17, 0, 0, 0, BulletSprites[7], colors[0], 0.8f, 0, 0, -20);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -15, 17, 0, 0, 0, BulletSprites[7], colors[0], 0.8f, 0, 0, -15);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -10, 17, 0, 0, 0, BulletSprites[7], colors[0], 0.8f, 0, 0, -20);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -5, 17, 0, 0, 0, BulletSprites[7], colors[0], 0.8f, 0, 0, -15);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 17, 0, 0, 0, BulletSprites[7], colors[0], 0.8f, 0, 0, -20);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 5, 17, 0, 0, 0, BulletSprites[7], colors[0], 0.8f, 0, 0, -15);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 10, 17, 0, 0, 0, BulletSprites[7], colors[0], 0.8f, 0, 0, -20);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 15, 17, 0, 0, 0, BulletSprites[7], colors[0], 0.8f, 0, 0, -15);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -20, 20, 0, 0, 0, BulletSprites[7], colors[0], 0.8f, 0, 0, -20);
+
+        }
+
+        if (pattern == shootingPattern.STREAKY)
+        {
+            randval = Random.Range(-20f, 20f);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[1], 0.8f, 0, 0, -30);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[1], 0.8f, 0, 0, -25);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[1], 0.8f, 0, 0, -20);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[1], 0.8f, 0, 0, -15);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[1], 0.8f, 0, 0, -10);
+
+        }
+
+        if (pattern == shootingPattern.FULL_MOON)
+        {
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[0], colors[3], 13.0f, 0, 0, -20);
+        }
+
+        if (pattern == shootingPattern.CUT_THROAT)
+        {
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -20, 17, 0, 0, 0, BulletSprites[7], colors[2], 0.8f, 0, 0, Random.Range(-17f, -25f));
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -15, 17, 0, 0, 0, BulletSprites[7], colors[2], 0.8f, 0, 0, Random.Range(-17f, -25f));
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -10, 17, 0, 0, 0, BulletSprites[7], colors[2], 0.8f, 0, 0, Random.Range(-17f, -25f));
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -5, 17, 0, 0, 0, BulletSprites[7], colors[2], 0.8f, 0, 0, Random.Range(-17f, -25f));
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 17, 0, 0, 0, BulletSprites[7], colors[2], 0.8f, 0, 0, Random.Range(-17f, -25f));
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 5, 17, 0, 0, 0, BulletSprites[7], colors[2], 0.8f, 0, 0, Random.Range(-17f, -25f));
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 10, 17, 0, 0, 0, BulletSprites[7], colors[2], 0.8f, 0, 0, Random.Range(-17f, -25f));
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 15, 17, 0, 0, 0, BulletSprites[7], colors[2], 0.8f, 0, 0, Random.Range(-17f, -25f));
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -20, 20, 0, 0, 0, BulletSprites[7], colors[2], 0.8f, 0, 0, Random.Range(-17f, -25f));
+        }
+
+        if (pattern == shootingPattern.THE_FEAR)
+        {
+            randval = Random.Range(-20f, 20f);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[4], 0.8f, 0, 0, -30);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[4], 0.8f, 0, 0, -25);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[4], 0.8f, 0, 0, -20);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[4], 0.8f, 0, 0, -15);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[4], 0.8f, 0, 0, -10);
+
+            randval = Random.Range(-20f, 20f);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[4], 0.8f, 0, 0, -30);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[4], 0.8f, 0, 0, -25);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[4], 0.8f, 0, 0, -20);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[4], 0.8f, 0, 0, -15);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[4], 0.8f, 0, 0, -10);
+        }
+
+
+        //Boss 4
+
+
+        if (pattern == shootingPattern.INANIMATE_SENSATION)
+        {
+            randval = Random.Range(-20f, 20f);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, 5, -30);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, 5, -25);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, 5, -20);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, 5, -15);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, 5, -10);
+
+            randval = Random.Range(-20f, 20f);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, -5, -30);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, -5, -25);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, -5, -20);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, -5, -15);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, -5, -10);
+        }
+
+        if (pattern == shootingPattern.HAHAHA)
+        {
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[3], colors[0], 3.0f, 0, 0, -20);
+        }
+
+        if (pattern == shootingPattern.BIRDS)
+        {
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, 15, 0);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, -15, 0);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, 0, 15);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, 0, -15);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, 15, 15);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, -15, 15);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, 15,-15);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, -15, -15);
+        }
+
+        if (pattern == shootingPattern.THRU_THE_WALLS)
+        {
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, 3, -2f);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, -3, -2f);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, 3, -2f);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, -3, -2f);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, 3, -2f);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, -3, -2f);
+        }
+
+        if (pattern == shootingPattern.HUSTLE_BONES)
+        {
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[3], colors[0], Random.Range(1.0f, 2.0f), 0, 0, Random.Range(-20f, -8f));
+        }
+
+    }
 
     IEnumerator G()
     {

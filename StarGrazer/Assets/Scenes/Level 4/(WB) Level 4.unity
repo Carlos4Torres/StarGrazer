@@ -7351,35 +7351,35 @@ PrefabInstance:
       objectReference: {fileID: 1077072403}
     - target: {fileID: 689015015764783906, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_Position
-      value: 0
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -708.4
+      value: 1225.5201
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 627.53
+      value: 1443.8916
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1709.6984
+      value: 396.52283
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.0000014643322
+      value: -0.002696735
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9999729
+      value: 0.6778016
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.007359816
+      value: 0.0024860753
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.00019895777
+      value: 0.73523575
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_RootOrder
@@ -17385,7 +17385,7 @@ MonoBehaviour:
   health: 100
   phases: 5
   dmgPerBullet: 1
-  boss: 1
+  boss: 4
   state: 0
   shotSpawn: {fileID: 8424575234006654968}
   pattern: 0
@@ -17409,19 +17409,21 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 189e5bd812ae1884683d53c275c59e90, type: 3}
   - {fileID: 21300000, guid: 79c1343c8e8329c41a5521fe14e0f24a, type: 3}
   colors:
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 1, g: 0.49003887, b: 0, a: 1}
-  - {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
-  - {r: 1, g: 0, b: 0.6199312, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 0.2784314}
+  - {r: 1, g: 1, b: 1, a: 1}
   mainDollyScipt: {fileID: 902832714}
   timer: 0
   timertop: 0
   timer2: 0
   timertop2: 0
+  phasetimer: 0
   bomb: {fileID: 4635193171472097772, guid: a7a3141339d59dc46aaf9d59b0938d1a, type: 3}
   burst: 0
   rise: 0
   BladePos: 0
+  randval: 0
   secondstowait: 0
 --- !u!1 &1497734590580641076
 GameObject:

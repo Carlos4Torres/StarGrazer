@@ -11342,35 +11342,35 @@ PrefabInstance:
       objectReference: {fileID: 957427142}
     - target: {fileID: 689015015764783906, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_Position
-      value: 0
+      value: 2800
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -60.16
+      value: 54.3399
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 86.240005
+      value: 83.147736
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 432.8
+      value: -959.6136
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.49818286
+      value: -0.00005875706
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.5018106
+      value: 0.7109876
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.49818525
+      value: -0.7032046
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5018082
+      value: -0.000059407386
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_RootOrder
@@ -14401,19 +14401,21 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 189e5bd812ae1884683d53c275c59e90, type: 3}
   - {fileID: 21300000, guid: 79c1343c8e8329c41a5521fe14e0f24a, type: 3}
   colors:
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 1, g: 0.49003887, b: 0, a: 1}
-  - {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
-  - {r: 1, g: 0, b: 0.6199312, a: 1}
+  - {r: 0.119190335, g: 1, b: 0, a: 1}
+  - {r: 0.8568187, g: 1, b: 0, a: 1}
+  - {r: 0, g: 1, b: 0.87024784, a: 1}
+  - {r: 0.3620683, g: 1, b: 0, a: 1}
   mainDollyScipt: {fileID: 1613626212}
   timer: 0
   timertop: 0
   timer2: 0
   timertop2: 0
+  phasetimer: 0
   bomb: {fileID: 4635193171472097772, guid: a7a3141339d59dc46aaf9d59b0938d1a, type: 3}
   burst: 0
   rise: 0
   BladePos: 0
+  randval: 0
   secondstowait: 0
 --- !u!114 &9170483863312932892
 MonoBehaviour:

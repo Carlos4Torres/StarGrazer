@@ -2644,6 +2644,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2691071566384591987, guid: 06d95ac4b5dc0a4498bd1d3d4a8310c6, type: 3}
+      propertyPath: Mute
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2691071566384591988, guid: 06d95ac4b5dc0a4498bd1d3d4a8310c6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -11712,35 +11716,35 @@ PrefabInstance:
       objectReference: {fileID: 1381451162}
     - target: {fileID: 689015015764783906, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_Position
-      value: 0
+      value: 4300
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 243.9
+      value: -1806.3925
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18
+      value: 1302.8804
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 283.85
+      value: 1361.1349
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -7.60763e-11
+      value: -0.67329687
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000029144755
+      value: 0.008952567
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 2.2172251e-16
+      value: 0.008153598
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.73927313
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_RootOrder
@@ -15139,7 +15143,7 @@ MonoBehaviour:
   boss: 2
   state: 0
   shotSpawn: {fileID: 8424575235049973319}
-  pattern: 0
+  pattern: 5
   bc: {fileID: 1532578955}
   BulletTypes:
   - {fileID: 4635193171472097772, guid: b097a1f0bba851f48acf31fdb432bdcc, type: 3}
@@ -15160,19 +15164,22 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 189e5bd812ae1884683d53c275c59e90, type: 3}
   - {fileID: 21300000, guid: 79c1343c8e8329c41a5521fe14e0f24a, type: 3}
   colors:
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 1, g: 0.49003887, b: 0, a: 1}
-  - {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
-  - {r: 1, g: 0, b: 0.6199312, a: 1}
+  - {r: 1, g: 0.9697046, b: 0, a: 1}
+  - {r: 0.8396226, g: 0.72174656, b: 0, a: 1}
+  - {r: 0.972549, g: 0.5979311, b: 0, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 0.07058824}
   mainDollyScipt: {fileID: 1878224734}
   timer: 0
   timertop: 0
   timer2: 0
   timertop2: 0
+  phasetimer: 0
   bomb: {fileID: 4635193171472097772, guid: a7a3141339d59dc46aaf9d59b0938d1a, type: 3}
   burst: 0
   rise: 0
   BladePos: 0
+  randval: 0
   secondstowait: 0
 --- !u!4 &3705869572784296728 stripped
 Transform:
