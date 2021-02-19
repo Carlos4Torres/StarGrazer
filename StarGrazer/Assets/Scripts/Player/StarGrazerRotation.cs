@@ -22,7 +22,7 @@ public class StarGrazerRotation : MonoBehaviour
     [Header("Direction")]
     public TriggerDirection direction;
 
-    public Transform gameplayPlane;
+    public int currentScene;
     public Image crosshair;
 
     //private float rotationX = 0;
@@ -34,6 +34,7 @@ public class StarGrazerRotation : MonoBehaviour
     PlayerControls controls;
     Vector2 move;
     Vector3 point;
+    Quaternion toAngle;
 
     void Awake()
     {
@@ -51,23 +52,24 @@ public class StarGrazerRotation : MonoBehaviour
         if (changed)
             StartCoroutine(SlowDownRotation());
 
+        // Lerps rotate speed back to 50 after transition is over
         if (rotationBack)
         {
             rotateSpeed = Mathf.Lerp(rotateSpeed, 50, Time.deltaTime * 1.25f);
             rotationBack = false;
         }
 
+        // Calculates angle between StarGrazer and Crosshair
         Vector3 screenPos = cam.WorldToScreenPoint(transform.position);
-        Vector3 worldPosCross = cam.ScreenToWorldPoint(crosshair.transform.position);
         Vector3 screenPosCross = crosshair.rectTransform.position;
         float angle = Mathf.Atan2(screenPosCross.y - screenPos.y, screenPosCross.x - screenPos.x) * 180 / Mathf.PI;
 
         switch (movement.state)
         {
+            // If movement state is full, lerp to look direction from raycast
             case StarGrazerMovement.movementState.FULL:
                 RaycastHit hit;
                 var ray = Camera.main.ScreenPointToRay(screenPosCross);
-                Quaternion toAngle;
 
                 if (Physics.Raycast(ray, out hit) && hit.transform.tag != "Player")
                 {
@@ -75,36 +77,52 @@ public class StarGrazerRotation : MonoBehaviour
                     if (!changed)
                         toAngle = Quaternion.LookRotation(dir);
                     else
-                        toAngle = Quaternion.LookRotation(gameplayPlane.forward);
+                        CheckScene();
                     transform.rotation = Quaternion.Lerp(transform.rotation, toAngle, Time.deltaTime * rotateSpeed);
                 }
                 break;
 
+            // If movement state is horizontal, lerp to horizontal position and look at crosshair
             case StarGrazerMovement.movementState.HORIZONTAL:
                 if (!changed)
                     toAngle = Quaternion.Euler(-angle, 0, 0);
                 else
-                    toAngle = Quaternion.LookRotation(gameplayPlane.forward);
+                    toAngle = Quaternion.LookRotation(Vector3.forward);
                 transform.localRotation = Quaternion.Lerp(transform.localRotation, toAngle, Time.deltaTime * rotateSpeed);
                 break;
 
+            // If movement state is vertical, lerp to vertical position and look at crosshair
             case StarGrazerMovement.movementState.VERTICAL:
                 if (!changed)
                     toAngle = Quaternion.Euler(0, -angle + 90, 0);
                 else
-                    toAngle = Quaternion.LookRotation(-gameplayPlane.right);
+                    toAngle = Quaternion.LookRotation(Vector3.forward);
                 transform.localRotation = Quaternion.Lerp(transform.localRotation, toAngle, Time.deltaTime * rotateSpeed);
                 break;
         }
     }
 
+    // Slows rotation during transitions
     IEnumerator SlowDownRotation()
     {
-        rotateSpeed = 2;
+        rotateSpeed = 1.5f;
         yield return new WaitForSeconds(3);
         //rotateSpeed = 50;
         changed = false;
         rotationBack = true;
+    }
+
+    void CheckScene()
+    {
+        switch(currentScene)
+        {
+            case 1:
+                toAngle = Quaternion.LookRotation(-Vector3.right);
+                break;
+            default:
+                toAngle = Quaternion.LookRotation(Vector3.right);
+                break;
+        }
     }
 
     //void Rotater()

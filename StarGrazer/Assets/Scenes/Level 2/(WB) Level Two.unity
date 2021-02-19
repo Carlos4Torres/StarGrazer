@@ -11782,6 +11782,10 @@ PrefabInstance:
       propertyPath: gameplayPlane
       value: 
       objectReference: {fileID: 1673145273}
+    - target: {fileID: 689015017433729281, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
+      propertyPath: currentScene
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 689015017433729283, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_Layer
       value: 2
