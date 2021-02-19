@@ -131,30 +131,14 @@ public class StarGrazerMovement : MonoBehaviour
         }
     }
 
-    //public void OnCollisionEnter(Collision collision)
-    //{
-    //    if(collision.collider.CompareTag("Enemy") || (collision.collider.CompareTag("Boss") || collision.collider.CompareTag("Enemy Model")))
-    //    {
-    //        StartCoroutine(playerHealth.Respawn());
-    //    }
-    //}
-
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy Model") && !playerHealth.respawning)
+        if ((other.CompareTag("Enemy Model")  || other.CompareTag("Ghost")) && !playerHealth.flickering && !playerHealth.respawning)
         {
-            playerHealth.respawning = true;
             playerHealth.Damage(1);
+            if (!playerHealth.respawning) StartCoroutine(playerHealth.Flicker());
         }
     }
-
-    // IEnumerator DestroyModel()
-    // {
-    //     deathSound.Play();
-    //     Destroy(model); 
-    //     yield return new WaitForSeconds(5);
-    //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    // }
 
     [Header("Full Clamp Values")]
     [Range(0.0f, 1f)] public float xMinFull;
@@ -173,5 +157,22 @@ public class StarGrazerMovement : MonoBehaviour
     [Range(0.0f, 1f)] public float xMaxHorz;
     [Range(0.0f, 1f)] public float yMinHorz;
     [Range(0.0f, 1f)] public float yMaxHorz;
+
+
+    //public void OnCollisionEnter(Collision collision)
+    //{
+    //    if(collision.collider.CompareTag("Enemy") || (collision.collider.CompareTag("Boss") || collision.collider.CompareTag("Enemy Model")))
+    //    {
+    //        StartCoroutine(playerHealth.Respawn());
+    //    }
+    //}
+
+    // IEnumerator DestroyModel()
+    // {
+    //     deathSound.Play();
+    //     Destroy(model); 
+    //     yield return new WaitForSeconds(5);
+    //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    // }
 
 }

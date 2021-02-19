@@ -10,6 +10,8 @@ public class GhostActivator : MonoBehaviour
     private float moveDampen = 0;
     private bool active = false;
 
+    private float delay = 2.5f;
+
     void Update()
     {
         if(active)
@@ -19,12 +21,17 @@ public class GhostActivator : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            active = true;
-        }
+            StartCoroutine(Delay());
+        }        
     }
+
+    private IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(delay);
+        active = true;
+    }    
 }

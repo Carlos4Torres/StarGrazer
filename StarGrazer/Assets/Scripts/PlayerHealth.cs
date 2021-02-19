@@ -8,7 +8,6 @@ public class PlayerHealth : MonoBehaviour
 {
     //For archiving purposes, this script must be accompanied by a box collider on CubeGrazer in order to work properly with interaction with enemy bullets.
 
-   
     public AudioSource deathAudio;
     public GameObject model;
 
@@ -17,7 +16,7 @@ public class PlayerHealth : MonoBehaviour
     public RawImage healthUI;
     public Texture[] healthImages;
 
-    public bool respawning;
+    
 
     [Header("Lives")]
     public int lives = 3;
@@ -26,9 +25,13 @@ public class PlayerHealth : MonoBehaviour
     public GameObject crosshair;
 
     private Collider healthCollider;
-    private int respawnCycles = 10;
 
-    //Cleaned this up to be an array, only updates when damaged instead of updating every frame
+
+    public bool respawning;
+    private readonly int respawnCycles = 10;
+    
+    public bool flickering;
+    private readonly int flickerCycles = 3;
 
     public void Start()
     {
@@ -62,11 +65,15 @@ public class PlayerHealth : MonoBehaviour
                 StartCoroutine(Restart());
             }
         }
+        // else StartCoroutine(Flicker());
+        // We can put this here to give the player a bit of time to sort themselves between getting it, so they don't just lose all their health at once.
+        // THe game is pretty dang hard right now, so I think adding this snippet it would be a lot of help, but need to talk to other before fully implementing.  
     }
 
     public IEnumerator Respawn()
     {
         respawning = true;
+
         healthCollider.enabled = false;
 
         for (int i = 0; i < respawnCycles; i++)
@@ -76,11 +83,29 @@ public class PlayerHealth : MonoBehaviour
             model.SetActive(true);
             yield return new WaitForSeconds(.2f);
         }
-       
+
         health = 5;
         healthUI.texture = healthImages[health];
-        healthCollider.enabled = true;
+
         respawning = false;
+    }
+
+    //Needed for when player hits an enemy. 
+    public IEnumerator Flicker()
+    {
+        flickering = true;
+        healthCollider.enabled = false;
+
+        for (int i = 0; i < flickerCycles; i++)
+        {
+            model.SetActive(false);
+            yield return new WaitForSeconds(.2f);
+            model.SetActive(true);
+            yield return new WaitForSeconds(.2f);
+        }
+
+        healthCollider.enabled = true;
+        flickering = false;
     }
 
     public IEnumerator Restart()
