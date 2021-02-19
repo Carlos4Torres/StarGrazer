@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.UI;
 
 public class BossController : MonoBehaviour
 {
@@ -86,10 +87,16 @@ public class BossController : MonoBehaviour
     public float randval;
 
     public int secondstowait;
+
+    public RawImage m_RawImage;
+    public float alpha;
+    public Color tempcolor;
+
     //-----------------------------------------------------------------------------------------------------------------------------------------
 
     void Start()
     {
+        alpha = 0f;
         localDollyScript = GetComponent<CinemachineDollyCart>();
         state = 0;
         localDollyScript.m_Speed = 0;
@@ -97,6 +104,22 @@ public class BossController : MonoBehaviour
 
     void Update()
     {
+        //Cut Ins
+        //run this every frame to check for whether its active or not
+        //create a temporary color variable
+        tempcolor = m_RawImage.color;
+        //set the alpha of that temporary color variable based on the CIactive variable
+        tempcolor.a = alpha;
+        //apply the temporary color to the real cut in
+        m_RawImage.color = tempcolor;
+
+        //if CIactive is on, add to the alpha. If it's off, subtract.
+        if ((phasetimer > 100) && (alpha < 255f)){alpha += 1f;}
+        if ((phasetimer <= 100) && (alpha > 0f)) {alpha -= 1f;}
+
+
+
+
         //constantly decreases timer that controls the pause between phases
         if (phasetimer > 0) { phasetimer--; }
 
@@ -145,12 +168,11 @@ public class BossController : MonoBehaviour
             //Change the position on the "Gameplay Plane" object script to 2800 for easy testing the boss section only
 
             //just copy pasted this part in bc it froze without it 
-            if (phases == 6) { pattern = shootingPattern.LIL_BOY; timertop = 20; }
-            if (phases == 5) { pattern = shootingPattern.DEATH_HEATED; timertop = 20; timertop2 = 120; }
-            if (phases == 4) { pattern = shootingPattern.SYSTEM_BLOWER; timertop = 20; timertop2 = 180; rise = -20; }
-            if (phases == 3) { pattern = shootingPattern.HACKER; timertop = 240; }
-            if (phases == 2) { pattern = shootingPattern.EIGHT_OH_EIGHT; timertop = 40; timertop2 = 300; }
-            if (phases == 1) { pattern = shootingPattern.EIGHT_OH_EIGHT; timertop = 40; timertop2 = 300; }
+            if (phases == 5) { pattern = shootingPattern.LIL_BOY; timertop = 300; }
+            if (phases == 4) { pattern = shootingPattern.DEATH_HEATED; timertop = 150;}
+            if (phases == 3) { pattern = shootingPattern.SYSTEM_BLOWER; timertop = 20;}
+            if (phases == 2) { pattern = shootingPattern.HACKER; timertop = 20;}
+            if (phases == 1) { pattern = shootingPattern.ARTIFICIAL_DEATH; timertop = 60;}
 
 
             //Used to stop the boss/player once they reach the end of the boss tunnel. Might also be useful to use this code in level 1 to prevent the teleport issue. 
@@ -384,6 +406,109 @@ public class BossController : MonoBehaviour
         {
             bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[3], colors[0], Random.Range(1.0f, 2.0f), 0, 0, Random.Range(-20f, -8f));
         }
+
+        //Boss 3
+
+        if (pattern == shootingPattern.LIL_BOY)
+        {
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[9], colors[0], 0.8f, 2, 0, 0);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[9], colors[0], 0.8f, 2, 5, 5);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[9], colors[0], 0.8f, 2, 5, -5);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[9], colors[0], 0.8f, 2, -5, 5);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[9], colors[0], 0.8f, 2, -5, -5);
+
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 10, 10, 0, 0, 0, BulletSprites[9], colors[0], 0.8f, 2, 0, 0);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 10, 10, 0, 0, 0, BulletSprites[9], colors[0], 0.8f, 2, 5, 5);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 10, 10, 0, 0, 0, BulletSprites[9], colors[0], 0.8f, 2, 5, -5);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 10, 10, 0, 0, 0, BulletSprites[9], colors[0], 0.8f, 2, -5, 5);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 10, 10, 0, 0, 0, BulletSprites[9], colors[0], 0.8f, 2, -5, -5);
+
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -10, 10, 0, 0, 0, BulletSprites[9], colors[0], 0.8f, 2, 0, 0);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -10, 10, 0, 0, 0, BulletSprites[9], colors[0], 0.8f, 2, 5, 5);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -10, 10, 0, 0, 0, BulletSprites[9], colors[0], 0.8f, 2, 5, -5);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -10, 10, 0, 0, 0, BulletSprites[9], colors[0], 0.8f, 2, -5, 5);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -10, 10, 0, 0, 0, BulletSprites[9], colors[0], 0.8f, 2, -5, -5);
+
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 10, -10, 0, 0, 0, BulletSprites[9], colors[0], 0.8f, 2, 0, 0);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 10, -10, 0, 0, 0, BulletSprites[9], colors[0], 0.8f, 2, 5, 5);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 10, -10, 0, 0, 0, BulletSprites[9], colors[0], 0.8f, 2, 5, -5);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 10, -10, 0, 0, 0, BulletSprites[9], colors[0], 0.8f, 2, -5, 5);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 10, -10, 0, 0, 0, BulletSprites[9], colors[0], 0.8f, 2, -5, -5);
+
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -10, -10, 0, 0, 0, BulletSprites[9], colors[0], 0.8f, 2, 0, 0);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -10, -10, 0, 0, 0, BulletSprites[9], colors[0], 0.8f, 2, 5, 5);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -10, -10, 0, 0, 0, BulletSprites[9], colors[0], 0.8f, 2, 5, -5);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -10, -10, 0, 0, 0, BulletSprites[9], colors[0], 0.8f, 2, -5, 5);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -10, -10, 0, 0, 0, BulletSprites[9], colors[0], 0.8f, 2, -5, -5);
+        }
+
+        if (pattern == shootingPattern.DEATH_HEATED)
+        {
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[9], colors[1], 0.8f, 4, 0, 0);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[9], colors[2], 0.8f, 4, 5, 5);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[9], colors[2], 0.8f, 4, 5, -5);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[9], colors[2], 0.8f, 4, -5, 5);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[9], colors[2], 0.8f, 4, -5, -5);
+
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[9], colors[2], 0.8f, 4, 10, 10);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[9], colors[2], 0.8f, 4, 10, -10);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[9], colors[2], 0.8f, 4, -10, 10);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[9], colors[2], 0.8f, 4, -10, -10);
+
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[9], colors[1], 0.8f, 4, 5, 10);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[9], colors[1], 0.8f, 4, 10, -5);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[9], colors[1], 0.8f, 4, -5, 10);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[9], colors[1], 0.8f, 4, -10, -5);
+        
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[9], colors[1], 0.8f, 4, 10, 5);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[9], colors[1], 0.8f, 4, 5, -10);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[9], colors[1], 0.8f, 4, -10, 5);
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[9], colors[1], 0.8f, 4, -5, -10);
+
+
+
+        }
+
+
+        if (pattern == shootingPattern.SYSTEM_BLOWER)
+        {
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0, 0, 0, 0, BulletSprites[9], colors[0], 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0, 0, 0, 0, BulletSprites[9], colors[1], 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0, 0, 0, 0, BulletSprites[9], colors[2], 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0, 0, 0, 0, BulletSprites[9], colors[3], 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
+        }
+
+        if (pattern == shootingPattern.HACKER)
+        {
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 10, 10, 0, 0, 0, BulletSprites[9], colors[Random.Range(0, 3)], 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 10, 10, 0, 0, 0, BulletSprites[9], colors[Random.Range(0, 3)], 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 10, 10, 0, 0, 0, BulletSprites[9], colors[Random.Range(0, 3)], 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 10, 10, 0, 0, 0, BulletSprites[9], colors[Random.Range(0, 3)], 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
+
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 10, -10, 0, 0, 0, BulletSprites[9], colors[Random.Range(0, 3)], 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 10, -10, 0, 0, 0, BulletSprites[9], colors[Random.Range(0, 3)], 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 10, -10, 0, 0, 0, BulletSprites[9], colors[Random.Range(0, 3)], 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 10, -10, 0, 0, 0, BulletSprites[9], colors[Random.Range(0, 3)], 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
+
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -10, 10, 0, 0, 0, BulletSprites[9], colors[Random.Range(0, 3)], 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -10, 10, 0, 0, 0, BulletSprites[9], colors[Random.Range(0, 3)], 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -10, 10, 0, 0, 0, BulletSprites[9], colors[Random.Range(0, 3)], 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -10, 10, 0, 0, 0, BulletSprites[9], colors[Random.Range(0, 3)], 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
+
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -10, -10, 0, 0, 0, BulletSprites[9], colors[Random.Range(0, 3)], 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -10, -10, 0, 0, 0, BulletSprites[9], colors[Random.Range(0, 3)], 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -10, -10, 0, 0, 0, BulletSprites[9], colors[Random.Range(0, 3)], 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -10, -10, 0, 0, 0, BulletSprites[9], colors[Random.Range(0, 3)], 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
+        }
+
+
+
+        if (pattern == shootingPattern.ARTIFICIAL_DEATH)
+        {
+            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), Random.Range(-20f, 20f), Random.Range(-20f, 20f), 0, 0, BulletSprites[0], colors[Random.Range(0, 3)], 13.0f, -5, 0, 0);
+        }
+
+
 
     }
 
