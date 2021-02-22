@@ -9,7 +9,10 @@ public class SpeedTrigger : MonoBehaviour
 
 
     private bool active = false;
+    private bool deactivate = false;
     public SpeedChange changeType;
+
+    public bool DestroyMe = true;
 
     public int newSpeed;
 
@@ -23,7 +26,7 @@ public class SpeedTrigger : MonoBehaviour
 
     void Update()
     {
-        if(active)
+        if(active && !deactivate)
         {
             switch (changeType)
             {
@@ -33,7 +36,7 @@ public class SpeedTrigger : MonoBehaviour
                     if( mainDolly.m_Speed - newSpeed < 1)
                     {
                         mainDolly.m_Speed = newSpeed;
-                        Destroy(this.gameObject);
+                        if (DestroyMe) Destroy(this.gameObject); else deactivate = true;
                     }
                     break;
                 case SpeedChange.SPEEDING:
@@ -42,7 +45,7 @@ public class SpeedTrigger : MonoBehaviour
                     if (newSpeed - mainDolly.m_Speed < 1)
                     {
                         mainDolly.m_Speed = newSpeed;
-                        Destroy(this.gameObject);
+                        if (DestroyMe) Destroy(this.gameObject); else deactivate = true;
                     }
                     break;
                 default:
