@@ -18,7 +18,7 @@ public class StarGrazerMovement : MonoBehaviour
     [Header("State")]
     public movementState state;
     public float _SPEED = 20;
-    private float speed;
+    public float speed;
 
     public bool resetting = false;
 
