@@ -188,6 +188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lavaDollyV: {fileID: 0}
   lavaDollyH: {fileID: 0}
+  grazer: {fileID: 0}
   state: 0
   lavaModelV: {fileID: 0}
   lavaModelH: {fileID: 0}
@@ -2168,6 +2169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lavaDollyV: {fileID: 882769994}
   lavaDollyH: {fileID: 435355473}
+  grazer: {fileID: 1008551796}
   state: 0
   lavaModelV: {fileID: 1902781376}
   lavaModelH: {fileID: 3258401610671558428}
@@ -11445,7 +11447,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1604083266
 Transform:
   m_ObjectHideFlags: 0
