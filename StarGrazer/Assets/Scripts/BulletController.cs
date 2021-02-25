@@ -21,6 +21,8 @@ public class BulletController : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, spawnPosition.position, Quaternion.Euler(rotationX, rotationY, rotationZ));
         SpriteRenderer sr = bullet.GetComponentInChildren<SpriteRenderer>();
         sr.sprite = sprite;
+        GameObject child = bullet.transform.GetChild(0).gameObject;
+        child.transform.LookAt(Camera.main.transform.position, -Vector3.up);
         sr.color = color;
         bullet.transform.localScale = new Vector3(scale, scale, scale);                                                                 
         Rigidbody bulletrb = bullet.GetComponent<Rigidbody>();
@@ -41,7 +43,8 @@ public class BulletController : MonoBehaviour
         SpriteRenderer sr = bullet.GetComponentInChildren<SpriteRenderer>();
         sr.sprite = sprite;
         sr.color = color;
-
+        GameObject child = bullet.transform.GetChild(0).gameObject;
+        child.transform.LookAt(Camera.main.transform.position, -Vector3.up);
         //GetComponent<AudioSource>().Play();
     }
 

@@ -35,6 +35,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void Start()
     {
+        Weapon.alive = true;
         respawning = false;
         health = 5;
         healthUI.texture = healthImages[health];
@@ -110,6 +111,7 @@ public class PlayerHealth : MonoBehaviour
 
     public IEnumerator Restart()
     {
+        Weapon.alive = false;
         healthCollider.enabled = false;
         deathAudio.Play();
         model.SetActive(false);
@@ -117,6 +119,7 @@ public class PlayerHealth : MonoBehaviour
         //Destroy(gameObject);
 
         yield return new WaitForSeconds(3f);
+        Weapon.alive = true;
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
     }

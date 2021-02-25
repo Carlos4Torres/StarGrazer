@@ -33,7 +33,6 @@ public class CameraAnimator : MonoBehaviour
                 animator.SetBool("HORIZONTAL", true);
                 break;
             case "Level One":
-                print("trie");
                 animator.SetBool("HORIZONTAL", true);
                 break;
             case "(WB) Level Two":

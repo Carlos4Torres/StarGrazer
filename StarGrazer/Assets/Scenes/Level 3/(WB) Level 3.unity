@@ -11447,7 +11447,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1604083266
 Transform:
   m_ObjectHideFlags: 0
@@ -11700,6 +11700,10 @@ PrefabInstance:
     - target: {fileID: 689015016564672343, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 689015017433729280, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 689015017433729281, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: crosshair
