@@ -88,6 +88,7 @@ public class PlayerHealth : MonoBehaviour
         health = 5;
         healthUI.texture = healthImages[health];
 
+        healthCollider.enabled = true;
         respawning = false;
     }
 
