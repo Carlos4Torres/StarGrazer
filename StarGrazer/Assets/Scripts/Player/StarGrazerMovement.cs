@@ -97,24 +97,44 @@ public class StarGrazerMovement : MonoBehaviour
     void PlayerMovementClamping()
     {
         Vector3 viewportCoords = Camera.main.WorldToViewportPoint(transform.position);
-     
-        switch (state)
-        {
-            case movementState.FULL:
-                viewportCoords.x = Mathf.Clamp(viewportCoords.x, xMinFull, xMaxFull);
-                viewportCoords.y = Mathf.Clamp(viewportCoords.y, yMinFull, yMaxFull);
-                break;
-            case movementState.HORIZONTAL:
-                viewportCoords.x = Mathf.Clamp(viewportCoords.x, xMinHorz, xMaxHorz);
-                viewportCoords.y = Mathf.Clamp(viewportCoords.y, yMinHorz, yMaxHorz);
-                break;
-            case movementState.VERTICAL:
-                viewportCoords.x = Mathf.Clamp(viewportCoords.x, xMinVert, xMaxVert);
-                viewportCoords.y = Mathf.Clamp(viewportCoords.y, yMinVert, yMaxVert);
-                break;
-        }
 
-        transform.position = Camera.main.ViewportToWorldPoint(viewportCoords);
+            switch (state)
+            {
+                case movementState.FULL: 
+
+                    if(viewportCoords.x < xMinFull || viewportCoords.y < yMinFull || viewportCoords.x > xMaxFull || viewportCoords.y > yMaxFull)
+                    {
+                        viewportCoords.x = Mathf.Clamp(viewportCoords.x, xMinFull, xMaxFull);
+                        viewportCoords.y = Mathf.Clamp(viewportCoords.y, yMinFull, yMaxFull);
+
+                        transform.position = Camera.main.ViewportToWorldPoint(viewportCoords);
+                    }
+
+                    break;
+
+                case movementState.HORIZONTAL:
+                
+                    if (viewportCoords.x < xMinHorz || viewportCoords.y < yMinHorz || viewportCoords.x > xMaxHorz || viewportCoords.y > yMaxHorz)
+                    {
+                        viewportCoords.x = Mathf.Clamp(viewportCoords.x, xMinHorz, xMaxHorz);
+                        viewportCoords.y = Mathf.Clamp(viewportCoords.y, yMinHorz, yMaxHorz);
+
+                        transform.position = Camera.main.ViewportToWorldPoint(viewportCoords);
+                    }
+                    
+                    break;
+
+                case movementState.VERTICAL:
+                    if (viewportCoords.x < xMinVert || viewportCoords.y < yMinVert || viewportCoords.x > xMaxVert || viewportCoords.y > yMaxVert)
+                    {
+                        viewportCoords.x = Mathf.Clamp(viewportCoords.x, xMinVert, xMaxVert);
+                        viewportCoords.y = Mathf.Clamp(viewportCoords.y, yMinVert, yMaxVert);
+
+                        transform.position = Camera.main.ViewportToWorldPoint(viewportCoords);
+                    }
+                   
+                    break;
+            }
     }
 
     void Focus(bool focusing)
