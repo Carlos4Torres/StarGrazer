@@ -91,6 +91,9 @@ public class MenuButton : MonoBehaviour
         }
     }
 
+    //Added in scene openers for each of the levels
+    //Didn't rename the IENumerators to level specific ones in case we want to change them back to their intended purposes 
+
     public IEnumerator MenuStartGame()
     {
         clickControl = 1;
@@ -125,6 +128,7 @@ public class MenuButton : MonoBehaviour
         menuScreen = 1;
         menuButtonController.index = 1;
         yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("(WB) Level 4");
         animator.SetBool("selected", false);
         clickControl = 0;
     }
@@ -133,11 +137,11 @@ public class MenuButton : MonoBehaviour
     {
         clickControl = 1;
         yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene("Level One");
+        SceneManager.LoadScene("(WB) Level 3");
         animator.SetBool("selected", false);
         clickControl = 0;
     }
-    
+
     public IEnumerator MenuMainToOptions()
     {
         clickControl = 1;
