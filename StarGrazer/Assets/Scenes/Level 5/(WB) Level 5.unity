@@ -514,7 +514,7 @@ GameObject:
   - component: {fileID: 73738575}
   - component: {fileID: 73738574}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Path
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -564,6 +564,56 @@ MonoBehaviour:
   - position: {x: 1300, y: 750, z: 0}
     roll: 0
   - position: {x: 1500, y: 750, z: 0}
+    roll: 0
+  - position: {x: 1543.7966, y: 750.54004, z: 0}
+    roll: 0
+  - position: {x: 1584.4462, y: 735.2302, z: 0}
+    roll: 0
+  - position: {x: 1591.6853, y: 665.70917, z: 0}
+    roll: 0
+  - position: {x: 1622.5018, y: 526.66705, z: 0}
+    roll: 0
+  - position: {x: 1706.4806, y: 350, z: 0}
+    roll: 0
+  - position: {x: 1874.4343, y: 343.0738, z: 0}
+    roll: 0
+  - position: {x: 1962.5713, y: 350, z: 0}
+    roll: 0
+  - position: {x: 2050.7083, y: 350, z: 0}
+    roll: 0
+  - position: {x: 2138.8452, y: 350, z: 0}
+    roll: 0
+  - position: {x: 2226.9822, y: 350, z: 0}
+    roll: 0
+  - position: {x: 2315.1191, y: 350, z: 0}
+    roll: 0
+  - position: {x: 2403.256, y: 350, z: 0}
+    roll: 0
+  - position: {x: 2491.393, y: 350, z: 0}
+    roll: 0
+  - position: {x: 2579.53, y: 350, z: 0}
+    roll: 0
+  - position: {x: 2667.667, y: 350, z: 0}
+    roll: 0
+  - position: {x: 2699.05, y: 350, z: 57.58142}
+    roll: 0
+  - position: {x: 2699.05, y: 350, z: 211.64368}
+    roll: 0
+  - position: {x: 2699.05, y: 350, z: 558.953}
+    roll: 0
+  - position: {x: 2699.05, y: 350, z: 906.2623}
+    roll: 0
+  - position: {x: 2699.05, y: 450.5082, z: 1198.9437}
+    roll: 0
+  - position: {x: 2699.05, y: 551.0164, z: 1302.085}
+    roll: 0
+  - position: {x: 2699.05, y: 651.52466, z: 1313.9746}
+    roll: 0
+  - position: {x: 2699.05, y: 752.0329, z: 1316.6211}
+    roll: 0
+  - position: {x: 2699.05, y: 989.0751, z: 1319.2676}
+    roll: 0
+  - position: {x: 2699.05, y: 1226.1172, z: 1321.9141}
     roll: 0
 --- !u!4 &73738575
 Transform:
