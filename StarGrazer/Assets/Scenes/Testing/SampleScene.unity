@@ -267,7 +267,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 1
+  _SPEED: 20
   speed: 20
+  resetting: 0
+  model: {fileID: 0}
+  focusingSprite: {fileID: 0}
+  deathSound: {fileID: 0}
+  playerHealth: {fileID: 0}
   xMinFull: 0
   xMaxFull: 0
   yMinFull: 0
@@ -619,7 +625,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 732428207}
-  m_LocalRotation: {x: 0.00007125669, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.020473296, z: 0, w: 0.99979043}
   m_LocalPosition: {x: 1.5599995, y: 1, z: -8.539999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -711,10 +717,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b998f653a80b0d54dae25b44b183758c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 200117860}
-  direction: 0
-  speed: 0
-  mainCamera: {fileID: 963194227}
 --- !u!1 &912719348
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,13 +891,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 25, y: 10, z: 20}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 732428208}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &963194229
 Animator:
   serializedVersion: 3
@@ -1321,6 +1323,9 @@ MonoBehaviour:
   rotateValue: 25
   rotateSpeed: 50
   returnSpeed: 0.25
+  direction: 0
+  currentScene: 0
+  crosshair: {fileID: 0}
 --- !u!1 &1351311808
 GameObject:
   m_ObjectHideFlags: 0
@@ -1583,33 +1588,95 @@ MonoBehaviour:
     roll: 0
   - position: {x: 0, y: 1, z: 10}
     roll: 0
-  - position: {x: 0, y: 1, z: 25}
+  - position: {x: -0.34380722, y: 1, z: 54.260902}
     roll: 0
-  - position: {x: 0, y: 1, z: 40}
+  - position: {x: -0.45563602, y: 1, z: 89.85798}
     roll: 0
-  - position: {x: 0, y: 1, z: 55}
+  - position: {x: -10.1479435, y: 1, z: 100.87132}
     roll: 0
-  - position: {x: 0, y: 1, z: 70}
+  - position: {x: -20.385406, y: 1, z: 98.18116}
     roll: 0
-  - position: {x: 0, y: 5, z: 85}
+  - position: {x: -24.584969, y: 1, z: 84.0957}
     roll: 0
-  - position: {x: 0, y: 20, z: 100}
+  - position: {x: -24.884665, y: 1, z: 69.04941}
     roll: 0
-  - position: {x: 0, y: 50, z: 115}
+  - position: {x: -38.38523, y: 1, z: 66.03027}
     roll: 0
-  - position: {x: 0, y: 110, z: 120}
+  - position: {x: -42.726135, y: 1, z: 60.163086}
     roll: 0
-  - position: {x: 0, y: 170, z: 125}
+  - position: {x: -44.19333, y: 1, z: 40.0737}
     roll: 0
-  - position: {x: 0, y: 220, z: 135}
+  - position: {x: -36.170135, y: 1, z: 35.79949}
     roll: 0
-  - position: {x: 0, y: 220, z: 190}
+  - position: {x: -22.465147, y: 1, z: 23.380198}
     roll: 0
-  - position: {x: 0, y: 220, z: 245}
+  - position: {x: -23.173117, y: 1, z: -16.717686}
     roll: 0
-  - position: {x: 0, y: 220, z: 300}
+  - position: {x: -18.626429, y: 1, z: -47.99456}
     roll: 0
-  - position: {x: 0, y: 220, z: 355}
+  - position: {x: -3.9613175, y: 1, z: -47.587486}
+    roll: 0
+  - position: {x: -1.1413083, y: 1, z: -14.245882}
+    roll: 0
+  - position: {x: -3.0691152, y: 1, z: 56.11052}
+    roll: 0
+  - position: {x: 6.071844, y: 0.99999523, z: 87.05972}
+    roll: 0
+  - position: {x: 12.205448, y: 0.9999981, z: 94.55265}
+    roll: 0
+  - position: {x: 20.746414, y: 1, z: 94.9235}
+    roll: 0
+  - position: {x: 26.279879, y: 1, z: 88.85626}
+    roll: 0
+  - position: {x: 30.326052, y: 1, z: 76.89762}
+    roll: 0
+  - position: {x: 44.055786, y: 1, z: 68.81316}
+    roll: 0
+  - position: {x: 58.223236, y: 1, z: 73.09971}
+    roll: 0
+  - position: {x: 62.592316, y: 1, z: 85.6259}
+    roll: 0
+  - position: {x: 52.429176, y: 1, z: 95.293236}
+    roll: 0
+  - position: {x: 32.917503, y: 1, z: 92.84691}
+    roll: 0
+  - position: {x: 17.421978, y: 1, z: 88.336975}
+    roll: 0
+  - position: {x: 3.2445412, y: 1, z: 92.65775}
+    roll: 0
+  - position: {x: 0.22112656, y: 4.0335903, z: 106.19793}
+    roll: 0
+  - position: {x: 0, y: 10.623953, z: 114.591}
+    roll: 0
+  - position: {x: 0, y: 20.970154, z: 122.97748}
+    roll: 0
+  - position: {x: 0, y: 40.042717, z: 131.36395}
+    roll: 0
+  - position: {x: 0, y: 58.02205, z: 135.392}
+    roll: 0
+  - position: {x: 0, y: 82.86032, z: 137.24002}
+    roll: 0
+  - position: {x: 0, y: 133.26382, z: 137.92522}
+    roll: 0
+  - position: {x: 0, y: 177.78204, z: 141.67633}
+    roll: 0
+  - position: {x: 0, y: 196.8573, z: 142.93051}
+    roll: 0
+  - position: {x: 0, y: 216.84576, z: 147.53029}
+    roll: 0
+  - position: {x: 0, y: 222, z: 161.78201}
+    roll: 0
+  - position: {x: 0, y: 222, z: 181.24509}
+    roll: 0
+  - position: {x: 0, y: 222, z: 195.62514}
+    roll: 0
+  - position: {x: 5.0462093, y: 222, z: 204.5503}
+    roll: 0
+  - position: {x: 11.064104, y: 222, z: 208.4029}
+    roll: 0
+  - position: {x: 17.882011, y: 222, z: 208.86052}
+    roll: 0
+  - position: {x: 24.699919, y: 222, z: 209.31815}
     roll: 0
 --- !u!4 &1541102994
 Transform:
@@ -1642,10 +1709,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b998f653a80b0d54dae25b44b183758c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 200117860}
-  direction: 2
-  speed: 0
-  mainCamera: {fileID: 963194227}
 --- !u!1 &1652848338
 GameObject:
   m_ObjectHideFlags: 0
@@ -1895,7 +1958,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713320608}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -34.5, y: 0.8000002, z: 6.3}
+  m_LocalPosition: {x: -35.1, y: 0.8000002, z: -1.2}
   m_LocalScale: {x: 8, y: 19.8944, z: 21.0287}
   m_Children: []
   m_Father: {fileID: 912719349}
