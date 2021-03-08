@@ -53,6 +53,9 @@ public class CameraAnimator : MonoBehaviour
             case "Level 4":
                 animator.SetBool("HORIZONTAL", true);
                 break;
+            case "(WB) Level 5":
+                animator.SetBool("VERTICAL", true);
+                break;
         }
     }
 
