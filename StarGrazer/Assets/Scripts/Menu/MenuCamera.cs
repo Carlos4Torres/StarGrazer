@@ -10,10 +10,12 @@ public class MenuCamera : MonoBehaviour
     void Update()
     {
         menuScreen = MenuButton.menuScreen;
+        RenderSettings.skybox.SetFloat("_Rotation", Time.time);
 
         if (menuScreen == 1)
         {
             animator.SetInteger("menu", 1);
+            animator.SetInteger("Direction", 1);
         }
         if (menuScreen == 2)
         {
@@ -26,6 +28,15 @@ public class MenuCamera : MonoBehaviour
         if (menuScreen == 4)
         {
             animator.SetInteger("menu", 4);
+        }
+        if (menuScreen == 5)
+        {
+            animator.SetInteger("menu", 5);
+            animator.SetInteger("Direction", 2);
+        }
+        if (menuScreen == 6)
+        {
+            animator.SetInteger("menu", 6);
         }
     }
 }

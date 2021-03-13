@@ -63,22 +63,32 @@ public class MenuButtonController : MonoBehaviour
         if (menuScreen == 1)
         {
             minIndex = 1;
-            maxIndex = 4;
+            maxIndex = 5;
         }
         if (menuScreen == 2)
         {
-            minIndex = 5;
-            maxIndex = 8;
+            minIndex = 6;
+            maxIndex = 9;
         }
         if (menuScreen == 3)
         {
-            minIndex = 9;
-            maxIndex = 9;
+            minIndex = 10;
+            maxIndex = 10;
         }
         if (menuScreen == 4)
         {
-            minIndex = 10;
-            maxIndex = 10;
+            minIndex = 11;
+            maxIndex = 11;
+        }
+        if (menuScreen == 5)
+        {
+            minIndex = 12;
+            maxIndex = 18;
+        }
+        if (menuScreen == 6)
+        {
+            minIndex = 19;
+            minIndex = 19;
         }
     }
 }
