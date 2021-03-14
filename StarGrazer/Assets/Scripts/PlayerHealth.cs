@@ -66,9 +66,7 @@ public class PlayerHealth : MonoBehaviour
                 StartCoroutine(Restart());
             }
         }
-        // else StartCoroutine(Flicker());
-        // We can put this here to give the player a bit of time to sort themselves between getting it, so they don't just lose all their health at once.
-        // THe game is pretty dang hard right now, so I think adding this snippet it would be a lot of help, but need to talk to other before fully implementing.  
+        else if(!flickering) StartCoroutine(Flicker()); 
     }
 
     public IEnumerator Respawn()
@@ -105,6 +103,8 @@ public class PlayerHealth : MonoBehaviour
             model.SetActive(true);
             yield return new WaitForSeconds(.2f);
         }
+
+        yield return new WaitForSeconds(.25f);
 
         healthCollider.enabled = true;
         flickering = false;
