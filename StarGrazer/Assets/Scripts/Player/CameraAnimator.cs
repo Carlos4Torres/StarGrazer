@@ -35,6 +35,9 @@ public class CameraAnimator : MonoBehaviour
             case "Level One":
                 animator.SetBool("HORIZONTAL", true);
                 break;
+            case "Level One (Updated Visuals)":
+                animator.SetBool("HORIZONTAL", true);
+                break;
             case "(WB) Level Two":
                 animator.SetBool("FULL", true);
                 break;
