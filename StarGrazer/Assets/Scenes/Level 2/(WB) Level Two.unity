@@ -7559,6 +7559,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: b6d2152fa2ab52e4e8bccee92173da8c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: bba7de65681b2f245a7396f0c41076e9, type: 2}
     - target: {fileID: 7225423047929989335, guid: b6d2152fa2ab52e4e8bccee92173da8c, type: 3}
       propertyPath: m_TagString
       value: Boss
