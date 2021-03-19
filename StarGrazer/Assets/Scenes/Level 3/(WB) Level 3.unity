@@ -16148,6 +16148,7 @@ MonoBehaviour:
   m_RawImage: {fileID: 2081902585}
   alpha: 0
   tempcolor: {r: 0, g: 0, b: 0, a: 0}
+  modelObj: {fileID: 1903061202}
 --- !u!114 &9170483863312932892
 MonoBehaviour:
   m_ObjectHideFlags: 0

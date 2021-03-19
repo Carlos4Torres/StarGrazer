@@ -11853,7 +11853,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.36, y: 0.21, z: -0.03}
+  m_Size: {x: 0.36, y: 0.21, z: 0.03}
   m_Center: {x: 0, y: 0.06, z: 0}
 --- !u!1 &915115529
 GameObject:
@@ -26404,6 +26404,7 @@ MonoBehaviour:
   m_RawImage: {fileID: 1358452946}
   alpha: 0
   tempcolor: {r: 1, g: 1, b: 1, a: 0}
+  modelObj: {fileID: 904853444}
 --- !u!65 &8769853678268738968
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -16637,6 +16637,7 @@ MonoBehaviour:
   m_RawImage: {fileID: 1099649231}
   alpha: 0
   tempcolor: {r: 0, g: 0, b: 0, a: 0}
+  modelObj: {fileID: 188163921}
 --- !u!1 &1497734590580641076
 GameObject:
   m_ObjectHideFlags: 0

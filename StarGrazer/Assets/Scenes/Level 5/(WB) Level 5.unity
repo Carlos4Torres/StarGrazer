@@ -7730,6 +7730,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1200499937}
+  - component: {fileID: 1200499938}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -7752,6 +7753,50 @@ Transform:
   m_Father: {fileID: 842855394}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1200499938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200499936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 567701a5683e4254aa330b050ffc7889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveSpeed: 0
+  timeBetweenShots: 0
+  initialShotDelay: 0
+  shotSpeed: 25
+  health_per_phase: 0
+  health: 0
+  phases: 0
+  dmgPerBullet: 0
+  boss: 0
+  state: 0
+  shotSpawn: {fileID: 0}
+  pattern: 0
+  bc: {fileID: 907057586}
+  BulletTypes: []
+  BulletSprites: []
+  colors: []
+  mainDollyScipt: {fileID: 1588047382}
+  timer: 0
+  timertop: 0
+  timer2: 0
+  timertop2: 0
+  phasetimer: 0
+  bomb: {fileID: 0}
+  burst: 0
+  rise: -20
+  BladePos: 0
+  randval: 0
+  secondstowait: 0
+  m_RawImage: {fileID: 0}
+  alpha: 0
+  tempcolor: {r: 0, g: 0, b: 0, a: 0}
+  modelObj: {fileID: 1881792129}
 --- !u!1 &1219076422
 GameObject:
   m_ObjectHideFlags: 0
@@ -10729,6 +10774,11 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 32746face73283548a84a162221546aa, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0167f629e3c222a4a89b6dba4021d67b, type: 3}
+--- !u!1 &1881792129 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0167f629e3c222a4a89b6dba4021d67b, type: 3}
+  m_PrefabInstance: {fileID: 1881792128}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1884949005
 PrefabInstance:
   m_ObjectHideFlags: 0

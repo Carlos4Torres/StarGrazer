@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BossController : MonoBehaviour
 {
@@ -92,6 +93,9 @@ public class BossController : MonoBehaviour
     public float alpha;
     public Color tempcolor;
 
+    private bool deathActivated;
+    public GameObject modelObj;
+
     //-----------------------------------------------------------------------------------------------------------------------------------------
 
     void Start()
@@ -124,10 +128,18 @@ public class BossController : MonoBehaviour
         if (phasetimer > 0) { phasetimer--; }
 
         //if the boss's health is 0, but they have more than 1 phase left, transitions to the next phase
-        if ((health <= 0) && (phases > 0)) { phasetimer = 500;  phases--; health = health_per_phase; }
+        if ((health <= 0) && (phases > 0)) 
+        {   phasetimer = 500;  
+            phases--; 
+            if(phases!= 0 ) health = health_per_phase; 
+        }
 
         //if the boss's health is 0 and they have no more phases left, kills the boss.
-        if ((health <= 0) && (phases == 0)) { Destroy(this.gameObject); }
+        if ((health <= 0) && (phases == 0) && !deathActivated)
+        {
+            deathActivated = true;
+            StartCoroutine(Death());
+        }
 
 
         //Moves the boss object into the scene, Once it gets there, it transitions to its combat state I think
@@ -253,6 +265,30 @@ public class BossController : MonoBehaviour
     //move in function
     public void Entry() { state = 1; localDollyScript.m_Speed = MoveSpeed; }
 
+    public IEnumerator Death()
+    {
+        Destroy(modelObj);
+        yield return new WaitForSeconds(3);
+        switch(boss)
+        {
+            case 1:
+                SceneManager.LoadScene("(WB) Level Two");
+                break;
+            case 2:
+                SceneManager.LoadScene("(WB) Level 3");
+                break;
+            case 3:
+                SceneManager.LoadScene("(WB) Level 4");
+                break;
+            case 4:
+                SceneManager.LoadScene("(WB) Level 5");
+                break;
+            case 5:
+                SceneManager.LoadScene("Menu");
+                break;
+
+        }
+    }
 
     //detects when the player gets to the boss area in order to activate it
     public void OnTriggerEnter(Collider other)
