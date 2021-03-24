@@ -10,6 +10,7 @@ public class EnemyHealth : MonoBehaviour
     
 
     private float health = 50;
+    public GameObject impactEffect;
 
 
     public void OnTriggerEnter(Collider other)
@@ -18,11 +19,17 @@ public class EnemyHealth : MonoBehaviour
             {
                 Bullet bulletScript = other.GetComponent<Bullet>();
                 health -= bulletScript.enemyDamage;
+                Destroy(other.gameObject);
+                
   
                 if (health <= 0)
                 {
                     deathSound.Play();
                     StartCoroutine(mainController.DestroyThis());
+
+                    GameObject effectIn = Instantiate(impactEffect, transform.position, transform.rotation);
+                    Destroy(effectIn, 2f);
+
                     mainController.isDead = true;
                     var mesh = GetComponent<MeshRenderer>();
                     mesh.enabled = false;

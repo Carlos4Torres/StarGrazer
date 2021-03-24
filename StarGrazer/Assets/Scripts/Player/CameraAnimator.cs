@@ -111,6 +111,12 @@ public class CameraAnimator : MonoBehaviour
                         animator.SetInteger("state", 1);
                         StartCoroutine(TurnOffLast("HORIZONTAL"));
                     }
+                    else if(animator.GetBool("FULL"))
+                    {
+                        animator.SetBool("VERTICAL", true);
+                        animator.SetInteger("state", 6);
+                        StartCoroutine(TurnOffLast("FULL"));
+                    }
                     break;
             }
         }

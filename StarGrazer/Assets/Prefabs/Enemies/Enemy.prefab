@@ -122,9 +122,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainController: {fileID: 6414416409364205175}
-  health: 50
-  dmgPerBullet: 1
   deathSound: {fileID: 2317281009243724140}
+  impactEffect: {fileID: 921932400209565370, guid: 932a6f95d31009648bfd134f8b766eed, type: 3}
 --- !u!1 &6414416409364205168
 GameObject:
   m_ObjectHideFlags: 0

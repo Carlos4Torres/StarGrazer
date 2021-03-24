@@ -14228,6 +14228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  Enemy: []
   empty: {fileID: 780230989}
   scoreText: {fileID: 336410753}
 --- !u!4 &2003576336 stripped
