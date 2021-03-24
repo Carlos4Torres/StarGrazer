@@ -297,7 +297,7 @@ public class BossController : MonoBehaviour
         {
             if (state == 0)
             {
-                if(boss != 2)
+                if(boss != 2 && boss != 5)
                 {
                     if (localDollyScript.m_Position - mainDollyScipt.m_Position > 40)
                         MoveSpeed += ((localDollyScript.m_Position - mainDollyScipt.m_Position) * -.75f);      
