@@ -95,6 +95,8 @@ public class BossController : MonoBehaviour
 
     private bool deathActivated;
     public GameObject modelObj;
+    private float spawnPosition;
+    private float startHealth;
 
     //-----------------------------------------------------------------------------------------------------------------------------------------
 
@@ -104,6 +106,8 @@ public class BossController : MonoBehaviour
         localDollyScript = GetComponent<CinemachineDollyCart>();
         state = 0;
         localDollyScript.m_Speed = 0;
+        spawnPosition = localDollyScript.m_Position;
+        startHealth = health;
     }
 
     void Update()
@@ -120,8 +124,6 @@ public class BossController : MonoBehaviour
         //if CIactive is on, add to the alpha. If it's off, subtract.
         if ((phasetimer > 100) && (alpha < 255f)){alpha += 1f;}
         if ((phasetimer <= 100) && (alpha > 0f)) {alpha -= 1f;}
-
-
 
 
         //constantly decreases timer that controls the pause between phases
@@ -313,6 +315,14 @@ public class BossController : MonoBehaviour
                 break;
 
         }
+    }
+
+    public void SelfReset()
+    {
+        localDollyScript.m_Speed = 0;
+        localDollyScript.m_Position = spawnPosition;
+        health = startHealth;
+        state = 0;
     }
 
     //detects when the player gets to the boss area in order to activate it

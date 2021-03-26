@@ -57,7 +57,18 @@ public class StarGrazerMovement : MonoBehaviour
         //Need this bit to reset player position and actually have the enemy bullets hit
         if(resetting)
         {
-            transform.localPosition = Vector3.MoveTowards(transform.localPosition, new Vector3(0, 3, 0), speed * Time.deltaTime);
+            switch(state)
+            {
+                case movementState.HORIZONTAL:
+                    transform.localPosition = Vector3.MoveTowards(transform.localPosition, new Vector3(0, 9, 0), speed * Time.deltaTime);
+                    break;
+                case movementState.FULL:
+                    transform.localPosition = Vector3.MoveTowards(transform.localPosition, new Vector3(0, 3, 0), speed * Time.deltaTime);
+                    break;
+                case movementState.VERTICAL:
+                    transform.localPosition = Vector3.MoveTowards(transform.localPosition, new Vector3(0, 3, 0), speed * Time.deltaTime);
+                    break;
+            }
         }
     }
 

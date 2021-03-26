@@ -36,8 +36,9 @@ public class EnemyMainPath : MonoBehaviour
     [Header("Scripts and Components")]
     public CinemachineDollyCart mainDollyScipt; //Using this just to match speed
     private CinemachineDollyCart localDollyScript;
+    private EnemyHealth enemyHealth;
 
-    public Transform spawnPosition;
+    private float spawnPosition;
     public float rotationX; float rotationY; float rotationZ;
     public Sprite sprite;
     public Color color;
@@ -52,11 +53,12 @@ public class EnemyMainPath : MonoBehaviour
 
     void Start()
     {
-
+        enemyHealth = GetComponentInChildren<EnemyHealth>();
         localDollyScript = GetComponent<CinemachineDollyCart>();
 
         state = combatState.IDLE;
         localDollyScript.m_Speed = 0;
+        spawnPosition = localDollyScript.m_Position;
     }
 
     void Update()
@@ -89,13 +91,26 @@ public class EnemyMainPath : MonoBehaviour
         yield return new WaitForSeconds(timeUntilEscape);
         state = combatState.ESCAPE;
 
-        Destroy(this.gameObject, timeUntilDestroy);
+        //Destroy(this.gameObject, timeUntilDestroy);
+        yield return new WaitForSeconds(5);
+        if(state == combatState.ESCAPE)
+            this.gameObject.SetActive(false);
     }
 
     public void Enter()
     {
         state = combatState.ENTRY;
         localDollyScript.m_Speed = escapeSpeed;
+    }
+
+    public void ResetEnemy()
+    {
+        isDead = false;
+        state = combatState.IDLE;
+        localDollyScript.m_Speed = 0;
+        localDollyScript.m_Position = spawnPosition;
+        enemyHealth.health = 50;
+        StopCoroutine(Escape());
     }
 
     public void StartCombat()
@@ -115,7 +130,7 @@ public class EnemyMainPath : MonoBehaviour
         {
             Enter();
             var boxCollider = GetComponent<BoxCollider>();
-            boxCollider.enabled = false;
+            //boxCollider.enabled = false;
         }
     }
 
@@ -147,12 +162,12 @@ public class EnemyMainPath : MonoBehaviour
     public IEnumerator DestroyThis()
     {
         yield return new WaitForSeconds(2);
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
+        this.gameObject.SetActive(false);
     }
 
 
     //---------------------------------------------------------------------------------------------------------------------------------------------------
-
 
 
     //very very long list of enemy attacks because there's literally nowhere else I can put it that isnt a huge pain in the neck

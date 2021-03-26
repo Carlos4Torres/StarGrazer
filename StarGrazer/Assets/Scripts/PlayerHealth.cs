@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -15,7 +16,6 @@ public class PlayerHealth : MonoBehaviour
     public int health = 5;
     public RawImage healthUI;
     public Texture[] healthImages;
-
     
 
     [Header("Lives")]
@@ -25,7 +25,12 @@ public class PlayerHealth : MonoBehaviour
     public GameObject crosshair;
 
     private Collider healthCollider;
+    private CinemachineDollyCart dollyCart;
+    private SkinnedMeshRenderer mr;
 
+    public List<Transform> sections;
+
+    public static int checkpointNum;
 
     public bool respawning;
     private readonly int respawnCycles = 10;
@@ -35,24 +40,23 @@ public class PlayerHealth : MonoBehaviour
 
     public void Start()
     {
-        Weapon.alive = true;
-        respawning = false;
-        health = 5;
-        healthUI.texture = healthImages[health];
-
-        lives = 3;
-        livesUI.texture = livesImages[lives];
-
         healthCollider = this.GetComponent<Collider>();
+        dollyCart = transform.parent.parent.GetComponent<CinemachineDollyCart>();
+        mr = GetComponentInChildren<SkinnedMeshRenderer>();
+
+        SetBeginningValues();
     }
 
     public void Damage(int amount)
     {
-        health -= amount;
+        if (health > 0)
+        {
+            health -= amount;
 
-        healthUI.texture = healthImages[health];
+            healthUI.texture = healthImages[health];
+        }
 
-        if (health <= 0)
+        if (health <= 0 && lives > 0)
         {
             lives--;
             livesUI.texture = livesImages[lives];
@@ -63,10 +67,48 @@ public class PlayerHealth : MonoBehaviour
             }
             else if(lives == 0)
             {
-                StartCoroutine(Restart());
+                mr.enabled = false;
+                Weapon.alive = false;
+                StartCoroutine(ResetToCheckpoint(checkpointNum));
             }
         }
         else if(!flickering) StartCoroutine(Flicker()); 
+    }
+
+    void SetBeginningValues()
+    {
+        Weapon.alive = true;
+        respawning = false;
+        mr.enabled = true;
+        health = 5;
+        healthUI.texture = healthImages[health];
+
+        lives = 3;
+        livesUI.texture = livesImages[lives];
+    }
+
+    void ResetEnemies(Transform section)
+    {
+        if (!section)
+            return;
+
+        for (int j = 0; j < section.childCount; j++)
+        {
+            Transform child = section.GetChild(j);
+
+            for (int i = 0; i < child.childCount; i++)
+            {
+                Transform childsChild = child.transform.GetChild(i);
+                childsChild.gameObject.SetActive(true);
+                childsChild.GetComponent<EnemyMainPath>().ResetEnemy();
+            }
+        }
+
+    }
+
+    private void ResetBoss(Transform section)
+    {
+        section.GetComponent<BossController>().SelfReset();
     }
 
     public IEnumerator Respawn()
@@ -108,6 +150,91 @@ public class PlayerHealth : MonoBehaviour
 
         healthCollider.enabled = true;
         flickering = false;
+    }
+
+    public IEnumerator ResetToCheckpoint(int cn)
+    {
+        yield return new WaitForSeconds(3f);
+
+        int s = SceneManager.GetActiveScene().buildIndex;
+        switch(s)
+        {
+            case 1:
+                switch(cn)
+                {
+                    case 1:
+                        dollyCart.m_Position = 475;
+                        break;
+                    case 2:
+                        dollyCart.m_Position = 1175;
+                        break;
+                    case 3:
+                        dollyCart.m_Position = 1850;
+                        break;
+                }
+                break;
+            case 2:
+                switch (cn)
+                {
+                    case 1:
+                        dollyCart.m_Position = 925;
+                        break;
+                    case 2:
+                        dollyCart.m_Position = 2975;
+                        break;
+                    case 3:
+                        dollyCart.m_Position = 4425;
+                        break;
+                }
+                break;
+            case 3:
+                switch (cn)
+                {
+                    case 1:
+                        dollyCart.m_Position = 750;
+                        break;
+                    case 2:
+                        dollyCart.m_Position = 2150;
+                        break;
+                    case 3:
+                        dollyCart.m_Position = 2925;
+                        break;
+                }
+                break;
+            case 4:
+                switch (cn)
+                {
+                    case 1:
+                        dollyCart.m_Position = 2450;
+                        break;
+                    case 2:
+                        dollyCart.m_Position = 3100;
+                        break;
+                    case 3:
+                        dollyCart.m_Position = 4150;
+                        break;
+                }
+                break;
+            case 5:
+                switch (cn)
+                {
+                    case 1:
+                        dollyCart.m_Position = 0;
+                        break;
+                    case 2:
+                        dollyCart.m_Position = 0;
+                        break;
+                    case 3:
+                        dollyCart.m_Position = 0;
+                        break;
+                }
+                break;
+        }
+        SetBeginningValues();
+        if (cn != 3)
+            ResetEnemies(sections[cn]);
+        else
+            ResetBoss(sections[cn]);
     }
 
     public IEnumerator Restart()

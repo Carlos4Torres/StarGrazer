@@ -8,9 +8,9 @@ public class EnemyHealth : MonoBehaviour
     public EnemyMainPath mainController;
     public AudioSource deathSound;
     
-
-    private float health = 50;
     public GameObject impactEffect;
+
+    public float health = 50;
 
 
     public void OnTriggerEnter(Collider other)

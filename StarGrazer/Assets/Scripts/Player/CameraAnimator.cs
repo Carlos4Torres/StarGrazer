@@ -17,6 +17,7 @@ public class CameraAnimator : MonoBehaviour
     [Header("Direction")]
     public TriggerDirection direction;
     public float speed;
+    public int checkpointNum;
 
     [Header("Camera Information")]
     public Camera mainCamera;
@@ -66,6 +67,7 @@ public class CameraAnimator : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            PlayerHealth.checkpointNum = checkpointNum;
             StarGrazerRotation.changed = true;
             player.resetting = true;
             StartCoroutine(player.TurnOffResetting());
