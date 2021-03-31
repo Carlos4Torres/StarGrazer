@@ -8409,6 +8409,10 @@ PrefabInstance:
       propertyPath: mainDolly
       value: 
       objectReference: {fileID: 1878224734}
+    - target: {fileID: 6933551276620560532, guid: 05e16f90d6002f6478d541abc5e0670b, type: 3}
+      propertyPath: weaponScript
+      value: 
+      objectReference: {fileID: 1119859180}
     - target: {fileID: 6933551276620560533, guid: 05e16f90d6002f6478d541abc5e0670b, type: 3}
       propertyPath: m_Name
       value: Speed Trigger (Slow)

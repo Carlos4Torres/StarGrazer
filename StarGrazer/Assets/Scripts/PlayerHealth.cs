@@ -27,6 +27,7 @@ public class PlayerHealth : MonoBehaviour
     private Collider healthCollider;
     private CinemachineDollyCart dollyCart;
     private SkinnedMeshRenderer mr;
+    private float startingDollySpeed;
 
     public List<Transform> sections;
 
@@ -43,6 +44,8 @@ public class PlayerHealth : MonoBehaviour
         healthCollider = this.GetComponent<Collider>();
         dollyCart = transform.parent.parent.GetComponent<CinemachineDollyCart>();
         mr = GetComponentInChildren<SkinnedMeshRenderer>();
+        startingDollySpeed = dollyCart.m_Speed;
+        checkpointNum = 0;
 
         SetBeginningValues();
     }
@@ -78,13 +81,14 @@ public class PlayerHealth : MonoBehaviour
     void SetBeginningValues()
     {
         Weapon.alive = true;
-        respawning = false;
         mr.enabled = true;
-        health = 5;
-        healthUI.texture = healthImages[health];
+        respawning = false;
 
+        health = 5;
         lives = 3;
+        healthUI.texture = healthImages[health];
         livesUI.texture = livesImages[lives];
+        dollyCart.m_Speed = startingDollySpeed;
     }
 
     void ResetEnemies(Transform section)
@@ -162,6 +166,9 @@ public class PlayerHealth : MonoBehaviour
             case 1:
                 switch(cn)
                 {
+                    case 0:
+                        dollyCart.m_Position = 0;
+                        break;
                     case 1:
                         dollyCart.m_Position = 475;
                         break;
@@ -176,6 +183,9 @@ public class PlayerHealth : MonoBehaviour
             case 2:
                 switch (cn)
                 {
+                    case 0:
+                        dollyCart.m_Position = 0;
+                        break;
                     case 1:
                         dollyCart.m_Position = 925;
                         break;
@@ -190,6 +200,9 @@ public class PlayerHealth : MonoBehaviour
             case 3:
                 switch (cn)
                 {
+                    case 0:
+                        dollyCart.m_Position = 0;
+                        break;
                     case 1:
                         dollyCart.m_Position = 750;
                         break;
@@ -204,6 +217,9 @@ public class PlayerHealth : MonoBehaviour
             case 4:
                 switch (cn)
                 {
+                    case 0:
+                        dollyCart.m_Position = 0;
+                        break;
                     case 1:
                         dollyCart.m_Position = 2450;
                         break;
@@ -218,6 +234,9 @@ public class PlayerHealth : MonoBehaviour
             case 5:
                 switch (cn)
                 {
+                    case 0:
+                        dollyCart.m_Position = 0;
+                        break;
                     case 1:
                         dollyCart.m_Position = 0;
                         break;
@@ -228,6 +247,9 @@ public class PlayerHealth : MonoBehaviour
                         dollyCart.m_Position = 0;
                         break;
                 }
+                break;
+            default:
+                Debug.Log("Not valid scene");
                 break;
         }
         SetBeginningValues();

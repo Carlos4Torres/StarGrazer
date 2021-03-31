@@ -174,6 +174,8 @@ MonoBehaviour:
   timer: 0
   DestroyMe: 1
   newSpeed: 20
+  newShotSpeed: 0
+  weaponScript: {fileID: 0}
 --- !u!114 &9647175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4285,6 +4287,8 @@ MonoBehaviour:
   timer: 0
   DestroyMe: 1
   newSpeed: 20
+  newShotSpeed: 0
+  weaponScript: {fileID: 0}
 --- !u!1001 &571309580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15960,6 +15964,8 @@ MonoBehaviour:
   timer: 3
   DestroyMe: 0
   newSpeed: 10
+  newShotSpeed: 0
+  weaponScript: {fileID: 0}
 --- !u!1 &6080684852653866265
 GameObject:
   m_ObjectHideFlags: 0
@@ -16189,6 +16195,8 @@ MonoBehaviour:
   timer: 0
   DestroyMe: 1
   newSpeed: 20
+  newShotSpeed: 0
+  weaponScript: {fileID: 0}
 --- !u!4 &9110832066332155817
 Transform:
   m_ObjectHideFlags: 0

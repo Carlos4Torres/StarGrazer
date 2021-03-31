@@ -6716,6 +6716,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Gameplay Plane
       objectReference: {fileID: 0}
+    - target: {fileID: 689015016306477808, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 689015016306477815, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: state
       value: 1
@@ -6727,6 +6731,14 @@ PrefabInstance:
     - target: {fileID: 689015016564672343, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 689015017433729280, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 689015017433729280, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 689015017433729281, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: crosshair
@@ -6819,6 +6831,10 @@ PrefabInstance:
     - target: {fileID: 2629149997807755217, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817828972225972879, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3058144269850529079, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_Layer
@@ -7371,6 +7387,14 @@ PrefabInstance:
     - target: {fileID: 6933551276620560532, guid: 05e16f90d6002f6478d541abc5e0670b, type: 3}
       propertyPath: newSpeed
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6933551276620560532, guid: 05e16f90d6002f6478d541abc5e0670b, type: 3}
+      propertyPath: weaponScript
+      value: 
+      objectReference: {fileID: 902832715}
+    - target: {fileID: 6933551276620560532, guid: 05e16f90d6002f6478d541abc5e0670b, type: 3}
+      propertyPath: newShotSpeed
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6933551276620560533, guid: 05e16f90d6002f6478d541abc5e0670b, type: 3}
       propertyPath: m_Name
@@ -16830,6 +16854,14 @@ PrefabInstance:
     - target: {fileID: 6933551276620560532, guid: 05e16f90d6002f6478d541abc5e0670b, type: 3}
       propertyPath: newSpeed
       value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 6933551276620560532, guid: 05e16f90d6002f6478d541abc5e0670b, type: 3}
+      propertyPath: weaponScript
+      value: 
+      objectReference: {fileID: 902832715}
+    - target: {fileID: 6933551276620560532, guid: 05e16f90d6002f6478d541abc5e0670b, type: 3}
+      propertyPath: newShotSpeed
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6933551276620560533, guid: 05e16f90d6002f6478d541abc5e0670b, type: 3}
       propertyPath: m_Name

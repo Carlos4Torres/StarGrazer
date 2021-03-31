@@ -97,6 +97,11 @@ public class BossController : MonoBehaviour
     public GameObject modelObj;
     private float spawnPosition;
     private float startHealth;
+    private float startingSpeed;
+    private int startingTimer;
+    private int startingTimer2;
+    private int startingTimertop;
+    private int startingTimertop2;
 
     //-----------------------------------------------------------------------------------------------------------------------------------------
 
@@ -108,6 +113,11 @@ public class BossController : MonoBehaviour
         localDollyScript.m_Speed = 0;
         spawnPosition = localDollyScript.m_Position;
         startHealth = health;
+        startingSpeed = MoveSpeed;
+        startingTimer = timer;
+        startingTimer2 = timer2;
+        startingTimertop = timertop;
+        startingTimertop2 = timertop2;
     }
 
     void Update()
@@ -323,6 +333,30 @@ public class BossController : MonoBehaviour
         localDollyScript.m_Position = spawnPosition;
         health = startHealth;
         state = 0;
+        MoveSpeed = startingSpeed;
+        phases = 5;
+        timer = startingTimer;
+        timer2 = startingTimer2;
+        timertop = startingTimertop;
+        timertop2 = startingTimertop2;
+        StartEntry();
+    }
+
+    void StartEntry()
+    {
+        if (state == 0)
+        {
+            if (boss != 2 && boss != 5)
+            {
+                if (localDollyScript.m_Position - mainDollyScipt.m_Position > 40)
+                    MoveSpeed += ((localDollyScript.m_Position - mainDollyScipt.m_Position) * -.75f);
+            }
+
+            var collider = this.GetComponent<BoxCollider>();
+            collider.enabled = false;
+
+            Entry();
+        }
     }
 
     //detects when the player gets to the boss area in order to activate it
@@ -330,19 +364,7 @@ public class BossController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (state == 0)
-            {
-                if(boss != 2 && boss != 5)
-                {
-                    if (localDollyScript.m_Position - mainDollyScipt.m_Position > 40)
-                        MoveSpeed += ((localDollyScript.m_Position - mainDollyScipt.m_Position) * -.75f);      
-                }
-
-                var collider = this.GetComponent<BoxCollider>();
-                collider.enabled = false;
-
-                Entry();
-            }
+            StartEntry();
         }
 
         //when bullets hit the boss, they are destroyed
