@@ -102,6 +102,7 @@ public class BossController : MonoBehaviour
     private int startingTimer2;
     private int startingTimertop;
     private int startingTimertop2;
+    private BoxCollider collider;
 
     //-----------------------------------------------------------------------------------------------------------------------------------------
 
@@ -109,6 +110,7 @@ public class BossController : MonoBehaviour
     {
         alpha = 0f;
         localDollyScript = GetComponent<CinemachineDollyCart>();
+        collider = GetComponent<BoxCollider>();
         state = 0;
         localDollyScript.m_Speed = 0;
         spawnPosition = localDollyScript.m_Position;
@@ -339,7 +341,8 @@ public class BossController : MonoBehaviour
         timer2 = startingTimer2;
         timertop = startingTimertop;
         timertop2 = startingTimertop2;
-        StartEntry();
+        collider.enabled = true;
+        //StartEntry();
     }
 
     void StartEntry()
@@ -352,7 +355,6 @@ public class BossController : MonoBehaviour
                     MoveSpeed += ((localDollyScript.m_Position - mainDollyScipt.m_Position) * -.75f);
             }
 
-            var collider = this.GetComponent<BoxCollider>();
             collider.enabled = false;
 
             Entry();

@@ -19,7 +19,7 @@ public class PathSwitchTrigger : MonoBehaviour
 
             mainDollyScipt.m_Position = insertPoint;
 
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
         }
     }
 }

@@ -23,6 +23,8 @@ public class PlayerHealth : MonoBehaviour
     public RawImage livesUI;
     public Texture[] livesImages;
     public GameObject crosshair;
+    public CinemachineSmoothPath path;
+    public CinemachineDollyCart ghostDolly;
 
     private Collider healthCollider;
     private CinemachineDollyCart dollyCart;
@@ -30,6 +32,7 @@ public class PlayerHealth : MonoBehaviour
     private float startingDollySpeed;
 
     public List<Transform> sections;
+    public List<SpeedTrigger> speedTrigs;
 
     public static int checkpointNum;
 
@@ -89,6 +92,7 @@ public class PlayerHealth : MonoBehaviour
         healthUI.texture = healthImages[health];
         livesUI.texture = livesImages[lives];
         dollyCart.m_Speed = startingDollySpeed;
+        dollyCart.m_Path = path;
     }
 
     void ResetEnemies(Transform section)
@@ -107,12 +111,24 @@ public class PlayerHealth : MonoBehaviour
                 childsChild.GetComponent<EnemyMainPath>().ResetEnemy();
             }
         }
-
     }
 
     private void ResetBoss(Transform section)
     {
         section.GetComponent<BossController>().SelfReset();
+    }
+
+    void ResetGhosts()
+    {
+        ghostDolly.m_Position = 0;
+    }
+
+    void ResetSpeedTriggers()
+    {
+        foreach(SpeedTrigger t in speedTrigs)
+        {
+            t.TurnOnCollider();
+        }
     }
 
     public IEnumerator Respawn()
@@ -159,6 +175,9 @@ public class PlayerHealth : MonoBehaviour
     public IEnumerator ResetToCheckpoint(int cn)
     {
         yield return new WaitForSeconds(3f);
+
+        SetBeginningValues();
+        ResetSpeedTriggers();
 
         int s = SceneManager.GetActiveScene().buildIndex;
         switch(s)
@@ -238,13 +257,13 @@ public class PlayerHealth : MonoBehaviour
                         dollyCart.m_Position = 0;
                         break;
                     case 1:
-                        dollyCart.m_Position = 0;
+                        dollyCart.m_Position = 750;
                         break;
                     case 2:
-                        dollyCart.m_Position = 0;
+                        dollyCart.m_Position = 3750;
                         break;
                     case 3:
-                        dollyCart.m_Position = 0;
+                        dollyCart.m_Position = 5260;
                         break;
                 }
                 break;
@@ -252,8 +271,9 @@ public class PlayerHealth : MonoBehaviour
                 Debug.Log("Not valid scene");
                 break;
         }
-        SetBeginningValues();
-        if (cn != 3)
+        if(s == 4 && cn == 2)
+            ResetGhosts();
+        else if (cn != 3)
             ResetEnemies(sections[cn]);
         else
             ResetBoss(sections[cn]);

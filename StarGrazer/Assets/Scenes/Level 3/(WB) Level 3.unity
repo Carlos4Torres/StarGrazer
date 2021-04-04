@@ -12389,6 +12389,10 @@ PrefabInstance:
       propertyPath: sections.Array.data[3]
       value: 
       objectReference: {fileID: 9170483863312932894}
+    - target: {fileID: 689015017433729343, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
+      propertyPath: path
+      value: 
+      objectReference: {fileID: 957427142}
     - target: {fileID: 933969586513639041, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_Layer
       value: 2

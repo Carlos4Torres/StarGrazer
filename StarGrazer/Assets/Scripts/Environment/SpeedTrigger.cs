@@ -19,12 +19,18 @@ public class SpeedTrigger : MonoBehaviour
 
     private float moveDampen = 0;
     private float defaultShotSpeed;
+    private BoxCollider bc;
     public Weapon weaponScript;
 
     public enum SpeedChange
     {
         SLOWING,
         SPEEDING,
+    }
+
+    void Start()
+    {
+        bc = GetComponent<BoxCollider>();
     }
 
     void Update()
@@ -45,6 +51,11 @@ public class SpeedTrigger : MonoBehaviour
                         weaponScript.shotSpeed = newShotSpeed;
                         moveDampen = 0;
                         if (DestroyMe) Destroy(this.gameObject);
+                        else
+                        {
+                            bc.enabled = false;
+                            active = false;
+                        }
                     }
 
                     break;
@@ -60,7 +71,12 @@ public class SpeedTrigger : MonoBehaviour
                             mainDolly.m_Speed = defaultSPEED;
                             weaponScript.shotSpeed = defaultShotSpeed;
                             moveDampen = 0;
-                            if (DestroyMe) Destroy(this.gameObject); else active = false;
+                            if (DestroyMe) Destroy(this.gameObject);
+                            else
+                            {
+                                //bc.enabled = false;
+                                active = false;
+                            }
                         }
                     }
                     else
@@ -73,7 +89,12 @@ public class SpeedTrigger : MonoBehaviour
                             mainDolly.m_Speed = newSpeed;
                             weaponScript.shotSpeed = newShotSpeed;
                             moveDampen = 0;
-                            if (DestroyMe) Destroy(this.gameObject); else active = false;
+                            if (DestroyMe) Destroy(this.gameObject);
+                            else
+                            {
+                                //bc.enabled = false;
+                                active = false;
+                            }
                         }
                     }
 
@@ -89,6 +110,11 @@ public class SpeedTrigger : MonoBehaviour
             }
         }
      
+    }
+
+    public void TurnOnCollider()
+    {
+        //bc.enabled = true;
     }
 
 
