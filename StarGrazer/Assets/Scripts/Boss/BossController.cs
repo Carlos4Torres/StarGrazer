@@ -65,7 +65,7 @@ public class BossController : MonoBehaviour
     [Header("Components")]
     public Transform shotSpawn;
     public shootingPattern pattern;
-    public GameObject bc;
+    public BulletController bc;
     public GameObject[] BulletTypes;
     public Sprite[] BulletSprites;
     public Color[] colors;
@@ -103,6 +103,10 @@ public class BossController : MonoBehaviour
     private int startingTimertop;
     private int startingTimertop2;
     private BoxCollider collider;
+
+    private bool isMoving = true;
+    private float isMovingMin = -12f;
+    private float isMovingMax = -17.5f;
 
     //-----------------------------------------------------------------------------------------------------------------------------------------
 
@@ -195,6 +199,15 @@ public class BossController : MonoBehaviour
                         { pattern = shootingPattern.GUILLOTINE; timertop = 40; timertop2 = 300; }
                         break;
                 }
+                
+                if (localDollyScript.m_Position > localDollyScript.m_Path.PathLength - 75)
+                {
+                    localDollyScript.m_Speed = Mathf.Lerp(localDollyScript.m_Speed, 0, moveDampen);
+                    mainDollyScipt.m_Speed = Mathf.Lerp(mainDollyScipt.m_Speed, 0, moveDampen);
+
+                    isMoving = false;
+                    moveDampen += 0.007f * Time.deltaTime;
+                }
                 break;
 
             case 2:
@@ -240,8 +253,10 @@ public class BossController : MonoBehaviour
 
                 //Used to stop the boss/player once they reach the end of the boss tunnel. Might also be useful to use this code in level 1 to prevent the teleport issue. 
                 //Once you put in whatever code you want to use to signifiy the phase two/retreating camera section, I can come back in and make the player & boss start going backwards.
-                if (localDollyScript.m_Position > localDollyScript.m_Path.PathLength - 150)
+                if (localDollyScript.m_Speed > 0 && localDollyScript.m_Position > localDollyScript.m_Path.PathLength - 150 )
                 {
+
+
                     localDollyScript.m_Speed = Mathf.Lerp(localDollyScript.m_Speed, 0, moveDampen);
                     mainDollyScipt.m_Speed = Mathf.Lerp(mainDollyScipt.m_Speed, 0, moveDampen);
 
@@ -388,24 +403,39 @@ public class BossController : MonoBehaviour
         switch (pattern)
         {
             case shootingPattern.HUNGER_GAMES:
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, 0, Random.Range(-1f, -5f));
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[0], colors[1], 2.0f, 0, 0, Random.Range(-1f, -5f));
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, 0, Random.Range(-1f, -5f));
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[0], colors[1], 2.0f, 0, 0, Random.Range(-1f, -5f));
+                if(isMoving)
+                {
+                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, 0, Random.Range(-1f, -5f));
+                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[0], colors[1], 2.0f, 0, 0, Random.Range(-1f, -5f));
+                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, 0, Random.Range(-1f, -5f));
+                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[0], colors[1], 2.0f, 0, 0, Random.Range(-1f, -5f));
+                }
+                else
+                {
+                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, 0, Random.Range(isMovingMin, isMovingMax));
+                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[0], colors[1], 2.0f, 0, 0, Random.Range(isMovingMin, isMovingMax));
+                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, 0, Random.Range(isMovingMin, isMovingMax));
+                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[0], colors[1], 2.0f, 0, 0, Random.Range(isMovingMin, isMovingMax));
+                }
+                
                 break;
 
             case shootingPattern.HOTHEAD:
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[0], colors[1], 1.0f, 0, 0, 0);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[0], colors[1], 1.0f, 0, 0, 0);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[0], colors[1], 1.0f, 0, 0, 0);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[0], colors[1], 1.0f, 0, 0, 0);
-                if (timer2 <= 0) { bc.GetComponent<BulletController>().ShootExtra(BulletTypes[1], shotSpawn, 0, Random.Range(-10f, 10f), 40, 0, 90, 0, BulletSprites[4], colors[2], 2.0f, 0, 0, -30); timer2 = timertop2; }
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[0], colors[1], 1.0f, 0, 0, Random.Range(isMovingMin, isMovingMax));
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[0], colors[1], 1.0f, 0, 0, Random.Range(isMovingMin, isMovingMax));
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[0], colors[1], 1.0f, 0, 0, Random.Range(isMovingMin, isMovingMax));
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[0], colors[1], 1.0f, 0, 0, Random.Range(isMovingMin, isMovingMax));
+                if (timer2 <= 0)
+                {
+                    bc.GetComponent<BulletController>().ShootExtra(BulletTypes[1], shotSpawn, 0, Random.Range(-10f, 10f), 40, 0, 90, 0, BulletSprites[4], colors[2], 2.0f, 0, 0, -10); timer2 = timertop2;
+                }
+
                 break;
 
             case shootingPattern.WHAMMY_POP:
                 if (timer2 <= 0) { GameObject thisone = Instantiate(bomb, shotSpawn.position, Quaternion.Euler(0, 0, 0)); thisone.GetComponent<EnemyShootFollow>().mode = 1; timer2 = timertop2; }
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[0], colors[3], 2.0f, 0, 3, -2f);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[0], colors[3], 2.0f, 0, -3, -2f);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[0], colors[3], 2.0f, 0, 3, -8.5f);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[0], colors[3], 2.0f, 0, -3, -8.5f);
                 break;
 
             case shootingPattern.THIS_IS_VIOLENCE_NOW:
@@ -413,8 +443,8 @@ public class BossController : MonoBehaviour
                 break;
 
             case shootingPattern.GUILLOTINE:
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -5.5f, 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, 0, -2f);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 5.5f, 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, 0, -2f);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, -5.5f, 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, 0, -20f);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 5.5f, 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, 0, -20f);
 
                 if (timer2 <= 0)
                 {
@@ -422,13 +452,13 @@ public class BossController : MonoBehaviour
                     switch (BladePos)
                     {
                         case 0:
-                            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 11, 0, 0, 0, 0, BulletSprites[8], colors[2], 1.5f, 0, 0, 20); secondstowait = 3; StartCoroutine(G());
+                            bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 11, 0, 0, 0, 0, BulletSprites[8], colors[2], 1.5f, 0, 0, -20); secondstowait = 3; StartCoroutine(G());
                             break;
                         case 1:
-                            { bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[8], colors[2], 1.5f, 0, 0, 20); secondstowait = 3; StartCoroutine(G()); }
+                            { bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[8], colors[2], 1.5f, 0, 0, -20); secondstowait = 3; StartCoroutine(G()); }
                             break;
                         case 2:
-                            { bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -11, 0, 0, 0, 0, BulletSprites[8], colors[2], 1.5f, 0, 0, 20); secondstowait = 3; StartCoroutine(G()); }
+                            { bc.ShootExtra(BulletTypes[0], shotSpawn, 0, -11, 0, 0, 0, 0, BulletSprites[8], colors[2], 1.5f, 0, 0, -20); secondstowait = 3; StartCoroutine(G()); }
                             break;
                     }
                     timer2 = timertop2;
@@ -436,72 +466,72 @@ public class BossController : MonoBehaviour
                 break;
 
             case shootingPattern.THE_FEVER:
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -20, 17, 0, 0, 0, BulletSprites[7], colors[0], 0.8f, 0, 0, -20);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -15, 17, 0, 0, 0, BulletSprites[7], colors[0], 0.8f, 0, 0, -15);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -10, 17, 0, 0, 0, BulletSprites[7], colors[0], 0.8f, 0, 0, -20);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -5, 17, 0, 0, 0, BulletSprites[7], colors[0], 0.8f, 0, 0, -15);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 17, 0, 0, 0, BulletSprites[7], colors[0], 0.8f, 0, 0, -20);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 5, 17, 0, 0, 0, BulletSprites[7], colors[0], 0.8f, 0, 0, -15);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 10, 17, 0, 0, 0, BulletSprites[7], colors[0], 0.8f, 0, 0, -20);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 15, 17, 0, 0, 0, BulletSprites[7], colors[0], 0.8f, 0, 0, -15);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -20, 20, 0, 0, 0, BulletSprites[7], colors[0], 0.8f, 0, 0, -20);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, -20, 17, 0, 0, 0, BulletSprites[7], colors[0], 0.8f, 0, 0, -20);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, -15, 17, 0, 0, 0, BulletSprites[7], colors[0], 0.8f, 0, 0, -15);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, -10, 17, 0, 0, 0, BulletSprites[7], colors[0], 0.8f, 0, 0, -20);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, -5, 17, 0, 0, 0, BulletSprites[7], colors[0], 0.8f, 0, 0, -15);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 17, 0, 0, 0, BulletSprites[7], colors[0], 0.8f, 0, 0, -20);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 5, 17, 0, 0, 0, BulletSprites[7], colors[0], 0.8f, 0, 0, -15);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 10, 17, 0, 0, 0, BulletSprites[7], colors[0], 0.8f, 0, 0, -20);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 15, 17, 0, 0, 0, BulletSprites[7], colors[0], 0.8f, 0, 0, -15);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, -20, 20, 0, 0, 0, BulletSprites[7], colors[0], 0.8f, 0, 0, -20);
                 break;
 
             case shootingPattern.STREAKY:
                 randval = Random.Range(-20f, 20f);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[1], 0.8f, 0, 0, -30);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[1], 0.8f, 0, 0, -25);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[1], 0.8f, 0, 0, -20);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[1], 0.8f, 0, 0, -15);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[1], 0.8f, 0, 0, -10);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[1], 0.8f, 0, 0, -30);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[1], 0.8f, 0, 0, -25);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[1], 0.8f, 0, 0, -20);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[1], 0.8f, 0, 0, -15);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[1], 0.8f, 0, 0, -10);
                 break;
 
             case shootingPattern.FULL_MOON:
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[0], colors[3], 13.0f, 0, 0, -20);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[0], colors[3], 13.0f, 0, 0, -20);
                 break;
 
             case shootingPattern.CUT_THROAT:
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -20, 17, 0, 0, 0, BulletSprites[7], colors[2], 0.8f, 0, 0, Random.Range(-17f, -25f));
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -15, 17, 0, 0, 0, BulletSprites[7], colors[2], 0.8f, 0, 0, Random.Range(-17f, -25f));
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -10, 17, 0, 0, 0, BulletSprites[7], colors[2], 0.8f, 0, 0, Random.Range(-17f, -25f));
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -5, 17, 0, 0, 0, BulletSprites[7], colors[2], 0.8f, 0, 0, Random.Range(-17f, -25f));
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 17, 0, 0, 0, BulletSprites[7], colors[2], 0.8f, 0, 0, Random.Range(-17f, -25f));
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 5, 17, 0, 0, 0, BulletSprites[7], colors[2], 0.8f, 0, 0, Random.Range(-17f, -25f));
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 10, 17, 0, 0, 0, BulletSprites[7], colors[2], 0.8f, 0, 0, Random.Range(-17f, -25f));
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 15, 17, 0, 0, 0, BulletSprites[7], colors[2], 0.8f, 0, 0, Random.Range(-17f, -25f));
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, -20, 20, 0, 0, 0, BulletSprites[7], colors[2], 0.8f, 0, 0, Random.Range(-17f, -25f));
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, -20, 17, 0, 0, 0, BulletSprites[7], colors[2], 0.8f, 0, 0, Random.Range(-17f, -25f));
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, -15, 17, 0, 0, 0, BulletSprites[7], colors[2], 0.8f, 0, 0, Random.Range(-17f, -25f));
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, -10, 17, 0, 0, 0, BulletSprites[7], colors[2], 0.8f, 0, 0, Random.Range(-17f, -25f));
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, -5, 17, 0, 0, 0, BulletSprites[7], colors[2], 0.8f, 0, 0, Random.Range(-17f, -25f));
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 17, 0, 0, 0, BulletSprites[7], colors[2], 0.8f, 0, 0, Random.Range(-17f, -25f));
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 5, 17, 0, 0, 0, BulletSprites[7], colors[2], 0.8f, 0, 0, Random.Range(-17f, -25f));
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 10, 17, 0, 0, 0, BulletSprites[7], colors[2], 0.8f, 0, 0, Random.Range(-17f, -25f));
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 15, 17, 0, 0, 0, BulletSprites[7], colors[2], 0.8f, 0, 0, Random.Range(-17f, -25f));
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, -20, 20, 0, 0, 0, BulletSprites[7], colors[2], 0.8f, 0, 0, Random.Range(-17f, -25f));
                 break;
 
             case shootingPattern.THE_FEAR:
                 randval = Random.Range(-20f, 20f);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[4], 0.8f, 0, 0, -30);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[4], 0.8f, 0, 0, -25);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[4], 0.8f, 0, 0, -20);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[4], 0.8f, 0, 0, -15);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[4], 0.8f, 0, 0, -10);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[4], 0.8f, 0, 0, -30);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[4], 0.8f, 0, 0, -25);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[4], 0.8f, 0, 0, -20);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[4], 0.8f, 0, 0, -15);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[4], 0.8f, 0, 0, -10);
 
                 randval = Random.Range(-20f, 20f);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[4], 0.8f, 0, 0, -30);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[4], 0.8f, 0, 0, -25);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[4], 0.8f, 0, 0, -20);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[4], 0.8f, 0, 0, -15);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[4], 0.8f, 0, 0, -10);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[4], 0.8f, 0, 0, -30);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[4], 0.8f, 0, 0, -25);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[4], 0.8f, 0, 0, -20);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[4], 0.8f, 0, 0, -15);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[4], 0.8f, 0, 0, -10);
                 break;
 
             case shootingPattern.INANIMATE_SENSATION:
                 randval = Random.Range(-20f, 20f);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, 5, -30);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, 5, -25);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, 5, -20);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, 5, -15);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, 5, -10);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, 5, -30);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, 5, -25);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, 5, -20);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, 5, -15);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, 5, -10);
 
                 randval = Random.Range(-20f, 20f);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, -5, -30);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, -5, -25);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, -5, -20);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, -5, -15);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, -5, -10);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, -5, -30);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, -5, -25);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, -5, -20);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, -5, -15);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, -5, -10);
                 break;
 
             case shootingPattern.HAHAHA:
@@ -509,23 +539,23 @@ public class BossController : MonoBehaviour
                 break;
 
             case shootingPattern.BIRDS:
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, 15, 0);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, -15, 0);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, 0, 15);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, 0, -15);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, 15, 15);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, -15, 15);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, 15, -15);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, -15, -15);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, 15, 0);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, -15, 0);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, 0, 15);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, 0, -15);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, 15, 15);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, -15, 15);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, 15, -15);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, -15, -15);
                 break;
 
             case shootingPattern.THRU_THE_WALLS:
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, 3, -2f);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, -3, -2f);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, 3, -2f);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, -3, -2f);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, 3, -2f);
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, -3, -2f);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, 3, -2f);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, -3, -2f);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, 3, -2f);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, -3, -2f);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, 3, -2f);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, -3, -2f);
                 break;
 
             case shootingPattern.HUSTLE_BONES:
@@ -735,9 +765,9 @@ public class BossController : MonoBehaviour
 
     IEnumerator TIVN()
     {
-        for (int i = 0;i<50;i++)
+        for (int i = 0; i < 25;i++)
         {
-            bc.GetComponent<BulletController>().ShootExtra(BulletTypes[2], shotSpawn, 0, rise, Random.Range(-5f, 0f), 0, 0, 0, BulletSprites[0], colors[0], Random.Range(0.5f,3.0f), 0, 0, 0);
+            bc.ShootExtra(BulletTypes[2], shotSpawn, 0, rise, Random.Range(-5f, 0f), 0, 0, 0, BulletSprites[0], colors[0], Random.Range(0.5f,3.0f), 0, 0, Random.Range(-5f, -12.5f));
             rise += 1.25f;
         }
         yield return new WaitForSeconds(1);

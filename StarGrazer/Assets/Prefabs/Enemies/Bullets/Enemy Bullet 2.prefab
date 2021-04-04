@@ -194,7 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 70
   rb: {fileID: -8470312112087465054}
-  lifetime: 3
+  lifetime: 4
   enemyDamage: 10
 --- !u!54 &-8470312112087465054
 Rigidbody:
