@@ -5917,17 +5917,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 378deb00b2420db45bca6413b5545927, type: 3}
---- !u!1 &907057586 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4471470595191187261, guid: 378deb00b2420db45bca6413b5545927, type: 3}
-  m_PrefabInstance: {fileID: 907057585}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &907057587 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4471470595191187262, guid: 378deb00b2420db45bca6413b5545927, type: 3}
   m_PrefabInstance: {fileID: 907057585}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 907057586}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dcc4723868b7e2459b1b434100d4e4d, type: 3}
@@ -12287,7 +12282,7 @@ MonoBehaviour:
   state: 0
   shotSpawn: {fileID: 2303214473696936717}
   pattern: 22
-  bc: {fileID: 907057586}
+  bc: {fileID: 907057587}
   BulletTypes:
   - {fileID: 4635193171472097772, guid: b097a1f0bba851f48acf31fdb432bdcc, type: 3}
   - {fileID: 4635193171472097772, guid: 473b571d1057ae947acb38f604d04a85, type: 3}
@@ -12335,3 +12330,4 @@ MonoBehaviour:
   alpha: 0
   tempcolor: {r: 1, g: 1, b: 1, a: 0}
   modelObj: {fileID: 215833740}
+  isMoving: 1

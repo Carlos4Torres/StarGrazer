@@ -6757,7 +6757,7 @@ PrefabInstance:
       objectReference: {fileID: 1077072403}
     - target: {fileID: 689015015764783906, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_Position
-      value: 3019
+      value: 4161.867
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783906, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_Speed
@@ -6765,31 +6765,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1030.6877
+      value: 1290.5813
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 587.2347
+      value: 1440.4797
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 425.64465
+      value: 523.3683
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.01463246
+      value: 0.0146460645
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.78223926
+      value: -0.04324918
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.018386258
+      value: 0.0006340917
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.6225348
+      value: 0.9989568
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_RootOrder
@@ -9846,7 +9846,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4471470595191187262, guid: 378deb00b2420db45bca6413b5545927, type: 3}
   m_PrefabInstance: {fileID: 1319900688}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1660395628}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dcc4723868b7e2459b1b434100d4e4d, type: 3}
@@ -12956,11 +12956,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 376e82cbef3612e4692094a4d43ba3b8, type: 3}
---- !u!1 &1660395628 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4471470595191187261, guid: 378deb00b2420db45bca6413b5545927, type: 3}
-  m_PrefabInstance: {fileID: 1319900688}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1663210640 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3302715154211795018, guid: 376e82cbef3612e4692094a4d43ba3b8, type: 3}
@@ -16983,13 +16978,13 @@ MonoBehaviour:
   shotSpeed: 25
   health_per_phase: 100
   health: 100
-  phases: 5
+  phases: 3
   dmgPerBullet: 1
   boss: 4
   state: 0
   shotSpawn: {fileID: 8424575234006654968}
   pattern: 0
-  bc: {fileID: 1660395628}
+  bc: {fileID: 1319900689}
   BulletTypes:
   - {fileID: 4635193171472097772, guid: b097a1f0bba851f48acf31fdb432bdcc, type: 3}
   - {fileID: 4635193171472097772, guid: 473b571d1057ae947acb38f604d04a85, type: 3}
@@ -17029,6 +17024,7 @@ MonoBehaviour:
   alpha: 0
   tempcolor: {r: 0, g: 0, b: 0, a: 0}
   modelObj: {fileID: 188163921}
+  isMoving: 1
 --- !u!1 &1497734590580641076
 GameObject:
   m_ObjectHideFlags: 0

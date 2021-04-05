@@ -1369,7 +1369,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4471470595191187262, guid: 378deb00b2420db45bca6413b5545927, type: 3}
   m_PrefabInstance: {fileID: 212059738}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1532578955}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dcc4723868b7e2459b1b434100d4e4d, type: 3}
@@ -8628,6 +8628,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Speed Trigger (Slow)
       objectReference: {fileID: 0}
+    - target: {fileID: 6933551276620560533, guid: 05e16f90d6002f6478d541abc5e0670b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6933551276620560536, guid: 05e16f90d6002f6478d541abc5e0670b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -20.9
@@ -11907,11 +11911,6 @@ Transform:
   m_Father: {fileID: 2000983799}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1532578955 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4471470595191187261, guid: 378deb00b2420db45bca6413b5545927, type: 3}
-  m_PrefabInstance: {fileID: 212059738}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1578983072
 GameObject:
   m_ObjectHideFlags: 0
@@ -15821,7 +15820,7 @@ MonoBehaviour:
   state: 0
   shotSpawn: {fileID: 8424575235049973319}
   pattern: 5
-  bc: {fileID: 1532578955}
+  bc: {fileID: 212059739}
   BulletTypes:
   - {fileID: 4635193171472097772, guid: b097a1f0bba851f48acf31fdb432bdcc, type: 3}
   - {fileID: 4635193171472097772, guid: 473b571d1057ae947acb38f604d04a85, type: 3}
@@ -15862,6 +15861,7 @@ MonoBehaviour:
   alpha: 0
   tempcolor: {r: 0, g: 0, b: 0, a: 0}
   modelObj: {fileID: 2142225078}
+  isMoving: 1
 --- !u!4 &3705869572784296728 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 367633112155143321, guid: ffa3a984b4f0b1f4a82cfff5aefd958c, type: 3}
