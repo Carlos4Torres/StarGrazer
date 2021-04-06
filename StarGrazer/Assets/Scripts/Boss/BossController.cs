@@ -108,7 +108,7 @@ public class BossController : MonoBehaviour
     private float isMovingMin = -12f;
     private float isMovingMax = -17.5f;
     private float swap = 0;
-    private float fullBulletMoveSpeed;
+    private float fullBulletMoveSpeed = 0;
 
     //-----------------------------------------------------------------------------------------------------------------------------------------
 
@@ -294,17 +294,27 @@ public class BossController : MonoBehaviour
                         { pattern = shootingPattern.INANIMATE_SENSATION; timertop = 150; }
                         break;
                     case 4:
-                        { pattern = shootingPattern.HAHAHA; timertop = 150; }
+                        { pattern = shootingPattern.HAHAHA; timertop = 200; }
                         break;
                     case 3:
                         { pattern = shootingPattern.BIRDS; timertop = 100; }
                         break;
                     case 2:
-                        { pattern = shootingPattern.THRU_THE_WALLS; timertop = 100; }
+                        { pattern = shootingPattern.THRU_THE_WALLS; timertop = 140; }
                         break;
                     case 1:
-                        { pattern = shootingPattern.HUSTLE_BONES; timertop = 50; }
+                        { pattern = shootingPattern.HUSTLE_BONES; timertop = 125; }
                         break;
+                }
+
+                if (localDollyScript.m_Position > localDollyScript.m_Path.PathLength - 75)
+                {
+                    localDollyScript.m_Speed = Mathf.Lerp(localDollyScript.m_Speed, 0, moveDampen);
+                    mainDollyScipt.m_Speed = Mathf.Lerp(mainDollyScipt.m_Speed, 0, moveDampen);
+
+                    isMoving = false;
+                    fullBulletMoveSpeed = -15f;
+                    moveDampen += 0.007f * Time.deltaTime;
                 }
 
                 break;
@@ -553,74 +563,94 @@ public class BossController : MonoBehaviour
                 break;
 
             case shootingPattern.INANIMATE_SENSATION:
-                randval = Random.Range(-20f, 20f);
-                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, 5, -25);
-                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, 5, -20);
-                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, 5, -15);
-                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, 5, -10);
+                if(swap == 0)
+                {
+                    randval = Random.Range(-20f, 20f);
+                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, 5, -25 + fullBulletMoveSpeed);
+                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, 5, -20 + fullBulletMoveSpeed);
+                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, 5, -15 + fullBulletMoveSpeed);
 
-                randval = Random.Range(-20f, 20f);
-                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, -5, -25);
-                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, -5, -20);
-                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, -5, -15);
-                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, -5, -10);
+                    swap = 1;
+                }
+                else
+                {
+
+                    randval = Random.Range(-20f, 20f);
+                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, -5, -25 + fullBulletMoveSpeed);
+                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, -5, -20 + fullBulletMoveSpeed);
+                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, -5, -15 + fullBulletMoveSpeed);
+
+                    swap = 0;
+                }
+
                 break;
 
             case shootingPattern.HAHAHA:
-                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[3], colors[0], 3.0f, 0, 0, -20);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[3], colors[0], 3.0f, 0, 0, -20 + fullBulletMoveSpeed);
                 break;
 
             case shootingPattern.BIRDS:
-
+                
                 switch(swap)
                 {
                     case 0:
 
-
-                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, 15, 0);
-                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, -15, 0);
+                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, 15, fullBulletMoveSpeed);
+                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, -15, fullBulletMoveSpeed);
 
                         swap = 1;
                         break;
                     case 1:
-
-                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, 15, 15);
-                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, -15, 15);
+                        
+                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, 15, -15 + fullBulletMoveSpeed);
+                        
+                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, -15, -15 + fullBulletMoveSpeed);
 
                         swap = 2;
                         break;
                     case 2:
 
-                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, 15, -15);
-                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, -15, -15);
+                         bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, 0, -15 + fullBulletMoveSpeed);
 
-                        swap = 3 ;
+                        swap = 0 ;
                         break;
-                   case 3:
-                   
-                   
-                       bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, 0, 15);
-                       bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, 0, -15);
-                   
-                       swap = 0;
-                       break;
+                    default:
+                        swap = 0;
+                        break;
                 }
 
-              
 
                 break;
 
             case shootingPattern.THRU_THE_WALLS:
-                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, 3, -2f);
-                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, -3, -2f);
-                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, 3, -2f);
-                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, -3, -2f);
-                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, 3, -2f);
-                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, -3, -2f);
+                if (swap == 0)
+                {
+                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, 3, -2f + fullBulletMoveSpeed);
+                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, -3, -2f + fullBulletMoveSpeed);
+                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, 3, -2f + fullBulletMoveSpeed);
+                }
+                else 
+                {
+                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, -3, -2f + fullBulletMoveSpeed);
+                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, 3, -2f + fullBulletMoveSpeed);
+                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[0], colors[0], 2.0f, 0, -3, -2f + fullBulletMoveSpeed);
+                }
+                
+                
+                
+
                 break;
 
             case shootingPattern.HUSTLE_BONES:
-                bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[3], colors[0], Random.Range(1.0f, 2.0f), 0, 0, Random.Range(-20f, -8f));
+                if(isMoving)
+                {
+                    bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[3], colors[0], Random.Range(1.0f, 2.0f), 0, 0, Random.Range(-20f, -8f));
+                }
+                else
+                {
+                    bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[3], colors[0], Random.Range(1.0f, 2.0f), 0, 0, Random.Range(isMovingMin, isMovingMax));
+                }
+               
                 break;
 
             case shootingPattern.LIL_BOY:
