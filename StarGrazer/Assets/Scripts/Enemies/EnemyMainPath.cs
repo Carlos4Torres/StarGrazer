@@ -109,7 +109,7 @@ public class EnemyMainPath : MonoBehaviour
         state = combatState.IDLE;
         localDollyScript.m_Speed = 0;
         localDollyScript.m_Position = spawnPosition;
-        enemyHealth.health = 50;
+        enemyHealth.Reset();
         StopCoroutine(Escape());
     }
 
