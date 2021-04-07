@@ -54,6 +54,7 @@ public class SpeedTrigger : MonoBehaviour
                         else
                         {
                             bc.enabled = false;
+                            if(timer == 0)
                             active = false;
                         }
                     }
@@ -61,9 +62,10 @@ public class SpeedTrigger : MonoBehaviour
                     break;
 
                 case SpeedChange.SPEEDING:
-
+                    
                     if (newSpeed < 20)
                     {
+
                         mainDolly.m_Speed = Mathf.Lerp(mainDolly.m_Speed, defaultSPEED, moveDampen);
                         weaponScript.shotSpeed = Mathf.Lerp(weaponScript.shotSpeed, defaultShotSpeed, moveDampen);
                         if (defaultSPEED - mainDolly.m_Speed < 1)
@@ -129,7 +131,7 @@ public class SpeedTrigger : MonoBehaviour
     }
 
     private IEnumerator Timer()
-    {        
+    {
         yield return new WaitForSeconds(timer);
         changeType = SpeedChange.SPEEDING;
     }

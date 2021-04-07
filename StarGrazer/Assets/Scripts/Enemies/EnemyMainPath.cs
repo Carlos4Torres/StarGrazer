@@ -527,8 +527,8 @@ public class EnemyMainPath : MonoBehaviour
 
     private void L3G1()
     {
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 0, 2);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 6, 4);
+       // bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 0, 2);
+       // bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 6, 4);
         bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 8, -4);
         bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 7, -12);
         bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 9, 12);
@@ -597,21 +597,21 @@ public class EnemyMainPath : MonoBehaviour
 
     private void L3G5()
     {
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, 0, 10);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, 6, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -6, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, 0, -10);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, 6, 10);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -6, -10);
-        bc.Shoot(shotSpawn, 0, 0, -5, sprite, color, 0.8f, 0, 6, -10);
-        bc.Shoot(shotSpawn, 0, 0, -5, sprite, color, 0.8f, 0, -6, 10);
+       // bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, 0, 10);
+       // bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, 6, 0);
+       // bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -6, 0);
+       // bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, 0, -10);
+       bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, 6, 10);
+       // bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -6, -10);
+      //  bc.Shoot(shotSpawn, 0, 0, -5, sprite, color, 0.8f, 0, 6, -10);
+       bc.Shoot(shotSpawn, 0, 0, -5, sprite, color, 0.8f, 0, -6, 10);
 
         return;
     }
 
     private void L3G6()
     {
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 0, 5);
+       // bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 0, 5);
         bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 10, 5);
         bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, -10, 5);
         bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 5, -2);
@@ -624,19 +624,19 @@ public class EnemyMainPath : MonoBehaviour
         bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 0, 10);
         bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 10, 10);
         bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, -10, 10);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 7, 5);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, -7, 5);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 4, -2);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, -4, -2);
+      // bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 7, 5);
+      // bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, -7, 5);
+      //  bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 4, -2);
+      //  bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, -4, -2);
 
         return;
     }
 
     private void L3G8()
     {
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 0, -4);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 4, 2);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, -4, 2);
+       // bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 0, -4);
+      // bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 4, 2);
+      // bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, -4, 2);
         bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 7, 7);
         bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, -7, 7);
         bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, 0, 10, 12);
