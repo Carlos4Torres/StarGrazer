@@ -7,7 +7,8 @@ public class SpecialWeapons : MonoBehaviour
 {
     private int specialWeaponUnits;
     private const int MAXSPECIAL = 3;
-   
+    public Animator animator;
+
     [Header("Images")]
     public RawImage specialUI;
     public Texture[] specialImages;
@@ -81,6 +82,7 @@ public class SpecialWeapons : MonoBehaviour
                 print("reached maximum units");
             }
         }
+
     }
 
 
@@ -103,6 +105,12 @@ public class SpecialWeapons : MonoBehaviour
     {
         if (specialWeaponUnits > 0)
         {
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                print("bomb used");
+                animator.SetTrigger("boom");
+            }
+
             specialWeaponUnits--;
             specialUI.texture = specialImages[specialWeaponUnits];
 
