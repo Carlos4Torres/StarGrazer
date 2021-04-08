@@ -34,7 +34,7 @@ public class LavaScript : MonoBehaviour
         {   
             case 1:
                 lavaDollyH.m_Speed = Mathf.Lerp(lavaDollyH.m_Speed, 25, moveDampen);
-                lavaDollyV.m_Speed = Mathf.Lerp(lavaDollyV.m_Speed, 30, moveDampen);
+                lavaDollyV.m_Speed = Mathf.Lerp(lavaDollyV.m_Speed, 35, moveDampen);
                 moveDampen += 0.007f * Time.deltaTime;
 
                 break;
