@@ -9,6 +9,7 @@ public class PauseMenuController : MonoBehaviour
     public CrossHair crossHairScript;
     public StarGrazerMovement movement;
     public Canvas PauseMenu;
+    public GameObject tutorial;
     public bool isPaused;
     [SerializeField] bool keyDown;
     //[SerializeField] int maxIndex = 1;
@@ -20,6 +21,9 @@ public class PauseMenuController : MonoBehaviour
     {
         PauseMenu.GetComponent<Canvas>().enabled = false;
         Time.timeScale = 1f;
+
+        if(SceneManager.GetActiveScene().buildIndex == 1 && tutorial)
+            ShowTutorial(true);
     }
 
     void Update()
@@ -88,6 +92,22 @@ public class PauseMenuController : MonoBehaviour
             {
                 QuitGame();
             }
+        }
+    }
+
+    public void ShowTutorial(bool on)
+    {
+        if (on)
+        {
+            tutorial.SetActive(true);
+            Cursor.visible = true;
+            Time.timeScale = 0;
+        }
+        else
+        {
+            tutorial.SetActive(false);
+            Cursor.visible = false;
+            Time.timeScale = 1;
         }
     }
 

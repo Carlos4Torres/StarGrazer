@@ -9047,6 +9047,10 @@ PrefabInstance:
       propertyPath: speed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6016195725851492541, guid: 381386dc172b36441bd5a6ef707f271c, type: 3}
+      propertyPath: checkpointNum
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6016195725851492543, guid: 381386dc172b36441bd5a6ef707f271c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -463

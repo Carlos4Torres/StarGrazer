@@ -33,12 +33,6 @@ public class CrossHair : MonoBehaviour
         controls.Gameplay.ReticleMove.performed += ctx => move = ctx.ReadValue<Vector2>();
         controls.Gameplay.ReticleMove.canceled += ctx => move = Vector2.zero;
     }
-    
-
-    private void Start()
-    {
-        Cursor.visible = false;
-    }
 
     // Update is called once per frame
     void Update()

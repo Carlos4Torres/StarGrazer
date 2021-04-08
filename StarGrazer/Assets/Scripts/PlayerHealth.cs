@@ -75,6 +75,7 @@ public class PlayerHealth : MonoBehaviour
             {
                 mr.enabled = false;
                 Weapon.alive = false;
+                dollyCart.m_Speed = 0;
                 StartCoroutine(ResetToCheckpoint(checkpointNum));
             }
         }
