@@ -776,7 +776,7 @@ public class EnemyMainPath : MonoBehaviour
     {
         if(swap == 0)
         {
-            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, 0, 0);
+            //bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, 0, 0);
             bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -2, 0);
             bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -4, 0);
             bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -6, 0);
@@ -814,7 +814,7 @@ public class EnemyMainPath : MonoBehaviour
     {
         if(swap == 0)
         {
-            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, 0, 0);
+            //bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, 0, 0);
             bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -2, -1);
             bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -4, -1);
             bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -6, -1);
@@ -824,7 +824,7 @@ public class EnemyMainPath : MonoBehaviour
         }
         else if (swap == 1)
         {
-            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, 0, 0);
+           // bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, 0, 0);
             bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -2, 1);
             bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -4, 1);
             bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -6, 1);
@@ -859,20 +859,20 @@ public class EnemyMainPath : MonoBehaviour
     {
         if(swap == 0)
         {
-            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -10, 0, 0);
+           // bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -10, 0, 0);
             bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -7, 7, 0);
             bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -7, -7, 0);
-            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -4, 0, 0);
+         //   bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -4, 0, 0);
             bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -1, 7, 0);
             bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -1, -7, 0);
             swap = 1;
         }
         else
         {
-            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -5, 0, 0);
+           // bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -5, 0, 0);
             bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -3.5f, 7, 0);
             bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -3.5f, -7, 0);
-            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -2, 0, 0);
+           // bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -2, 0, 0);
             bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -0.5f, 7, 0);
             bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -0.5f, -7, 0);
             swap = 0;
