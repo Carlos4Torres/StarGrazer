@@ -150,7 +150,7 @@ public class MenuButton : MonoBehaviour
     {
         clickControl = 1;
         yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene("Level One");
+        SceneManager.LoadScene("Level One (Updated Visuals)");
         animator.SetBool("selected", false);
         clickControl = 0;
     }
@@ -169,7 +169,7 @@ public class MenuButton : MonoBehaviour
     {
         clickControl = 1;
         yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene("Level One");
+        SceneManager.LoadScene("Level One (Updated Visuals)");
         animator.SetBool("selected", false);
         clickControl = 0;
     }
@@ -254,7 +254,7 @@ public class MenuButton : MonoBehaviour
     {
         clickControl = 1;
         yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene("Level One");
+        SceneManager.LoadScene("Level One (Updated Visuals)");
         animator.SetBool("selected", false);
         clickControl = 0;
     }
@@ -299,7 +299,7 @@ public class MenuButton : MonoBehaviour
     {
         clickControl = 1;
         yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene("Level One");
+        SceneManager.LoadScene("Level One (Updated Visuals)");
         animator.SetBool("selected", false);
         clickControl = 0;
     }
