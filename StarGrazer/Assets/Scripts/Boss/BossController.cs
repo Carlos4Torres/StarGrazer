@@ -140,8 +140,8 @@ public class BossController : MonoBehaviour
         m_RawImage.color = tempcolor;
 
         //if CIactive is on, add to the alpha. If it's off, subtract.
-        if ((phasetimer > 100) && (alpha < 255f)){alpha += 1f;}
-        if ((phasetimer <= 100) && (alpha > 0f)) {alpha -= 1f;}
+        if ((phasetimer > 100) && (alpha < 255f)){alpha = .7f;}
+        if ((phasetimer <= 100) && (alpha > 0f)) {alpha = 0f;}
 
 
         //constantly decreases timer that controls the pause between phases
@@ -149,9 +149,14 @@ public class BossController : MonoBehaviour
 
         //if the boss's health is 0, but they have more than 1 phase left, transitions to the next phase
         if ((health <= 0) && (phases > 0)) 
-        {   phasetimer = 500;  
-            phases--; 
-            if(phases!= 0 ) health = health_per_phase; 
+        {
+            phases--;  
+            if(phases!= 0 )
+            { 
+                health = health_per_phase;
+                phasetimer = 500;
+            }
+              
         }
 
         //if the boss's health is 0 and they have no more phases left, kills the boss.
