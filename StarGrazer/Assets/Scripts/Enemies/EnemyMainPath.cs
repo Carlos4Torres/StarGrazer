@@ -704,10 +704,10 @@ public class EnemyMainPath : MonoBehaviour
 
     private void L4G4()
     {
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -10, 0, 0);
+        //bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -10, 0, 0);
         bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -7, 7, 0);
         bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -7, -7, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -4, 0, 0);
+       // bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -4, 0, 0);
         bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -1, 7, 0);
         bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -1, -7, 0);
         return;
@@ -753,10 +753,10 @@ public class EnemyMainPath : MonoBehaviour
 
     private void L5G1()
     {
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -5, 0);
+      //  bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -5, 0);
         bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -4, -6);
         bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -4, 6);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -2, 0);
+       // bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -2, 0);
         bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, 0, 12);
         bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, 0, -12);
 
@@ -764,83 +764,122 @@ public class EnemyMainPath : MonoBehaviour
 
     private void L5G2()
     {
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -8, 0);
+      //  bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -8, 0);
         bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -7, -6);
         bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -7, 6);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -5, 0);
+      //  bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -5, 0);
         bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -3, 12);
         bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -3, -12);
     }
 
     private void L5G3()
     {
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, 0, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -2, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -4, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -6, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -8, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -10, 0);
+        if(swap == 0)
+        {
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -2, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -4, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -6, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -8, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -10, 0);
+            swap = 1;
+        }
+        else if (swap == 1)
+        {
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -2, -2);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -4, -4);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -6, -6);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -8, -8);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -10, -10);
+            swap = 2;
 
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -2, -2);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -4, -4);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -6, -6);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -8, -8);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -10, -10);
+        }
+        else
+        {
 
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -2, 2);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -4, 4);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -6, 6);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -8, 8);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -10, 10);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -2, 2);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -4, 4);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -6, 6);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -8, 8);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -10, 10);
+
+            swap = 0;
+        }
+
+
 
     }
 
     private void L5G4()
     {
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, 0, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -2, -1);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -4, -1);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -6, -1);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -8, -1);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -10, -1);
+        if(swap == 0)
+        {
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -2, -1);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -4, -1);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -6, -1);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -8, -1);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -10, -1);
+            swap = 1;
+        }
+        else if (swap == 1)
+        {
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -2, 1);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -4, 1);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -6, 1);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -8, 1);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -10, 1);
+            swap = 2;
+        }
+        else if (swap == 2)
+        {
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -3, -2);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -5, -4);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -7, -6);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -9, -8);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -11, -10);
+            swap = 3;
 
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, 0, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -2, 1);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -4, 1);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -6, 1);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -8, 1);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -10, 1);
-
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -3, -2);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -5, -4);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -7, -6);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -9, -8);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -11, -10);
-
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -3, 2);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -5, 4);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -7, 6);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -9, 8);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -11, 10);
+        }
+        else
+        {
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -3, 2);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -5, 4);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -7, 6);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -9, 8);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 0.8f, 0, -11, 10);
+            swap = 0;
+        }
 
     }
 
 
     private void L5G5()
     {
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -10, 0, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -7, 7, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -7, -7, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -4, 0, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -1, 7, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -1, -7, 0);
+        if(swap == 0)
+        {
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -10, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -7, 7, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -7, -7, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -4, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -1, 7, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -1, -7, 0);
+            swap = 1;
+        }
+        else
+        {
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -5, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -3.5f, 7, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -3.5f, -7, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -2, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -0.5f, 7, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -0.5f, -7, 0);
+            swap = 0;
+        }
 
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -5, 0, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -3.5f, 7, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -3.5f, -7, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -2, 0, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -0.5f, 7, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -0.5f, -7, 0);
+
+
         return;
     }
 
@@ -856,90 +895,136 @@ public class EnemyMainPath : MonoBehaviour
 
     private void L5G7()
     {
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -7, 7, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -7, -7, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -1, 7, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -1, -7, 0);
 
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -20, 0, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -16, 0, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -12, 0, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -8, 0, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -4, 0, 0);
+        if(swap == 0)
+        {
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -7, 7, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -7, -7, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -1, 7, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -1, -7, 0);
+
+            swap = 1;
+        }
+        else
+        {
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -20, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -16, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -12, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -8, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -4, 0, 0);
+
+            swap = 0;
+        }
+
+
         return;
     }
 
     private void L5G8()
     {
         //combination
+        if(swap == 0 )
+        {
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -7, 7, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -7, -7, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -1, 7, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -1, -7, 0);
+            swap = 1;
 
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -7, 7, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -7, -7, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -1, 7, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -1, -7, 0);
+        }
+        else if (swap == 1)
+        {
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -20, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -16, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -12, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -8, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -4, 0, 0);
+            swap = 2;
+        }
+        else
+        {
 
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -20, 0, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -16, 0, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -12, 0, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -8, 0, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -4, 0, 0);
 
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, -20, 0, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, -16, 0, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, -12, 0, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, -8, 0, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, -4, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, -20, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, -16, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, -12, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, -8, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, -4, 0, 0);
+            swap = 0;
+        }
+
         return;
     }
 
     private void L5G9()
     {
         //combination
+        if (swap == 0)
+        {
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -7, 7, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -7, -7, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -1, 7, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -1, -7, 0);
+            swap = 1;
+        }
+        else if (swap == 1)
+        {
 
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -7, 7, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -7, -7, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -1, 7, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -1, -7, 0);
 
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -20, 0, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -16, 0, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -12, 0, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -8, 0, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -4, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -20, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -16, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -12, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -8, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 1.8f, -4, 0, 0);
+            swap = 2;
+        }
+        else if (swap == 2)
+        {
 
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, -20, 0, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, -16, 0, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, -12, 0, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, -8, 0, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, -4, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, -20, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, -16, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, -12, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, -8, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 3.0f, -4, 0, 0);
+            swap = 3;
+        }
+        else if (swap == 3)
+        {
 
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -10, 0, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -7, 7, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -7, -7, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -4, 0, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -1, 7, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -1, -7, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -10, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -7, 7, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -7, -7, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -4, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -1, 7, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -1, -7, 0);
+            swap = 4;
+        }
+        else
+        {
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -5, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -3.5f, 7, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -3.5f, -7, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -2, 0, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -0.5f, 7, 0);
+            bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -0.5f, -7, 0);
+            swap = 0;
+        }
 
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -5, 0, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -3.5f, 7, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -3.5f, -7, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -2, 0, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -0.5f, 7, 0);
-        bc.Shoot(shotSpawn, 0, 0, 0, sprite, color, 2.0f, -0.5f, -7, 0);
+
         return;
     }
 
     private void L5G10()
     {
-        bc.Shoot(shotSpawn, Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0, sprite, color, 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
-        bc.Shoot(shotSpawn, Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0, sprite, color, 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
-        bc.Shoot(shotSpawn, Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0, sprite, color, 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
-        bc.Shoot(shotSpawn, Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0, sprite, color, 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
-        bc.Shoot(shotSpawn, Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0, sprite, color, 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
-        bc.Shoot(shotSpawn, Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0, sprite, color, 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
-        bc.Shoot(shotSpawn, Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0, sprite, color, 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
-        bc.Shoot(shotSpawn, Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0, sprite, color, 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
-        bc.Shoot(shotSpawn, Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0, sprite, color, 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
+      // bc.Shoot(shotSpawn, Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0, sprite, color, 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
+      // bc.Shoot(shotSpawn, Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0, sprite, color, 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
+      // bc.Shoot(shotSpawn, Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0, sprite, color, 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
+      // bc.Shoot(shotSpawn, Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0, sprite, color, 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
+      // bc.Shoot(shotSpawn, Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0, sprite, color, 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
+      // bc.Shoot(shotSpawn, Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0, sprite, color, 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
+      // bc.Shoot(shotSpawn, Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0, sprite, color, 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
+       // bc.Shoot(shotSpawn, Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0, sprite, color, 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
+       // bc.Shoot(shotSpawn, Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0, sprite, color, 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
         bc.Shoot(shotSpawn, Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0, sprite, color, 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
         bc.Shoot(shotSpawn, Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0, sprite, color, 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
         bc.Shoot(shotSpawn, Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0, sprite, color, 0.8f, Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f));
