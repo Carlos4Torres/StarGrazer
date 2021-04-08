@@ -63,10 +63,10 @@ public class StarGrazerMovement : MonoBehaviour
                     transform.localPosition = Vector3.MoveTowards(transform.localPosition, new Vector3(0, 9, 0), speed * Time.deltaTime);
                     break;
                 case movementState.FULL:
-                    transform.localPosition = Vector3.MoveTowards(transform.localPosition, new Vector3(0, 3, 0), speed * Time.deltaTime);
+                    transform.localPosition = Vector3.MoveTowards(transform.localPosition, new Vector3(0, 4, 0), speed * Time.deltaTime);
                     break;
                 case movementState.VERTICAL:
-                    transform.localPosition = Vector3.MoveTowards(transform.localPosition, new Vector3(0, 3, 0), speed * Time.deltaTime);
+                    transform.localPosition = Vector3.MoveTowards(transform.localPosition, new Vector3(0, 0, 0), speed * Time.deltaTime);
                     break;
             }
         }
