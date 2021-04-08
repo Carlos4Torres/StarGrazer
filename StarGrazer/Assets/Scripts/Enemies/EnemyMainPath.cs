@@ -92,7 +92,7 @@ public class EnemyMainPath : MonoBehaviour
         state = combatState.ESCAPE;
 
         //Destroy(this.gameObject, timeUntilDestroy);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(timeUntilDestroy);
         if(state == combatState.ESCAPE)
             this.gameObject.SetActive(false);
     }
