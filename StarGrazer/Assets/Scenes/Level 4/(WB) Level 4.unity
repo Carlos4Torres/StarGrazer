@@ -1317,7 +1317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 964113131587106787, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: attacktype
-      value: L4G2
+      value: L4G6
       objectReference: {fileID: 0}
     - target: {fileID: 964113131587106789, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1405,7 +1405,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6971041715442651726, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: attacktype
-      value: L4G2
+      value: L4G6
       objectReference: {fileID: 0}
     - target: {fileID: 7111609584860369875, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1441,7 +1441,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7294488070037190776, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: attacktype
-      value: L4G2
+      value: L4G6
       objectReference: {fileID: 0}
     - target: {fileID: 7294488070037190779, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_Path
@@ -1569,7 +1569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8319210976582233803, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: attacktype
-      value: L4G2
+      value: L4G6
       objectReference: {fileID: 0}
     - target: {fileID: 8319210976582233805, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalRotation.x
@@ -8456,15 +8456,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6933551276620560536, guid: 05e16f90d6002f6478d541abc5e0670b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 662
+      value: 639.4
       objectReference: {fileID: 0}
     - target: {fileID: 6933551276620560536, guid: 05e16f90d6002f6478d541abc5e0670b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 38.099976
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 6933551276620560536, guid: 05e16f90d6002f6478d541abc5e0670b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 6933551276620560536, guid: 05e16f90d6002f6478d541abc5e0670b, type: 3}
       propertyPath: m_LocalRotation.x
@@ -16327,7 +16327,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 964113131587106787, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: attacktype
-      value: L4G1
+      value: L4G4
       objectReference: {fileID: 0}
     - target: {fileID: 964113131587106789, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalRotation.x
@@ -16415,7 +16415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6971041715442651726, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: attacktype
-      value: L4G1
+      value: L4G4
       objectReference: {fileID: 0}
     - target: {fileID: 7111609584860369875, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16451,7 +16451,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7294488070037190776, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: attacktype
-      value: L4G1
+      value: L4G4
       objectReference: {fileID: 0}
     - target: {fileID: 7294488070037190779, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_Path
@@ -16579,7 +16579,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8319210976582233803, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: attacktype
-      value: L4G1
+      value: L4G4
       objectReference: {fileID: 0}
     - target: {fileID: 8319210976582233805, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalRotation.x
@@ -17279,7 +17279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 964113131587106787, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: attacktype
-      value: L4G3
+      value: L4G5
       objectReference: {fileID: 0}
     - target: {fileID: 964113131587106789, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalRotation.x
@@ -17367,7 +17367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6971041715442651726, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: attacktype
-      value: L4G3
+      value: L4G5
       objectReference: {fileID: 0}
     - target: {fileID: 7111609584860369875, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17403,7 +17403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7294488070037190776, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: attacktype
-      value: L4G3
+      value: L4G5
       objectReference: {fileID: 0}
     - target: {fileID: 7294488070037190779, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_Path
@@ -17531,7 +17531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8319210976582233803, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: attacktype
-      value: L4G3
+      value: L4G5
       objectReference: {fileID: 0}
     - target: {fileID: 8319210976582233805, guid: ade5de47221b15544a9ab49688e0c104, type: 3}
       propertyPath: m_LocalRotation.x
