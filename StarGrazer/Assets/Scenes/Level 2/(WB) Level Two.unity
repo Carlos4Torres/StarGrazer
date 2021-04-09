@@ -13029,6 +13029,7 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 4094367603665833329, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: Loop
       value: 0
@@ -13041,6 +13042,12 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.005
       objectReference: {fileID: 0}
+=======
+    - target: {fileID: 4094367603665833330, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
+      propertyPath: dolly
+      value: 
+      objectReference: {fileID: 1878224734}
+>>>>>>> Stashed changes
     - target: {fileID: 4694109445515642151, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_Layer
       value: 2
@@ -16238,8 +16245,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.05, y: 0.075, z: 0.1}
-  m_Center: {x: -0.005, y: 0.035, z: 0}
+  m_Size: {x: 0.05, y: 0.06, z: 0.04}
+  m_Center: {x: -0.005, y: 0.03, z: 0.01}
 --- !u!114 &1497734591621772424
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12331,8 +12331,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.36, y: 0.21, z: 0.03}
-  m_Center: {x: 0, y: 0.06, z: 0}
+  m_Size: {x: 0.36, y: 0.13, z: 0.03}
+  m_Center: {x: 0, y: 0.05, z: 0}
 --- !u!1 &915115529
 GameObject:
   m_ObjectHideFlags: 0
@@ -25887,6 +25887,10 @@ PrefabInstance:
       propertyPath: sgShot
       value: 
       objectReference: {fileID: 21300000, guid: f947a65ab753d244b80769c76570cdc5, type: 3}
+    - target: {fileID: 4094367603665833330, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
+      propertyPath: dolly
+      value: 
+      objectReference: {fileID: 3557212745565068605}
     - target: {fileID: 4694109445515642151, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_Layer
       value: 2

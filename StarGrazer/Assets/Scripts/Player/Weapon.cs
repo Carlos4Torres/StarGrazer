@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class Weapon : MonoBehaviour
 {
   /// Public DataFields
     public GameObject bulletPrefab;
     public Transform gameplayPlane;
+    public CinemachineDollyCart dolly;
     public Sprite sgShot;
     public float fireRate = .1f;
     public float shotSpeed = 50;
@@ -53,8 +55,12 @@ public class Weapon : MonoBehaviour
         yield return new WaitForSeconds(fireRate);     //There may be a better way to do this, but for now the different speed variables consist of transform.forward * speed which fires at the crosshair at a specific speed.    |                        
         if (shooting && alive)                                  //The gameplayPlane.forward * 20 ensures adds the forward speed to the bullet so that it actually goes at the crosshair instead of veering off.                             V
         {                                               
+<<<<<<< Updated upstream
             bulletController.Shoot(transform, transform.rotation.x, transform.rotation.y, transform.rotation.z, sgShot, Color.green, 1, gameplayPlane.forward.x * 20 + transform.forward.x * shotSpeed, gameplayPlane.forward.y * 20 + transform.forward.y * shotSpeed, gameplayPlane.forward.z * 20 + transform.forward.z * shotSpeed, bulletRadius);
             weaponNoise.Play();
+=======
+            bulletController.Shoot(transform, transform.rotation.x, transform.rotation.y, transform.rotation.z, sgShot, Color.green, 1, gameplayPlane.forward.x * dolly.m_Speed + transform.forward.x * shotSpeed, gameplayPlane.forward.y * dolly.m_Speed + transform.forward.y * shotSpeed, gameplayPlane.forward.z * dolly.m_Speed + transform.forward.z * shotSpeed, bulletRadius);
+>>>>>>> Stashed changes
             shooting = true;
             StartCoroutine(FireRate());
         }
@@ -64,7 +70,7 @@ public class Weapon : MonoBehaviour
     {
         if (!shooting && alive)
         {
-            bulletController.Shoot(transform, transform.rotation.x, transform.rotation.y, transform.rotation.z, sgShot, Color.green, 1, gameplayPlane.forward.x * 20 + transform.forward.x * shotSpeed, gameplayPlane.forward.y * 20 + transform.forward.y * shotSpeed, gameplayPlane.forward.z * 20 + transform.forward.z * shotSpeed, bulletRadius);
+            bulletController.Shoot(transform, transform.rotation.x, transform.rotation.y, transform.rotation.z, sgShot, Color.green, 1, gameplayPlane.forward.x * dolly.m_Speed + transform.forward.x * shotSpeed, gameplayPlane.forward.y * dolly.m_Speed + transform.forward.y * shotSpeed, gameplayPlane.forward.z * dolly.m_Speed + transform.forward.z * shotSpeed, bulletRadius);
             shooting = true;
             StartCoroutine(FireRate());
         }
