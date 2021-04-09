@@ -79,6 +79,8 @@ public class BossController : MonoBehaviour
     public int timertop2;
     public int phasetimer;
 
+    public Text LevelClearText;
+
     //attack specific variables
     public GameObject bomb;
     public bool burst;
@@ -129,6 +131,8 @@ public class BossController : MonoBehaviour
         startingTimertop2 = timertop2;
 
         bossDeath = GetComponent<AudioSource>();
+
+        LevelClearText.GetComponent<Text>().enabled = false;
     }
 
     void Update()
@@ -165,6 +169,7 @@ public class BossController : MonoBehaviour
         //if the boss's health is 0 and they have no more phases left, kills the boss.
         if ((health <= 0) && (phases == 0) && !deathActivated)
         {
+            LevelClearText.GetComponent<Text>().enabled = true;
             deathActivated = true;
             StartCoroutine(Death());
         }
