@@ -128,6 +128,7 @@ public class PauseMenuController : MonoBehaviour
         Cursor.visible = false;
         Time.timeScale = 1f;
         isPaused = false;
+        weaponFunc.enabled = true;
     }
 
     public void RestartGame()
