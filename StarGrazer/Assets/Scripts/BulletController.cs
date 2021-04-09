@@ -14,7 +14,7 @@ public class BulletController : MonoBehaviour
 
 
     // Summon a bullet prefab with all of it's specifications
-    public void Shoot(Transform spawnPosition, float rotationX, float rotationY, float rotationZ, Sprite sprite, Color color, float scale, float speedX, float speedY, float speedZ)
+    public void Shoot(Transform spawnPosition, float rotationX, float rotationY, float rotationZ, Sprite sprite, Color color, float scale, float speedX, float speedY, float speedZ, float collliderRadius)
     {
    
         //shooting = true;
@@ -26,12 +26,13 @@ public class BulletController : MonoBehaviour
         sr.color = color;
         bullet.transform.localScale = new Vector3(scale, scale, scale);                                                                 
         Rigidbody bulletrb = bullet.GetComponent<Rigidbody>();
+        SphereCollider bulletColl = bullet.GetComponent<SphereCollider>();
         bulletrb.velocity = new Vector3(speedX, speedY, speedZ);
-
+        bulletColl.radius = collliderRadius;
         //GetComponent<AudioSource>().Play();
     }
 
-    public void ShootExtra(GameObject prefab, Transform spawnPosition, float posX, float posY, float posZ, float rotationX, float rotationY, float rotationZ, Sprite sprite, Color color, float scale, float speedX, float speedY, float speedZ)
+    public void ShootExtra(GameObject prefab, Transform spawnPosition, float posX, float posY, float posZ, float rotationX, float rotationY, float rotationZ, Sprite sprite, Color color, float scale, float speedX, float speedY, float speedZ, float collliderRadius)
     {
 
         //shooting = true;
@@ -44,7 +45,10 @@ public class BulletController : MonoBehaviour
         sr.sprite = sprite;
         sr.color = color;
         GameObject child = bullet.transform.GetChild(0).gameObject;
+        SphereCollider bulletColl = bullet.GetComponent<SphereCollider>();
         child.transform.LookAt(Camera.main.transform.position, -Vector3.up);
+        bulletColl.radius = collliderRadius;
+
         //GetComponent<AudioSource>().Play();
     }
 
