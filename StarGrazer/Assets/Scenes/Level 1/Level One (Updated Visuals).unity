@@ -3161,6 +3161,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 441331675325139966, guid: 22a248fa1e57db94292e0a59dc0738a7, type: 3}
   m_PrefabInstance: {fileID: 235382139}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &235382141 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4947380231009143913, guid: 22a248fa1e57db94292e0a59dc0738a7, type: 3}
+  m_PrefabInstance: {fileID: 235382139}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &235382142 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5471531525362966798, guid: 22a248fa1e57db94292e0a59dc0738a7, type: 3}
@@ -10827,7 +10838,7 @@ MonoBehaviour:
   Enemy: []
   empty: {fileID: 1204028693}
   scoreText: {fileID: 235382142}
-  highScore: {fileID: 0}
+  highScore: {fileID: 235382141}
 --- !u!1 &755518694 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7421583794028094358, guid: e206bf9ae3ea53d48bc0ce8218bfdea5, type: 3}

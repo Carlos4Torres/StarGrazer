@@ -3184,6 +3184,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &408357013 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1100682560710729273, guid: 636e0f81f7efcac469b3d676c68d918d, type: 3}
+  m_PrefabInstance: {fileID: 408357007}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &416363817
 GameObject:
   m_ObjectHideFlags: 0
@@ -14466,7 +14477,7 @@ MonoBehaviour:
   Enemy: []
   empty: {fileID: 2076088469}
   scoreText: {fileID: 1177507070}
-  highScore: {fileID: 0}
+  highScore: {fileID: 408357013}
 --- !u!1 &1609589369
 GameObject:
   m_ObjectHideFlags: 0
