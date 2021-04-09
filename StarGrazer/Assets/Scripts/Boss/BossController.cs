@@ -767,23 +767,23 @@ public class BossController : MonoBehaviour
                 {
                     if(swap == 0)
                     {
-                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 5, 5, 0, 0, 0, BulletSprites[0], colors[Random.Range(1, 4)], 1.5f, Random.Range(-25f, 25f), Random.Range(-5f, 5f), Random.Range(-5f, 5f), .75f);
-                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 5, 5, 0, 0, 0, BulletSprites[0], colors[Random.Range(1, 4)], 1.5f, Random.Range(-25f, 25f), Random.Range(-5f, 5f), Random.Range(-5f, 5f), .75f);
+                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 5, 5, 0, 0, 0, BulletSprites[0], colors[Random.Range(1, 4)], 1.5f, Random.Range(-25f, 25f), Random.Range(-5f, 5f), Random.Range(-5f, 5f), 2);
+                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 5, 5, 0, 0, 0, BulletSprites[0], colors[Random.Range(1, 4)], 1.5f, Random.Range(-25f, 25f), Random.Range(-5f, 5f), Random.Range(-5f, 5f), 2);
 
 
-                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 5, -5, 0, 0, 0, BulletSprites[0], colors[Random.Range(1, 4)], 1.5f, Random.Range(-25f, 25f), Random.Range(-5f, 5f), Random.Range(-5f, 5f), .75f);
-                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 5, -5, 0, 0, 0, BulletSprites[0], colors[Random.Range(1, 4)], 1.5f, Random.Range(-25f, 25f), Random.Range(-5f, 5f), Random.Range(-5f, 5f), .75f);
+                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 5, -5, 0, 0, 0, BulletSprites[0], colors[Random.Range(1, 4)], 1.5f, Random.Range(-25f, 25f), Random.Range(-5f, 5f), Random.Range(-5f, 5f), 2);
+                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 5, -5, 0, 0, 0, BulletSprites[0], colors[Random.Range(1, 4)], 1.5f, Random.Range(-25f, 25f), Random.Range(-5f, 5f), Random.Range(-5f, 5f), 2);
 
                         swap = 1;
                     }
                     else
                     {
-                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, -5, 5, 0, 0, 0, BulletSprites[0], colors[Random.Range(1, 4)], 1.5f, Random.Range(-25f, 25f), Random.Range(-5f, 5f), Random.Range(-5f, 5f), .75f);
-                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, -5, 5, 0, 0, 0, BulletSprites[0], colors[Random.Range(1, 4)], 1.5f, Random.Range(-25f, 25f), Random.Range(-5f, 5f), Random.Range(-5f, 5f), .75f);
+                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, -5, 5, 0, 0, 0, BulletSprites[0], colors[Random.Range(1, 4)], 1.5f, Random.Range(-25f, 25f), Random.Range(-5f, 5f), Random.Range(-5f, 5f), 2);
+                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, -5, 5, 0, 0, 0, BulletSprites[0], colors[Random.Range(1, 4)], 1.5f, Random.Range(-25f, 25f), Random.Range(-5f, 5f), Random.Range(-5f, 5f), 2);
 
 
-                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, -5, -5, 0, 0, 0, BulletSprites[0], colors[Random.Range(1, 4)], 1.5f, Random.Range(-25f, 25f), Random.Range(-5f, 5f), Random.Range(-5f, 5f), .75f);
-                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, -5, -5, 0, 0, 0, BulletSprites[0], colors[Random.Range(1, 4)], 1.5f, Random.Range(-25f, 25f), Random.Range(-5f, 5f), Random.Range(-5f, 5f), .75f);
+                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, -5, -5, 0, 0, 0, BulletSprites[0], colors[Random.Range(1, 4)], 1.5f, Random.Range(-25f, 25f), Random.Range(-5f, 5f), Random.Range(-5f, 5f), 2);
+                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, -5, -5, 0, 0, 0, BulletSprites[0], colors[Random.Range(1, 4)], 1.5f, Random.Range(-25f, 25f), Random.Range(-5f, 5f), Random.Range(-5f, 5f), 2);
 
                         swap = 0;
                     }
@@ -818,7 +818,7 @@ public class BossController : MonoBehaviour
                 break;
 
             case shootingPattern.ARTIFICIAL_DEATH:
-                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), Random.Range(-20f, 20f), Random.Range(-20f, 20f), 0, 0, BulletSprites[0], colors[Random.Range(0, 3)], 13.0f, -5, 0, 0, .75f);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), Random.Range(-20f, 20f), Random.Range(-20f, 20f), 0, 0, BulletSprites[0], colors[Random.Range(0, 3)], 13.0f, -5, 0, 0, .5f);
                 break;
 
            
