@@ -434,6 +434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   _SPEED: 20
+  speed: 0
   resetting: 0
   model: {fileID: 689015017433729283}
   focusingSprite: {fileID: 8321467685463954577}
@@ -479,6 +480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7bc0aead7ec16f4f898e345906ddff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   specialUI: {fileID: 0}
   specialImages:
   - {fileID: 2800000, guid: 27d0345924276b24099c2c2da1dc9085, type: 3}
@@ -533,7 +535,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 401b12e99e84b59489a4e23ed96330e6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.005
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -634,6 +636,7 @@ MonoBehaviour:
   sgShot: {fileID: 21300000, guid: f947a65ab753d244b80769c76570cdc5, type: 3}
   fireRate: 0.1
   shotSpeed: 50
+  bulletRadius: 0.5
   grazeCount: 0
 --- !u!135 &2817828972225972879
 SphereCollider:
@@ -746,6 +749,10 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 9bd0169aea56d0344a13442fb92e865c, type: 3}
   - {fileID: 2800000, guid: 3b7432e58792d2f4e80cc4e4609544cd, type: 3}
   crosshair: {fileID: 0}
+  path: {fileID: 0}
+  ghostDolly: {fileID: 0}
+  sections: []
+  speedTrigs: []
   respawning: 0
   flickering: 0
 --- !u!65 &689015017433729280

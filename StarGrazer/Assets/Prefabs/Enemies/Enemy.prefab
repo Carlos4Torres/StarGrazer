@@ -25,7 +25,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: dfcb662b9d02412408651bcef1c9c2bb, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.025
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -124,6 +124,7 @@ MonoBehaviour:
   mainController: {fileID: 6414416409364205175}
   deathSound: {fileID: 2317281009243724140}
   impactEffect: {fileID: 921932400209565370, guid: 932a6f95d31009648bfd134f8b766eed, type: 3}
+  health: 50
 --- !u!1 &6414416409364205168
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,7 +201,6 @@ MonoBehaviour:
   laserSound: {fileID: 7575158320750305058}
   isDead: 0
   mainDollyScipt: {fileID: 0}
-  spawnPosition: {fileID: 0}
   rotationX: 0
   sprite: {fileID: 0}
   color: {r: 0, g: 0, b: 0, a: 0}
@@ -231,7 +231,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a6bc1ba59af839344a9d37a782762b5a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.01
   m_Pitch: 1
   Loop: 0
   Mute: 0

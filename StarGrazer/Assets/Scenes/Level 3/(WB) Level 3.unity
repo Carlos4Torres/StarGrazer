@@ -14608,7 +14608,7 @@ PrefabInstance:
       objectReference: {fileID: 957427142}
     - target: {fileID: 689015015764783906, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_Position
-      value: 2806
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783906, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_Speed
@@ -14616,31 +14616,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 56.466457
+      value: -60.16
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 94.61035
+      value: 86.240005
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -957.1977
+      value: 432.8
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.5026682
+      value: -0.49818286
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.49722198
+      value: 0.5018106
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.49258244
+      value: 0.49818525
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.50740284
+      value: 0.5018082
       objectReference: {fileID: 0}
     - target: {fileID: 689015015764783907, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_RootOrder
@@ -17784,8 +17784,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2691071566384591987, guid: 06d95ac4b5dc0a4498bd1d3d4a8310c6, type: 3}
       propertyPath: Mute
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2691071566384591987, guid: 06d95ac4b5dc0a4498bd1d3d4a8310c6, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a65a6b7be9b4c0240a1a3d1d53b96528, type: 3}
     - target: {fileID: 2691071566384591988, guid: 06d95ac4b5dc0a4498bd1d3d4a8310c6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

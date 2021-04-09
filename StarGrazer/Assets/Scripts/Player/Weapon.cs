@@ -18,6 +18,8 @@ public class Weapon : MonoBehaviour
     private BulletController bulletController;
 
 
+    private AudioSource weaponNoise;
+
     [SerializeField]
     private int grazeCount;
 
@@ -37,6 +39,8 @@ public class Weapon : MonoBehaviour
     {
         bulletController = GetComponent<BulletController>();
 
+        weaponNoise = GetComponent<AudioSource>();
+
         controls = new PlayerControls();
 
         controls.Gameplay.PlayerFire.started += ctx => CanShoot();                                  // If fire pressed, call shoot function
@@ -50,6 +54,7 @@ public class Weapon : MonoBehaviour
         if (shooting && alive)                                  //The gameplayPlane.forward * 20 ensures adds the forward speed to the bullet so that it actually goes at the crosshair instead of veering off.                             V
         {                                               
             bulletController.Shoot(transform, transform.rotation.x, transform.rotation.y, transform.rotation.z, sgShot, Color.green, 1, gameplayPlane.forward.x * 20 + transform.forward.x * shotSpeed, gameplayPlane.forward.y * 20 + transform.forward.y * shotSpeed, gameplayPlane.forward.z * 20 + transform.forward.z * shotSpeed, bulletRadius);
+            weaponNoise.Play();
             shooting = true;
             StartCoroutine(FireRate());
         }
