@@ -117,11 +117,15 @@ public class SpecialWeapons : MonoBehaviour
             enemies = GameObject.FindGameObjectsWithTag("Enemy Model");
             foreach (GameObject enemy in enemies)
             {
-                Renderer renderer = enemy.GetComponent<Renderer>();
-                if(renderer.isVisible)
+                if(Vector3.Distance(enemy.transform.position, this.transform.position) < 100)
                 {
-                    Destroy(enemy.transform.parent.gameObject);
+                    Renderer renderer = enemy.GetComponent<Renderer>();
+                    if (renderer.isVisible)
+                    {
+                        Destroy(enemy.transform.parent.gameObject);
+                    }
                 }
+
             }
 
             enemyBullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
