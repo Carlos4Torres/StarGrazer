@@ -571,9 +571,9 @@ public class BossController : MonoBehaviour
                 if(swap == 0)
                 {
                     randval = Random.Range(-20f, 20f);
-                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, 5, -25 + fullBulletMoveSpeed, .75f);
-                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, 5, -20 + fullBulletMoveSpeed, .75f);
-                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, 5, -15 + fullBulletMoveSpeed, .75f);
+                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, 5, -25 + fullBulletMoveSpeed, 1.25f);
+                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, 5, -20 + fullBulletMoveSpeed, 1.25f);
+                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, 5, -15 + fullBulletMoveSpeed, 1.25f);
 
                     swap = 1;
                 }
@@ -581,9 +581,9 @@ public class BossController : MonoBehaviour
                 {
 
                     randval = Random.Range(-20f, 20f);
-                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, -5, -25 + fullBulletMoveSpeed, .75f);
-                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, -5, -20 + fullBulletMoveSpeed, .75f);
-                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, -5, -15 + fullBulletMoveSpeed, .75f);
+                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, -5, -25 + fullBulletMoveSpeed, 1.25f);
+                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, -5, -20 + fullBulletMoveSpeed, 1.25f);
+                    bc.ShootExtra(BulletTypes[0], shotSpawn, 0, randval, 17, 0, 0, 0, BulletSprites[2], colors[2], 0.8f, 0, -5, -15 + fullBulletMoveSpeed, 1.25f);
 
                     swap = 0;
                 }
@@ -591,7 +591,7 @@ public class BossController : MonoBehaviour
                 break;
 
             case shootingPattern.HAHAHA:
-                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[3], colors[0], 3.0f, 0, 0, -20 + fullBulletMoveSpeed, .75f);
+                bc.ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 17, 0, 0, 0, BulletSprites[3], colors[0], 3.0f, 0, 0, -20 + fullBulletMoveSpeed, 1.25f);
                 break;
 
             case shootingPattern.BIRDS:
@@ -600,22 +600,22 @@ public class BossController : MonoBehaviour
                 {
                     case 0:
 
-                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, 15, fullBulletMoveSpeed, .75f);
-                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, -15, fullBulletMoveSpeed, .75f);
+                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, 15, fullBulletMoveSpeed, 2f);
+                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, -15, fullBulletMoveSpeed,2f);
 
                         swap = 1;
                         break;
                     case 1:
                         
-                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, 15, -15 + fullBulletMoveSpeed, .75f);
+                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, 15, -15 + fullBulletMoveSpeed, 2f);
                         
-                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, -15, -15 + fullBulletMoveSpeed, .75f);
+                        bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, -15, -15 + fullBulletMoveSpeed, 2f);
 
                         swap = 2;
                         break;
                     case 2:
 
-                         bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, 0, -15 + fullBulletMoveSpeed, .75f);
+                         bc.ShootExtra(BulletTypes[0], shotSpawn, 0, 0, 0, 0, 0, 0, BulletSprites[10], colors[0], 0.8f, 0, 0, -15 + fullBulletMoveSpeed, 2f);
 
                         swap = 0 ;
                         break;
@@ -649,11 +649,11 @@ public class BossController : MonoBehaviour
             case shootingPattern.HUSTLE_BONES:
                 if(isMoving)
                 {
-                    bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[3], colors[0], Random.Range(1.0f, 2.0f), 0, 0, Random.Range(-20f, -8f), .75f);
+                    bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[3], colors[0], Random.Range(1.0f, 2.0f), 0, 0, Random.Range(-20f, -8f), 1.5f);
                 }
                 else
                 {
-                    bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[3], colors[0], Random.Range(1.0f, 2.0f), 0, 0, Random.Range(isMovingMin, isMovingMax), .75f);
+                    bc.GetComponent<BulletController>().ShootExtra(BulletTypes[0], shotSpawn, 0, Random.Range(-20f, 20f), 0, 0, 0, 0, BulletSprites[3], colors[0], Random.Range(1.0f, 2.0f), 0, 0, Random.Range(isMovingMin, isMovingMax), 1.5f);
                 }
                
                 break;
