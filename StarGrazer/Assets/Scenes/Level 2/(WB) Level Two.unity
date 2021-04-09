@@ -13029,7 +13029,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
-<<<<<<< Updated upstream
     - target: {fileID: 4094367603665833329, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: Loop
       value: 0
@@ -13042,12 +13041,10 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.005
       objectReference: {fileID: 0}
-=======
     - target: {fileID: 4094367603665833330, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: dolly
       value: 
       objectReference: {fileID: 1878224734}
->>>>>>> Stashed changes
     - target: {fileID: 4694109445515642151, guid: f73cc050e3cc0aa4785d2a0723e8e000, type: 3}
       propertyPath: m_Layer
       value: 2
