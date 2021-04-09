@@ -12,7 +12,6 @@ public class BulletController : MonoBehaviour
     public GameObject bulletPrefab;
 
 
-
     // Summon a bullet prefab with all of it's specifications
     public void Shoot(Transform spawnPosition, float rotationX, float rotationY, float rotationZ, Sprite sprite, Color color, float scale, float speedX, float speedY, float speedZ, float collliderRadius)
     {
@@ -27,8 +26,16 @@ public class BulletController : MonoBehaviour
         bullet.transform.localScale = new Vector3(scale, scale, scale);                                                                 
         Rigidbody bulletrb = bullet.GetComponent<Rigidbody>();
         SphereCollider bulletColl = bullet.GetComponent<SphereCollider>();
+        CapsuleCollider bulletCaps = bullet.GetComponent<CapsuleCollider>();
         bulletrb.velocity = new Vector3(speedX, speedY, speedZ);
-        bulletColl.radius = collliderRadius;
+
+        if (bulletColl)
+            bulletColl.radius = collliderRadius;
+        else if (bulletCaps)
+            bulletCaps.radius = collliderRadius;
+        else
+            Debug.Log("Bullet has no acceptable collider");
+
         //GetComponent<AudioSource>().Play();
     }
 
@@ -46,8 +53,15 @@ public class BulletController : MonoBehaviour
         sr.color = color;
         GameObject child = bullet.transform.GetChild(0).gameObject;
         SphereCollider bulletColl = bullet.GetComponent<SphereCollider>();
+        CapsuleCollider bulletCaps = bullet.GetComponent<CapsuleCollider>();
         child.transform.LookAt(Camera.main.transform.position, -Vector3.up);
-        bulletColl.radius = collliderRadius;
+
+        if(bulletColl)
+            bulletColl.radius = collliderRadius;
+        else if(bulletCaps)
+            bulletCaps.radius = collliderRadius;
+        else
+            Debug.Log("Bullet has no acceptable collider");
 
         //GetComponent<AudioSource>().Play();
     }
