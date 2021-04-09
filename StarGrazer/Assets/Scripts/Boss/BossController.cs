@@ -109,6 +109,7 @@ public class BossController : MonoBehaviour
     private float isMovingMax = -17.5f;
     private float swap = 0;
     private float fullBulletMoveSpeed = 0;
+    private AudioSource bossDeath;
 
     //-----------------------------------------------------------------------------------------------------------------------------------------
 
@@ -126,6 +127,8 @@ public class BossController : MonoBehaviour
         startingTimer2 = timer2;
         startingTimertop = timertop;
         startingTimertop2 = timertop2;
+
+        bossDeath = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -376,6 +379,7 @@ public class BossController : MonoBehaviour
     public IEnumerator Death()
     {
         Destroy(modelObj);
+        bossDeath.Play();
         yield return new WaitForSeconds(3);
         switch(boss)
         {
