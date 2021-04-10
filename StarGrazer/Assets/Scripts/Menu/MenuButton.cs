@@ -201,13 +201,21 @@ public class MenuButton : MonoBehaviour
     
     public IEnumerator MenuSound()
     {
+        clickControl = 1;
         yield return new WaitForSeconds(0.5f);
+        animator.SetBool("selected", false);
+        clickControl = 0;
     }
     
     public IEnumerator MenuFullScreen()
     {
-        yield return new WaitForSeconds(0.5f);
+        clickControl = 1;
+        menuScreen = 3;
+        menuButtonController.index = 9;
         Screen.fullScreen = !Screen.fullScreen;
+        yield return new WaitForSeconds(0.5f);
+        animator.SetBool("selected", false);
+        clickControl = 0;
     }
 
     public IEnumerator MenuOptionsToMain()
